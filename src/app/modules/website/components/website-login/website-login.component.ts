@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'app/services/api.service';
 import { GlobalService } from 'app/services/global.service';
+import { environment } from 'environments/environment'
 
 @Component({
   selector: 'app-website-login',
@@ -33,10 +34,9 @@ export class WebsiteLoginComponent implements OnInit {
           localStorage.setItem('token', res['token']);
           localStorage.setItem('user', res['user']);
           this.globalService.notification.show({message: 'Login successful'});
-          this.globalService.redirection.delayed('/dashboard', 300);
+          this.globalService.redirection.delayed('/dashboard', 300)
         },
         error => {
-          console.log(error)
           this.globalService.errorHandler.process(error);
         }
       )

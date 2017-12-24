@@ -5,10 +5,14 @@
 @import './components/index';
 @import './services/notification.service';
 
-@import 'app/components/website-brand-guidelines/website-brand-guidelines.component';
-@import 'app/components/website-view-wrapper/website-view-wrapper.component';
-@import 'app/components/website-navbar/website-navbar.component';
-@import 'app/components/website-home/website-home.component';
-@import 'app/components/website-register/website-register.component';
-@import 'app/components/website-login/website-login.component';
-@import 'app/components/website-contact/website-contact.component';
+@import 'app/modules/website/components/website-brand-guidelines/website-brand-guidelines.component';
+@import 'app/modules/website/components/website-view-wrapper/website-view-wrapper.component';
+@import 'app/modules/website/components/website-navbar/website-navbar.component';
+@import 'app/modules/website/components/website-home/website-home.component';
+@import 'app/modules/website/components/website-register/website-register.component';
+@import 'app/modules/website/components/website-login/website-login.component';
+@import 'app/modules/website/components/website-contact/website-contact.component';
+
+@import 'app/modules/dashboard/components/dashboard-view-wrapper/dashboard-view-wrapper.component';
+@import 'app/modules/dashboard/components/dashboard-navbar/dashboard-navbar.component';
+@import 'app/modules/dashboard/components/dashboard-account/dashboard-account.component';
