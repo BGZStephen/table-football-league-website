@@ -49,7 +49,7 @@ export class PublicApiService {
   apiCall(callParams) {
     const jwt = localStorage.getItem('token');
     let headers = new HttpHeaders({'Authorization': `${this.authorization}`});
-    if(jwt) {
+    if (jwt) {
       headers = headers.set('token', jwt);
     }
     return this.http[callParams.type](`${this.baseUrl}${callParams.url}`, callParams.body ? callParams.body : {headers: headers}, callParams.body ? {headers: headers} : null);

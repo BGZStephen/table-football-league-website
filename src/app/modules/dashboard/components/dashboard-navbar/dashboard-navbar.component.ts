@@ -18,7 +18,7 @@ export class DashboardNavbarComponent implements OnInit {
   ) {
     this.menuItems = [
       {name: 'Home', iconClass: 'fa fa-home fa-2x', link: '/dashboard'},
-      {name: 'Fixtures', iconClass: 'fa fa-calendar fa-2x', link: '/dashboard/fixtures/register'},
+      {name: 'Fixtures', iconClass: 'fa fa-calendar fa-2x', link: '/dashboard/fixtures'},
       {name: 'Teams', iconClass: 'fa fa-users fa-2x', link: '/dashboard/teams'},
       {name: 'Leagues', iconClass: 'fa fa-list-alt fa-2x', link: '/dashboard/leagues'},
       {name: 'Account', iconClass: 'fa fa-cog fa-2x', link: '/dashboard/account'},
