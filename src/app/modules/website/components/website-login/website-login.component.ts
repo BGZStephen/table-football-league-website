@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'app/services/api.service';
+import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 import { environment } from 'environments/environment'
 
@@ -19,7 +19,7 @@ export class WebsiteLoginComponent implements OnInit {
   };
 
   constructor(
-    private api: ApiService,
+    private publicApi: PublicApiService,
     private globalService: GlobalService,
   ) { }
 
@@ -28,7 +28,7 @@ export class WebsiteLoginComponent implements OnInit {
   onLogin(user) {
     const validation = this.validateForm(user);
     if (validation) {
-      this.api.users.authenticate(user)
+      this.publicApi.users.authenticate(user)
       .subscribe(
         res => {
           localStorage.setItem('token', res['token']);

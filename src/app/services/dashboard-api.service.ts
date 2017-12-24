@@ -5,11 +5,10 @@ import { environment } from 'environments/environment';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class ApiService {
+export class DashboardApiService {
 
   baseUrl: string = environment.apiUrl;
-  websiteAuth: String = environment.authorization.website;
-  dashboardAuth: String = environment.authorization.dashboard;
+  authorization: String = environment.authorization.dashboard;
 
   constructor(
     private http: HttpClient,
@@ -17,21 +16,10 @@ export class ApiService {
   ) {}
 
   users = {
-    create: (user) => {
-      const callParams = {
-        type: 'post',
-        url: '/users',
-        body: user,
-        auth: this.websiteAuth,
-      }
-      return this.apiCall(callParams);
-    },
-
     get: (id) => {
       const callParams = {
         type: 'get',
         url: `/private/users/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -40,7 +28,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: '/admin/users',
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -49,7 +36,6 @@ export class ApiService {
       const callParams = {
         type: 'delete',
         url: `/users/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -59,7 +45,6 @@ export class ApiService {
         type: 'put',
         url: `/users/${user._id}`,
         body: user,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -69,7 +54,6 @@ export class ApiService {
         type: 'post',
         url: '/users/authenticate',
         body: user,
-        auth: this.websiteAuth,
       }
       return this.apiCall(callParams);
     },
@@ -80,7 +64,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: `/leagues/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -89,7 +72,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: '/admin/leagues',
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -98,7 +80,6 @@ export class ApiService {
       const callParams = {
         type: 'post',
         url: '/leagues', body: league,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -107,7 +88,6 @@ export class ApiService {
       const callParams = {
         type: 'delete',
         url: `/leagues/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -116,7 +96,6 @@ export class ApiService {
       const callParams = {
         type: 'put',
         url: `/leagues/${league._id}`, body: league,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -127,7 +106,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: `/teams/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -136,7 +114,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: '/admin/teams',
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -145,7 +122,6 @@ export class ApiService {
       const callParams = {
         type: 'post',
         url: '/teams', body: team,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -154,7 +130,6 @@ export class ApiService {
       const callParams = {
         type: 'delete',
         url: `/teams/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -164,7 +139,6 @@ export class ApiService {
         type: 'put',
         url: `/teams/${team._id}`,
         body: team,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -175,7 +149,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: `/fixtures/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -184,7 +157,6 @@ export class ApiService {
       const callParams = {
         type: 'get',
         url: '/admin/fixtures',
-        auth: this.dashboardAuth
       }
       return this.apiCall(callParams);
     },
@@ -194,7 +166,6 @@ export class ApiService {
         type: 'post',
         url: '/fixtures',
         body: fixture,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -203,7 +174,6 @@ export class ApiService {
       const callParams = {
         type: 'delete',
         url: `/fixtures/${id}`,
-        auth: this.dashboardAuth,
       }
       return this.apiCall(callParams);
     },
@@ -213,19 +183,6 @@ export class ApiService {
         type: 'put',
         url: `/fixtures/${fixture._id}`,
         body: fixture,
-        auth: this.dashboardAuth
-      }
-      return this.apiCall(callParams);
-    },
-  }
-
-  website = {
-    contactForm: (message) => {
-      const callParams = {
-        type: 'post',
-        url: '/website/contact-form',
-        body: message,
-        auth: this.websiteAuth
       }
       return this.apiCall(callParams);
     },
@@ -233,7 +190,7 @@ export class ApiService {
 
   apiCall(callParams) {
     const jwt = localStorage.getItem('token');
-    let headers = new HttpHeaders({'Authorization': `${callParams.auth}`});
+    let headers = new HttpHeaders({'Authorization': `${this.authorization}`});
     if(jwt) {
       headers = headers.set('token', jwt);
     }

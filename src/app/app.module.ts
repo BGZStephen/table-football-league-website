@@ -6,7 +6,9 @@ import { GlobalService } from './services/global.service';
 import { RedirectionService } from './services/redirection.service';
 import { NotificationService } from './services/notification.service';
 import { ErrorHandlerService } from './services/error-handler.service';
-import { ApiService } from './services/api.service'
+
+import { PublicApiService } from './services/public-api.service'
+import { DashboardApiService } from './services/dashboard-api.service'
 
 import { AuthGuard } from 'app/guards/auth.guard';
 
@@ -28,7 +30,7 @@ import { AppComponent } from './app.component';
     WebsiteModule,
     DashboardModule,
   ],
-  providers: [AuthGuard, GlobalService, ApiService, NotificationService, RedirectionService, ErrorHandlerService],
+  providers: [AuthGuard, GlobalService, PublicApiService, DashboardApiService, NotificationService, RedirectionService, ErrorHandlerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ApiService } from 'app/services/api.service';
+import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
@@ -12,13 +12,13 @@ export class DashboardAccountComponent implements OnInit {
   user: object = {};
 
   constructor(
-    private api: ApiService,
+    private dashboardApi: DashboardApiService,
     private globalService: GlobalService,
   ) { }
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
-    this.api.users.get(user._id)
+    this.dashboardApi.users.get(user._id)
     .subscribe(
       res => {
         this.user = res;
@@ -56,7 +56,7 @@ export class DashboardAccountComponent implements OnInit {
       user.password = form.newpassword;
     }
 
-    this.api.users.update(user)
+    this.dashboardApi.users.update(user)
     .subscribe(user => {
       this.user = user;
       return this.globalService.notification.show({message: 'Account update successful'});
