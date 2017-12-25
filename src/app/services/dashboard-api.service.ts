@@ -33,6 +33,15 @@ export class DashboardApiService {
       return this.apiCall(callParams);
     },
 
+    getLeagues: (id) => {
+      const callParams = {
+        type: 'post',
+        url: `/private/users/${id}/leagues`,
+        body: {},
+      }
+      return this.apiCall(callParams);
+    },
+
     delete: (id) => {
       const callParams = {
         type: 'delete',

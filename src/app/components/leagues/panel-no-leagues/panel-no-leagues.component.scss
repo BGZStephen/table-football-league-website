@@ -1,0 +1,19 @@
+app-panel-no-teams {
+  width: 100%;
+}
+
+#panel-no-teams {
+  .panel-head {
+    text-align: center;
+  }
+
+  .actions-container {
+    button {
+      margin: 0px 0px 5px 5px;
+    }
+
+    button:nth(last-of-type) {
+      margin-bottom: 0;
+    }
+  }
+}

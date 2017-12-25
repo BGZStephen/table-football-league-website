@@ -1,3 +1,10 @@
 <div id="dashboard-leagues" class="outlet-container">
-
+  <div class="row">
+    <div class="col-sm-3" *ngIf="leagues && leagues.length === 0">
+      <app-panel-no-leagues></app-panel-no-leagues>
+    </div>
+    <div class="col-sm-3" *ngIf="leagues && leagues.length >= 1">
+      <app-panel-add-league></app-panel-add-league>
+    </div>
+  </div>
 </div>

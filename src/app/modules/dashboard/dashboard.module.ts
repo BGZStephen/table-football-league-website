@@ -5,6 +5,8 @@ import { AppRoutes } from 'app/app.routes';
 import * as dashboard from 'app/modules/dashboard/components/dashboard-components-barrel';
 import { PanelAddTeamComponent } from 'app/components/teams/panel-add-team/panel-add-team.component';
 import { PanelNoTeamsComponent } from 'app/components/teams/panel-no-teams/panel-no-teams.component';
+import { PanelNoLeaguesComponent } from 'app/components/leagues/panel-no-leagues/panel-no-leagues.component';
+import { PanelAddLeagueComponent } from 'app/components/leagues/panel-add-league/panel-add-league.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { PanelNoTeamsComponent } from 'app/components/teams/panel-no-teams/panel
     dashboard.DashboardNavbarComponent,
     PanelNoTeamsComponent,
     PanelAddTeamComponent,
+    PanelNoLeaguesComponent,
+    PanelAddLeagueComponent,
   ],
   imports: [
     CommonModule,
