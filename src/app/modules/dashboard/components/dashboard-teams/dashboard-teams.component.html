@@ -1,7 +1,10 @@
 <div id="dashboard-teams" class="outlet-container">
   <div class="row">
-    <div class="col-sm-2" *ngIf="teams && teams.length === 0">
+    <div class="col-sm-3" *ngIf="teams && teams.length === 0">
       <app-panel-no-teams></app-panel-no-teams>
+    </div>
+    <div class="col-sm-3" *ngIf="teams && teams.length >= 1">
+      <app-panel-add-team></app-panel-add-team>
     </div>
   </div>
 </div>

@@ -17,8 +17,10 @@
 @for $i from 1 through 12 {
   .col-sm-#{$i} {
     @extend .col;
+    margin-bottom: 10px;
 
     @media(min-width: $screen-sm) {
+      margin-bottom: 0;
       margin-right: 10px;
       width: calc(((100% - 10px) / 12) * #{$i} - 10px);
     }
