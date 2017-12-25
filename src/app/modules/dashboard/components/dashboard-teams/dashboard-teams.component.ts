@@ -12,7 +12,8 @@ export class DashboardTeamsComponent implements OnInit {
   teams: Array<object>;
 
   constructor(
-    private dashboardApi: DashboardApiService
+    private dashboardApi: DashboardApiService,
+    private globalService: GlobalService,
   ) { }
 
   ngOnInit() {

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutes } from 'app/app.routes';
 import * as dashboard from 'app/modules/dashboard/components/dashboard-components-barrel';
+import { PanelNoTeamsComponent } from 'app/components/teams/panel-no-teams/panel-no-teams.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import * as dashboard from 'app/modules/dashboard/components/dashboard-component
     dashboard.DashboardLeaguesComponent,
     dashboard.DashboardAccountComponent,
     dashboard.DashboardNavbarComponent,
+    PanelNoTeamsComponent,
   ],
   imports: [
     CommonModule,
