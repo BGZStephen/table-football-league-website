@@ -1,9 +1,13 @@
 .form-row {
   align-items: center;
   display: flex;
-  margin: 15px 0;
+  margin-bottom: 15px;
   position: relative;
   width: 100%;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   &.vertical-row {
     flex-direction: column;
