@@ -42,6 +42,15 @@ export class DashboardApiService {
       return this.apiCall(callParams);
     },
 
+    getFixtures: (id) => {
+      const callParams = {
+        type: 'post',
+        url: `/private/users/${id}/fixtures`,
+        body: {},
+      }
+      return this.apiCall(callParams);
+    },
+
     delete: (id) => {
       const callParams = {
         type: 'delete',
