@@ -1,0 +1,37 @@
+<div id="panel-account-manage" class="panel">
+  <div class="panel-head">
+    <p>Account details</p>
+  </div>
+  <div class="panel-body">
+    <form #f="ngForm" (ngSubmit)="onUserUpdate(f.value)" class="account-edit-form">
+      <div class="form-row vertical-row">
+        <label>First name</label>
+        <input type="text" name="firstName" #firstName name="firstName" ngModel="{{user.firstName}}">
+      </div>
+      <div class="form-row vertical-row">
+        <label>Last name</label>
+        <input type="text" name="lastName" #lastName name="lastName" ngModel="{{user.lastName}}">
+      </div>
+      <div class="form-row vertical-row">
+        <label>Username</label>
+        <input type="text" name="username" #username name="username" ngModel="{{user.username}}">
+      </div>
+      <div class="form-row vertical-row">
+        <label>Email</label>
+        <input type="text" name="email" #email name="email" ngModel="{{user.email}}">
+      </div>
+      <div *ngIf="passwordChange" class="form-row vertical-row">
+        <label>New password</label>
+        <input type="password" name="newPassword" #newPassword name="newPassword" ngModel="{{user.newPassword}}">
+      </div>
+      <div *ngIf="passwordChange" class="form-row vertical-row">
+        <label>Confirm password</label>
+        <input type="password" name="confirmNewPassword" #confirmNewPassword name="confirmNewPassword" ngModel="{{user.confirmNewPassword}}">
+      </div>
+      <div class="row">
+        <button class="button-md button--blue" (click)="enablePasswordChange()">Reset Password</button>
+        <button class="button-md button--purple">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

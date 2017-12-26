@@ -9,6 +9,7 @@ import { PanelNoLeaguesComponent } from 'app/components/leagues/panel-no-leagues
 import { PanelAddLeagueComponent } from 'app/components/leagues/panel-add-league/panel-add-league.component';
 import { PanelNoFixturesComponent } from 'app/components/fixtures/panel-no-fixtures/panel-no-fixtures.component';
 import { PanelAddFixtureComponent } from 'app/components/fixtures/panel-add-fixture/panel-add-fixture.component';
+import { PanelAccountManageComponent } from 'app/components/account/panel-account-manage/panel-account-manage.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PanelAddFixtureComponent } from 'app/components/fixtures/panel-add-fixt
     PanelAddLeagueComponent,
     PanelNoFixturesComponent,
     PanelAddFixtureComponent,
+    PanelAccountManageComponent,
   ],
   imports: [
     CommonModule,
