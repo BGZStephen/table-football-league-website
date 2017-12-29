@@ -8,7 +8,8 @@ import * as components from 'app/modules/website/components/website-components-b
   declarations: [
     components.WebsiteNavbarComponent,
     components.WebsiteHomeComponent,
-    components.WebsiteLoginComponent,
+    components.WebsiteLoginViewComponent,
+    components.WebsiteLoginFormComponent,
     components.WebsiteViewWrapperComponent,
     components.WebsiteRegisterComponent,
     components.WebsiteContactViewComponent,

@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 import { environment } from 'environments/environment'
 
 @Component({
-  selector: 'app-website-login',
-  templateUrl: './website-login.component.html',
+  selector: 'app-website-login-form',
+  templateUrl: './website-login-form.component.html',
 })
-export class WebsiteLoginComponent implements OnInit {
+export class WebsiteLoginFormComponent implements OnInit {
 
   formValues = {
     email: {
@@ -18,7 +18,7 @@ export class WebsiteLoginComponent implements OnInit {
     },
   };
 
-  constructor(
+  constructor (
     private publicApi: PublicApiService,
     private globalService: GlobalService,
   ) { }
@@ -62,5 +62,4 @@ export class WebsiteLoginComponent implements OnInit {
 
     return true;
   }
-
 }
