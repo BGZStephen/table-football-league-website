@@ -15,6 +15,8 @@ import * as components from 'app/modules/website/components/website-components-b
     components.WebsiteContactViewComponent,
     components.WebsiteContactFormComponent,
     components.WebsiteBrandGuidelinesComponent,
+    components.WebsiteHomeFeaturesComponent,
+    components.WebsiteHomeActionsComponent,
   ],
   imports: [
     CommonModule,
