@@ -1,0 +1,87 @@
+app-panel-create-team {
+  width: 100%;
+}
+
+#panel-create-team {
+
+  .form-row {
+    i.fa-users {
+      color: $primary-blue-400;
+      position: absolute;
+      left: 8px;
+      width: 25px;
+      text-align: center;
+    }
+
+    input {
+      font-size: 1em;
+      transition: 0.3s ease all;
+      border: 2px solid $primary-black-400;
+
+      &:focus {
+        border: 2px solid $primary-blue-800;
+      }
+    }
+  }
+
+  .players-container,
+  .leagues-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+
+    > p {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    hr {
+      margin: 5px 0;
+    }
+
+    .player,
+    .league {
+      display: flex;
+      padding: 5px;
+      margin-bottom: 5px;
+      width: 100%;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      i.fa-user,
+      i.fa-plus,
+      i.fa-list-alt {
+        margin-right: 10px;
+      }
+
+      i.fa-times {
+        min-height: 100%;
+        margin-left: auto;
+        padding: 0 5px;
+        transition: 0.5s ease all;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-red-800;
+        }
+      }
+    }
+
+    .add-player,
+    .add-league, {
+      cursor: pointer;
+
+      &:hover {
+        i, p {
+          transition: 0.5s ease all;
+          color: $primary-green-400;
+        }
+      }
+    }
+  }
+}

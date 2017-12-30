@@ -2,7 +2,10 @@
   background: $primary-black-700;
   width: 100%;
   .panel-head {
+    font-weight: bold;
     padding: 5px;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   .panel-body {
