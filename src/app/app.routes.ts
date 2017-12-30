@@ -14,7 +14,8 @@ const APP_ROUTES: Routes = [
   ]},
   {path: 'dashboard', component: dashboard.DashboardViewWrapperComponent, children: [
     {path: '', component: dashboard.DashboardHomeComponent},
-    {path: 'teams', component: dashboard.DashboardTeamsComponent},
+    {path: 'teams', component: dashboard.DashboardTeamsViewComponent},
+    {path: 'teams/create', component: dashboard.DashboardTeamsCreateComponent},
     {path: 'leagues', component: dashboard.DashboardLeaguesComponent},
     {path: 'fixtures', component: dashboard.DashboardFixturesComponent},
     {path: 'account', component: dashboard.DashboardAccountComponent},
