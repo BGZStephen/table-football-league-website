@@ -3,11 +3,11 @@ import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-website-register',
-  templateUrl: './website-register.component.html',
+  selector: 'app-website-register-view',
+  templateUrl: './website-register-view.component.html',
 })
 
-export class WebsiteRegisterComponent implements OnInit {
+export class WebsiteRegisterViewComponent implements OnInit {
 
   formValues = {
     firstName: {

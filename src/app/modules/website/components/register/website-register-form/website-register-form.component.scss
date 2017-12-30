@@ -1,0 +1,23 @@
+#website-register-form {  
+  .form-row {
+    i {
+      color: $primary-blue-400;
+      position: absolute;
+      left: 5px;
+      width: 25px;
+      text-align: center;
+    }
+
+    button {
+      margin: 10px auto;
+    }
+
+    input {
+      transition: 0.3s ease all;
+
+      &:focus {
+        border: 1px solid $primary-blue-800;
+      }
+    }
+  }
+}

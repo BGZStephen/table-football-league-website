@@ -8,7 +8,7 @@ const APP_ROUTES: Routes = [
   {path: '', component: website.WebsiteViewWrapperComponent, children: [
     {path: '', component: website.WebsiteHomeViewComponent},
     {path: 'login', component: website.WebsiteLoginViewComponent},
-    {path: 'register', component: website.WebsiteRegisterComponent},
+    {path: 'register', component: website.WebsiteRegisterViewComponent},
     {path: 'contact', component: website.WebsiteContactViewComponent},
     {path: '__styles__', component: website.WebsiteBrandGuidelinesComponent},
   ]},
