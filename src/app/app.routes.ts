@@ -6,10 +6,10 @@ import * as dashboard from 'app/modules/dashboard/components/dashboard-component
 
 const APP_ROUTES: Routes = [
   {path: '', component: website.WebsiteViewWrapperComponent, children: [
-    {path: '', component: website.WebsiteHomeComponent},
-    {path: 'login', component: website.WebsiteLoginComponent},
+    {path: '', component: website.WebsiteHomeViewComponent},
+    {path: 'login', component: website.WebsiteLoginViewComponent},
     {path: 'register', component: website.WebsiteRegisterComponent},
-    {path: 'contact', component: website.WebsiteContactComponent},
+    {path: 'contact', component: website.WebsiteContactViewComponent},
     {path: '__styles__', component: website.WebsiteBrandGuidelinesComponent},
   ]},
   {path: 'dashboard', component: dashboard.DashboardViewWrapperComponent, children: [

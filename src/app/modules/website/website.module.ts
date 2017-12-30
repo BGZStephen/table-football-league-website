@@ -7,7 +7,7 @@ import * as components from 'app/modules/website/components/website-components-b
 @NgModule({
   declarations: [
     components.WebsiteNavbarComponent,
-    components.WebsiteHomeComponent,
+    components.WebsiteHomeViewComponent,
     components.WebsiteLoginViewComponent,
     components.WebsiteLoginFormComponent,
     components.WebsiteViewWrapperComponent,
