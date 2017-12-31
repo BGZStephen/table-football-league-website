@@ -3,13 +3,13 @@ import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-dashboard-teams-view',
-  templateUrl: './dashboard-teams-view.component.html',
+  selector: 'app-dashboard-fixtures-view',
+  templateUrl: './fixtures-view.component.html',
 })
-export class DashboardTeamsViewComponent implements OnInit {
+export class FixturesViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
-  teams: Array<object>;
+  fixtures: Array<object>;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -17,10 +17,10 @@ export class DashboardTeamsViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.getTeams(this.userId)
+    this.dashboardApi.users.getFixtures(this.userId)
     .subscribe(
       res => {
-        this.teams = res;
+        this.fixtures = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

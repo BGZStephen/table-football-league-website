@@ -1,8 +1,8 @@
-export { DashboardViewWrapperComponent } from './dashboard-view-wrapper/dashboard-view-wrapper.component';
-export { DashboardNavbarComponent } from './dashboard-navbar/dashboard-navbar.component';
-export { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
-export { DashboardAccountComponent } from './dashboard-account/dashboard-account.component';
-export { DashboardTeamsViewComponent } from './teams/dashboard-teams-view/dashboard-teams-view.component';
-export { DashboardTeamsCreateComponent } from './teams/dashboard-teams-create/dashboard-teams-create.component';
-export { DashboardFixturesComponent } from './dashboard-fixtures/dashboard-fixtures.component';
-export { DashboardLeaguesComponent } from './dashboard-leagues/dashboard-leagues.component';
+export { ViewWrapperComponent } from './view-wrapper/view-wrapper.component';
+export { NavbarComponent } from './navbar/navbar.component';
+export { HomeViewComponent } from './home/home-view/home-view.component';
+export { AccountEditComponent } from './account/account-edit/account-edit.component';
+export { TeamsViewComponent } from './teams/teams-view/teams-view.component';
+export { TeamsCreateComponent } from './teams/teams-create/teams-create.component';
+export { FixturesViewComponent } from './fixtures/fixtures-view/fixtures-view.component';
+export { LeaguesViewComponent } from './leagues/leagues-view/leagues-view.component';

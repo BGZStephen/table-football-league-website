@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'app/services/global.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-navbar',
-  templateUrl: './dashboard-navbar.component.html',
+  templateUrl: './navbar.component.html',
 })
-export class DashboardNavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   currentSubmenuActive: number = -1;
   menuVisible: boolean = false;

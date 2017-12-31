@@ -1,15 +1,15 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-dashboard-fixtures',
-  templateUrl: './dashboard-fixtures.component.html',
+  selector: 'app-dashboard-teams-view',
+  templateUrl: './teams-view.component.html',
 })
-export class DashboardFixturesComponent implements OnInit {
+export class TeamsViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
-  fixtures: Array<object>;
+  teams: Array<object>;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -17,10 +17,10 @@ export class DashboardFixturesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.getFixtures(this.userId)
+    this.dashboardApi.users.getTeams(this.userId)
     .subscribe(
       res => {
-        this.fixtures = res;
+        this.teams = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

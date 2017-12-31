@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
   selector: 'app-dashboard-leagues',
-  templateUrl: './dashboard-leagues.component.html',
+  templateUrl: './leagues-view.component.html',
 })
-export class DashboardLeaguesComponent implements OnInit {
+export class LeaguesViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
   leagues: Array<object>;

@@ -25,6 +25,6 @@
 @import 'app/components/leagues/panel-no-leagues/panel-no-leagues.component';
 @import 'app/components/account/panel-account-manage/panel-account-manage.component';
 
-@import 'app/modules/dashboard/components/dashboard-view-wrapper/dashboard-view-wrapper.component';
-@import 'app/modules/dashboard/components/dashboard-navbar/dashboard-navbar.component';
-@import 'app/modules/dashboard/components/dashboard-account/dashboard-account.component';
+@import 'app/modules/dashboard/components/view-wrapper/view-wrapper.component';
+@import 'app/modules/dashboard/components/navbar/navbar.component';
+@import 'app/modules/dashboard/components/account/account-edit/account-edit.component';
