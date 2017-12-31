@@ -8,15 +8,15 @@
         <i class="fa fa-users"></i>
         <input type="text" placeholder="Team name" name="teamName" #teamName required ngModel>
       </div>
-      <!-- <div class="alert--error" *ngIf="formValues.teamName.hasError"> -->
-        <!-- <p>{{formValues.teamName.message}}</p> -->
-      <!-- </div> -->
+      <div class="alert--error" *ngIf="formValues.teamName.hasError">
+        <p>{{formValues.teamName.message}}</p>
+      </div>
       <div class="form-row">
         <div class="players-container">
           <p>Players</p>
-          <div class="player">
+          <div *ngFor="let player of formValues.players" class="player">
             <i class="fa fa-user"></i>
-            <p>Stephen Wright (Striker)</p>
+            <p>{{player.firstName}} {{player.lastName}} ({{player.position}})</p>
             <i class="fa fa-times"></i>
           </div>
           <hr>

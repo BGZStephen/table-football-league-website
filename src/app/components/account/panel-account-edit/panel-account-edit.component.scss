@@ -1,18 +1,56 @@
-app-panel-account-manage {
+app-panel-account-edit {
   width: 100%;
 }
 
-#panel-account-manage {
+#panel-account-edit {
   .panel-head {
     text-align: center;
   }
 
-  .account-edit-form {
+  form {
     label {
       color: #DDD;
       font-size: 0.8em;
       margin: 0 0 5px 5px;
       text-transform: uppercase;
+    }
+  }
+
+  .position-selector {
+    cursor: pointer;
+    padding: 5px;
+    text-align: center;
+    transition: 0.3s ease all;
+    width: 50%;
+
+    &:first-of-type {
+      margin-right: 1%;
+    }
+
+    &:last-of-type {
+      margin-left: 1%;
+    }
+  }
+
+  .striker {
+    border: 2px solid $primary-yellow-400;
+
+    &.selected,
+    &:hover {
+      background: $primary-yellow-400;
+      color: black;
+      font-weight: bold;
+    }
+  }
+
+  .defender {
+    border: 2px solid $primary-blue-400;
+
+    &.selected,
+    &:hover {
+      background: $primary-blue-400;
+      color: black;
+      font-weight: bold;
     }
   }
 }

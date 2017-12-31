@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelAccountEditComponent implements OnInit {
   passwordChange = false;
-  user: object = {};
+  user: object;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -29,7 +29,6 @@ export class PanelAccountEditComponent implements OnInit {
   }
 
   onUserUpdate(form) {
-    console.log(this.user)
     const user = {
       _id: this.user['_id'],
       firstName: form.firstName,
@@ -56,14 +55,26 @@ export class PanelAccountEditComponent implements OnInit {
     }
 
     this.dashboardApi.users.update(user)
-    .subscribe(user => {
-      this.user = user;
-      return this.globalService.notification.show({message: 'Account update successful'});
-      // return this.globalService.notification.error({message: error});
-    })
+    .subscribe(
+      user => {
+        this.user = user;
+        this.globalService.notification.show({message: 'Account update successful'});
+      },
+      error => {
+        this.globalService.notification.error({message: error});
+      }
+    )
   }
 
   enablePasswordChange() {
     this.passwordChange = !this.passwordChange;
+  }
+
+  toggleStriker() {
+    this.user.position.striker = !this.user.position.striker;
+  }
+
+  toggleDefender() {
+    this.user.position.defender = !this.user.position.defender;
   }
 }
