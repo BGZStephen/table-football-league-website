@@ -10,7 +10,7 @@ export class PanelCreateTeamComponent implements OnInit {
 
   formValues = {
     teamName: {
-      display: 'First name'
+      display: 'Team name'
     },
     players: [],
   };
@@ -33,4 +33,24 @@ export class PanelCreateTeamComponent implements OnInit {
     )
   }
 
+  getPlayerPosition(index) {
+    const player = this.formValues.players[index];
+    if (player.position.striker && player.position.defender) {
+      return '(Striker / Defender)';
+    }
+
+    if (player.position.striker) {
+      return '(Striker)';
+    }
+
+    if (player.position.defender) {
+      return '(Defender)';
+    }
+  }
+
+  // addPlayer() {
+  //   this.modalService.show({
+  //     template: ''
+  //   })
+  // }
 }

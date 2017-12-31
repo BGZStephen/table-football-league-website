@@ -5,7 +5,9 @@ app-panel-create-team {
 #panel-create-team {
 
   .form-row {
-    i.fa-users {
+    i.fa-users,
+    i.fa-user,
+    i.fa-list-alt {
       color: $primary-blue-400;
       position: absolute;
       left: 8px;
@@ -13,13 +15,34 @@ app-panel-create-team {
       text-align: center;
     }
 
-    input {
+    i.fa-list-alt {
+      color: $primary-yellow-400;
+    }
+
+    input,
+    .player,
+    .league {
+      color: white;
       font-size: 1em;
       transition: 0.3s ease all;
+    }
+
+    input,
+    .player {
       border: 2px solid $primary-black-400;
 
-      &:focus {
+      &:focus,
+      &:hover {
         border: 2px solid $primary-blue-800;
+      }
+    }
+
+    .league {
+      border: 2px solid $primary-black-400;
+
+      &:focus,
+      &:hover {
+        border: 2px solid $primary-yellow-800;
       }
     }
   }
@@ -30,7 +53,6 @@ app-panel-create-team {
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-
 
     > p {
       font-weight: bold;
@@ -44,6 +66,7 @@ app-panel-create-team {
 
     .player,
     .league {
+      align-items: center;
       display: flex;
       padding: 5px;
       margin-bottom: 5px;
@@ -54,7 +77,6 @@ app-panel-create-team {
       }
 
       i.fa-user,
-      i.fa-plus,
       i.fa-list-alt {
         margin-right: 10px;
       }
@@ -69,6 +91,22 @@ app-panel-create-team {
         &:hover {
           color: $primary-red-800;
         }
+      }
+
+      p {
+        margin-left: 30px;
+        padding: 5px 0;
+      }
+    }
+
+    .add-player,
+    .add-league {
+      display: flex;
+      margin-bottom: 5px;
+      padding: 5px 5px 5px 15px;
+
+      i.fa-plus {
+        margin-right: 10px;
       }
     }
 

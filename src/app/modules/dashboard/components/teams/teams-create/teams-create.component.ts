@@ -5,7 +5,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './teams-create.component.html',
 })
 export class TeamsCreateComponent implements OnInit {
-  players: [];
 
   constructor() { }
 
