@@ -2,22 +2,22 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AppRoutes } from 'app/app.routes';
 import { FormsModule } from '@angular/forms';
-import * as components from 'app/modules/website/components/website-components-barrel';
+import * as websiteComponents from 'app/modules/website/components/website-components-barrel';
 
 @NgModule({
   declarations: [
-    components.WebsiteNavbarComponent,
-    components.WebsiteHomeViewComponent,
-    components.WebsiteLoginViewComponent,
-    components.WebsiteLoginFormComponent,
-    components.WebsiteViewWrapperComponent,
-    components.WebsiteRegisterViewComponent,
-    components.WebsiteRegisterFormComponent,
-    components.WebsiteContactViewComponent,
-    components.WebsiteContactFormComponent,
-    components.WebsiteBrandGuidelinesComponent,
-    components.WebsiteHomeFeaturesComponent,
-    components.WebsiteHomeActionsComponent,
+    websiteComponents.NavbarComponent,
+    websiteComponents.HomeViewComponent,
+    websiteComponents.LoginViewComponent,
+    websiteComponents.LoginFormComponent,
+    websiteComponents.ViewWrapperComponent,
+    websiteComponents.RegisterViewComponent,
+    websiteComponents.RegisterFormComponent,
+    websiteComponents.ContactViewComponent,
+    websiteComponents.ContactFormComponent,
+    websiteComponents.BrandGuidelinesComponent,
+    websiteComponents.HomeFeaturesComponent,
+    websiteComponents.HomeActionsComponent,
   ],
   imports: [
     CommonModule,

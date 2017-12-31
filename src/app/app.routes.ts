@@ -1,16 +1,16 @@
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'app/guards/auth.guard';
 
-import * as website from 'app/modules/website/components/website-components-barrel';
+import * as websiteComponents from 'app/modules/website/components/website-components-barrel';
 import * as dashboard from 'app/modules/dashboard/components/dashboard-components-barrel';
 
 const APP_ROUTES: Routes = [
-  {path: '', component: website.WebsiteViewWrapperComponent, children: [
-    {path: '', component: website.WebsiteHomeViewComponent},
-    {path: 'login', component: website.WebsiteLoginViewComponent},
-    {path: 'register', component: website.WebsiteRegisterViewComponent},
-    {path: 'contact', component: website.WebsiteContactViewComponent},
-    {path: '__styles__', component: website.WebsiteBrandGuidelinesComponent},
+  {path: '', component: websiteComponents.ViewWrapperComponent, children: [
+    {path: '', component: websiteComponents.HomeViewComponent},
+    {path: 'login', component: websiteComponents.LoginViewComponent},
+    {path: 'register', component: websiteComponents.RegisterViewComponent},
+    {path: 'contact', component: websiteComponents.ContactViewComponent},
+    {path: '__styles__', component: websiteComponents.BrandGuidelinesComponent},
   ]},
   {path: 'dashboard', component: dashboard.DashboardViewWrapperComponent, children: [
     {path: '', component: dashboard.DashboardHomeComponent},

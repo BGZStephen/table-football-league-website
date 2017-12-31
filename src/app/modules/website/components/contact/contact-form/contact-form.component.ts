@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
   selector: 'app-website-contact-form',
-  templateUrl: './website-contact-form.component.html',
+  templateUrl: './contact-form.component.html',
 })
-export class WebsiteContactFormComponent implements OnInit {
+export class ContactFormComponent implements OnInit {
 
   constructor (
     private publicApi: PublicApiService,

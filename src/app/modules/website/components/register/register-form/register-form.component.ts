@@ -1,40 +1,51 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
-import { environment } from 'environments/environment'
 
 @Component({
-  selector: 'app-website-login-form',
-  templateUrl: './website-login-form.component.html',
+  selector: 'app-website-register-form',
+  templateUrl: './register-form.component.html',
 })
-export class WebsiteLoginFormComponent implements OnInit {
+export class RegisterFormComponent implements OnInit {
 
   formValues = {
+    firstName: {
+      display: 'First name'
+    },
+    lastName: {
+      display: 'Last name'
+    },
+    username: {
+      display: 'Username'
+    },
     email: {
       display: 'Email'
     },
     password: {
       display: 'Password'
     },
+    confirmPassword: {
+      display: 'Password confirmation'
+    },
   };
 
-  constructor (
+  constructor(
     private publicApi: PublicApiService,
     private globalService: GlobalService,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  onLogin(user) {
+  onRegister(user) {
     const validation = this.validateForm(user);
     if (validation) {
-      this.publicApi.users.authenticate(user)
+      this.publicApi.users.create(user)
       .subscribe(
         res => {
           localStorage.setItem('token', res['token']);
-          localStorage.setItem('user', res['user']);
-          this.globalService.notification.show({message: 'Login successful'});
-          this.globalService.redirection.delayed('/dashboard', 300)
+          this.globalService.notification.show({message: 'Registration successful'});
+          this.globalService.redirection.delayed('/dashboard', 300);
         },
         error => {
           this.globalService.errorHandler.process(error);
@@ -55,6 +66,12 @@ export class WebsiteLoginFormComponent implements OnInit {
         this.formValues[key]['message'] = undefined;
       }
     })
+
+    if (form.confirmPassword !== form.password) {
+      errorFlag = true;
+      this.formValues.confirmPassword['hasError'] = true;
+      this.formValues.confirmPassword['message'] = 'The entered passwords do not match';
+    }
 
     if(errorFlag) {
       return false;

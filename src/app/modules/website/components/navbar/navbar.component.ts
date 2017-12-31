@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-website-navbar',
-  templateUrl: './website-navbar.component.html',
+  templateUrl: './navbar.component.html',
 })
-export class WebsiteNavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
   currentSubmenuActive: number = -1;
   menuVisible: boolean = false;
