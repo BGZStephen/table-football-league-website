@@ -23,7 +23,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     panels.PanelAddLeagueComponent,
     panels.PanelNoFixturesComponent,
     panels.PanelAddFixtureComponent,
-    panels.PanelAccountManageComponent,
+    panels.PanelAccountEditComponent,
   ],
   imports: [
     CommonModule,

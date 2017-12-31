@@ -54,7 +54,7 @@ export class DashboardApiService {
     delete: (id) => {
       const callParams = {
         type: 'delete',
-        url: `/users/${id}`,
+        url: `/private/users/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -62,7 +62,7 @@ export class DashboardApiService {
     update: (user) => {
       const callParams = {
         type: 'put',
-        url: `/users/${user._id}`,
+        url: `/private/users/${user._id}`,
         body: user,
       }
       return this.apiCall(callParams);
@@ -73,7 +73,7 @@ export class DashboardApiService {
     get: (id) => {
       const callParams = {
         type: 'get',
-        url: `/leagues/${id}`,
+        url: `/private/leagues/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -81,7 +81,7 @@ export class DashboardApiService {
     getAll: () => {
       const callParams = {
         type: 'get',
-        url: '/admin/leagues',
+        url: '/private/leagues',
       }
       return this.apiCall(callParams);
     },
@@ -89,7 +89,7 @@ export class DashboardApiService {
     create: (league) => {
       const callParams = {
         type: 'post',
-        url: '/leagues', body: league,
+        url: '/private/leagues', body: league,
       }
       return this.apiCall(callParams);
     },
@@ -97,7 +97,7 @@ export class DashboardApiService {
     delete: (id) => {
       const callParams = {
         type: 'delete',
-        url: `/leagues/${id}`,
+        url: `/private/leagues/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -105,7 +105,7 @@ export class DashboardApiService {
     update: (league) => {
       const callParams = {
         type: 'put',
-        url: `/leagues/${league._id}`, body: league,
+        url: `/private/leagues/${league._id}`, body: league,
       }
       return this.apiCall(callParams);
     },
@@ -115,7 +115,7 @@ export class DashboardApiService {
     get: (id) => {
       const callParams = {
         type: 'get',
-        url: `/teams/${id}`,
+        url: `/private/teams/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -123,7 +123,7 @@ export class DashboardApiService {
     getAll: () => {
       const callParams = {
         type: 'get',
-        url: '/admin/teams',
+        url: '/private/teams',
       }
       return this.apiCall(callParams);
     },
@@ -131,7 +131,7 @@ export class DashboardApiService {
     create: (team) => {
       const callParams = {
         type: 'post',
-        url: '/teams', body: team,
+        url: '/private/teams', body: team,
       }
       return this.apiCall(callParams);
     },
@@ -139,7 +139,7 @@ export class DashboardApiService {
     delete: (id) => {
       const callParams = {
         type: 'delete',
-        url: `/teams/${id}`,
+        url: `/private/teams/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -147,7 +147,7 @@ export class DashboardApiService {
     update: (team) => {
       const callParams = {
         type: 'put',
-        url: `/teams/${team._id}`,
+        url: `/private/teams/${team._id}`,
         body: team,
       }
       return this.apiCall(callParams);
@@ -158,7 +158,7 @@ export class DashboardApiService {
     get: (id) => {
       const callParams = {
         type: 'get',
-        url: `/fixtures/${id}`,
+        url: `/private/fixtures/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -166,7 +166,7 @@ export class DashboardApiService {
     getAll: () => {
       const callParams = {
         type: 'get',
-        url: '/admin/fixtures',
+        url: '/private/fixtures',
       }
       return this.apiCall(callParams);
     },
@@ -174,7 +174,7 @@ export class DashboardApiService {
     create: (fixture) => {
       const callParams = {
         type: 'post',
-        url: '/fixtures',
+        url: '/private/fixtures',
         body: fixture,
       }
       return this.apiCall(callParams);
@@ -183,7 +183,7 @@ export class DashboardApiService {
     delete: (id) => {
       const callParams = {
         type: 'delete',
-        url: `/fixtures/${id}`,
+        url: `/private/fixtures/${id}`,
       }
       return this.apiCall(callParams);
     },
@@ -191,7 +191,7 @@ export class DashboardApiService {
     update: (fixture) => {
       const callParams = {
         type: 'put',
-        url: `/fixtures/${fixture._id}`,
+        url: `/private/fixtures/${fixture._id}`,
         body: fixture,
       }
       return this.apiCall(callParams);

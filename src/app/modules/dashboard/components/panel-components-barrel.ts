@@ -5,4 +5,4 @@ export { PanelNoLeaguesComponent } from 'app/components/leagues/panel-no-leagues
 export { PanelAddLeagueComponent } from 'app/components/leagues/panel-add-league/panel-add-league.component';
 export { PanelNoFixturesComponent } from 'app/components/fixtures/panel-no-fixtures/panel-no-fixtures.component';
 export { PanelAddFixtureComponent } from 'app/components/fixtures/panel-add-fixture/panel-add-fixture.component';
-export { PanelAccountManageComponent } from 'app/components/account/panel-account-manage/panel-account-manage.component';
+export { PanelAccountEditComponent } from 'app/components/account/panel-account-edit/panel-account-edit.component';

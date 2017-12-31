@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-panel-account-manage',
-  templateUrl: './panel-account-manage.component.html',
+  selector: 'app-panel-account-edit',
+  templateUrl: './panel-account-edit.component.html',
 })
-export class PanelAccountManageComponent implements OnInit {
+export class PanelAccountEditComponent implements OnInit {
   passwordChange = false;
   user: object = {};
 
@@ -29,9 +29,9 @@ export class PanelAccountManageComponent implements OnInit {
   }
 
   onUserUpdate(form) {
-
+    console.log(this.user)
     const user = {
-      _id: this.user['id'],
+      _id: this.user['_id'],
       firstName: form.firstName,
       lastName: form.lastName,
       username: form.username,

@@ -1,4 +1,4 @@
-<div id="panel-account-manage" class="panel">
+<div id="panel-account-edit" class="panel">
   <div class="panel-head">
     <p>Account details</p>
   </div>
@@ -29,7 +29,7 @@
         <input type="password" name="confirmNewPassword" #confirmNewPassword name="confirmNewPassword" ngModel="{{user.confirmNewPassword}}">
       </div>
       <div class="row">
-        <button class="button-md button--blue" (click)="enablePasswordChange()">Reset Password</button>
+        <a class="button-md button--blue" (click)="enablePasswordChange()">Reset Password</a>
         <button class="button-md button--purple">Submit</button>
       </div>
     </form>
