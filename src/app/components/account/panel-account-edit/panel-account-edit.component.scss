@@ -35,8 +35,7 @@ app-panel-account-edit {
   .striker {
     border: 2px solid $primary-yellow-400;
 
-    &.selected,
-    &:hover {
+    &.selected {
       background: $primary-yellow-400;
       color: black;
       font-weight: bold;
@@ -46,8 +45,7 @@ app-panel-account-edit {
   .defender {
     border: 2px solid $primary-blue-400;
 
-    &.selected,
-    &:hover {
+    &.selected {
       background: $primary-blue-400;
       color: black;
       font-weight: bold;

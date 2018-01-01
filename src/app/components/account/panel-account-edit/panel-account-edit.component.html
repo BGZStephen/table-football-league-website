@@ -16,6 +16,10 @@
         <label>Username</label>
         <input type="text" name="username" #username name="username" ngModel="{{user.username}}">
       </div>
+      <div class="form-row vertical-row">
+        <label>Email</label>
+        <input type="text" name="email" #email name="email" ngModel="{{user.email}}">
+      </div>
       <div class="form-row">
         <div class="position-selector striker {{user.position.striker ? 'selected' : ''}}" (click)="toggleStriker()">
           <p>Striker</p>
@@ -23,10 +27,6 @@
         <div class="position-selector defender {{user.position.defender ? 'selected' : ''}}" (click)="toggleDefender()">
           <p>Defender</p>
         </div>
-      </div>
-      <div class="form-row vertical-row">
-        <label>Email</label>
-        <input type="text" name="email" #email name="email" ngModel="{{user.email}}">
       </div>
       <div *ngIf="passwordChange" class="form-row vertical-row">
         <label>New password</label>

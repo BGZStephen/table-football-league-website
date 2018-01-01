@@ -20,11 +20,11 @@
             <i *ngIf="playerIndex > 0" class="fa fa-times"></i>
           </div>
           <hr>
-          <div class="add-player">
+          <div class="add-player" (click)="usersSearchOpen()">
             <i class="fa fa-plus"></i>
             <p>Add a player</p>
-            <app-users-search></app-users-search>
           </div>
+          <app-users-search *ngIf="searchUsers" (close)="usersSearchClose()"></app-users-search>
         </div>
       </div>
       <div class="form-row">

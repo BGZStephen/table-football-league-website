@@ -70,11 +70,11 @@ export class PanelAccountEditComponent implements OnInit {
     this.passwordChange = !this.passwordChange;
   }
 
-  // toggleStriker() {
-  //   this.user.position.striker = !this.user.position.striker;
-  // }
-  //
-  // toggleDefender() {
-  //   this.user.position.defender = !this.user.position.defender;
-  // }
+  toggleStriker() {
+    this.user.position.striker = !this.user.position.striker;
+  }
+
+  toggleDefender() {
+    this.user.position.defender = !this.user.position.defender;
+  }
 }

@@ -14,6 +14,7 @@ export class PanelCreateTeamComponent implements OnInit {
     },
     players: [],
   };
+  searchUsers = false;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -48,9 +49,11 @@ export class PanelCreateTeamComponent implements OnInit {
     }
   }
 
-  // addPlayer() {
-  //   this.modalService.show({
-  //     template: ''
-  //   })
-  // }
+  usersSearchClose() {
+    this.searchUsers = false;
+  }
+
+  usersSearchOpen() {
+    this.searchUsers = true;
+  }
 }
