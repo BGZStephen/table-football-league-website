@@ -1,5 +1,9 @@
-<div id="users-search" class="modal-background" (click)="onBackgroundClick($event)">
-  <div class="modal">
+<div class="modal-background" (click)="onBackgroundClick($event)">
+  <div id="users-search" class="modal">
+    <div class="modal-head">
+      <p>Player search</p>
+      <i class="fa fa-times" (click)="onClose()"></i>
+    </div>
     <div class="modal-body">
       <p>users-search works!</p>
     </div>
