@@ -24,6 +24,15 @@ export class DashboardApiService {
       return this.apiCall(callParams);
     },
 
+    getByEmail: (query) => {
+      const callParams = {
+        type: 'post',
+        url: `/private/users/getByEmail`,
+        body: query,
+      }
+      return this.apiCall(callParams);
+    },
+
     getTeams: (id) => {
       const callParams = {
         type: 'post',

@@ -14,7 +14,7 @@ export class PanelCreateTeamComponent implements OnInit {
     },
     players: [],
   };
-  searchUsers = false;
+  searchUsers = true;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -55,5 +55,9 @@ export class PanelCreateTeamComponent implements OnInit {
 
   usersSearchOpen() {
     this.searchUsers = true;
+  }
+
+  onUserSelect(user) {
+    this.formValues.players.push(user)
   }
 }

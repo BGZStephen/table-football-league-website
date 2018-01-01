@@ -5,7 +5,35 @@
       <i class="fa fa-times" (click)="onClose()"></i>
     </div>
     <div class="modal-body">
-      <p>users-search works!</p>
+      <div class="row">
+        <div class="col-sm-12">
+          <p>Enter an email address to search</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
+            <div class="form-row">
+              <input type="text" #email name="email" ngModel>
+              <button type="submit" class="button button-md button--blue">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <hr *ngIf="searchResult === null || searchResult">
+      <div class="row" *ngIf="searchResult === null">
+        <div class="col-sm-12">
+          <p>No users found with that email.</p>
+        </div>
+      </div>
+      <div id="search-results" class="row" *ngIf="searchResult">
+        <div class="">
+          <p>{{searchResult.firstName}} {{searchResult.lastName}}<p>
+        </div>
+        <div class="">
+          <a class="button button-sm button--yellow select-button" (click)="onUserSelect(searchResult)">Select</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

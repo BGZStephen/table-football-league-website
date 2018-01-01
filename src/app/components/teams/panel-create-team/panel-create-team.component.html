@@ -24,7 +24,7 @@
             <i class="fa fa-plus"></i>
             <p>Add a player</p>
           </div>
-          <app-users-search *ngIf="searchUsers" (close)="usersSearchClose()"></app-users-search>
+          <app-users-search *ngIf="searchUsers" (close)="usersSearchClose()" (userSelect)="onUserSelect($event)"></app-users-search>
         </div>
       </div>
       <div class="form-row">
