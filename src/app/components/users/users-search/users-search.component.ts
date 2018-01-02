@@ -24,7 +24,7 @@ export class UsersSearchComponent implements OnInit {
   }
 
   onClose() {
-    this.destroy();
+    this.close.emit()
   }
 
   onUserSelect(user) {

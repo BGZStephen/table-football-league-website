@@ -14,16 +14,12 @@ export class PanelCreateTeamComponent implements OnInit {
     },
     players: [],
   };
-  searchUsers = true;
+  searchUsers = false;
 
   constructor(
-    private modalService: ModalService,
-    private viewContainerRef: ViewContainerRef,
     private dashboardApi: DashboardApiService,
     private globalService: GlobalService,
-  ) {
-    this.modalService.setRootViewContainerRef(this.viewContainerRef)
-  }
+  ) {}
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
@@ -54,9 +50,12 @@ export class PanelCreateTeamComponent implements OnInit {
   }
 
   usersSearchOpen() {
-    this.modalService.userSearch.open({
-      userSelect: this.onUserSelect,
-    })
+    this.searchUsers = true;
+  }
+
+  onClose() {
+    console.log('working')
+    this.searchUsers = false;
   }
 
   onUserSelect(user) {
