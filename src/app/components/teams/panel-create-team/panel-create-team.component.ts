@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Inject, ViewContainerRef } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
@@ -17,9 +17,13 @@ export class PanelCreateTeamComponent implements OnInit {
   searchUsers = true;
 
   constructor(
+    private modalService: ModalService,
+    private viewContainerRef: ViewContainerRef,
     private dashboardApi: DashboardApiService,
     private globalService: GlobalService,
-  ) { }
+  ) {
+    this.modalService.setRootViewContainerRef(this.viewContainerRef)
+  }
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
@@ -49,12 +53,10 @@ export class PanelCreateTeamComponent implements OnInit {
     }
   }
 
-  usersSearchClose() {
-    this.searchUsers = false;
-  }
-
   usersSearchOpen() {
-    this.searchUsers = true;
+    this.modalService.userSearch.open({
+      userSelect: this.onUserSelect,
+    })
   }
 
   onUserSelect(user) {
