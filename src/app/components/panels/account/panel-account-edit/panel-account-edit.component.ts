@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelAccountEditComponent implements OnInit {
   passwordChange = false;
-  user: object;
+  user: any;
 
   constructor(
     private dashboardApi: DashboardApiService,

@@ -13,8 +13,10 @@ export class PanelCreateTeamComponent implements OnInit {
       display: 'Team name'
     },
     players: [],
+    leagues: [],
   };
   searchUsers = false;
+  searchLeagues = false;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -53,12 +55,19 @@ export class PanelCreateTeamComponent implements OnInit {
     this.searchUsers = true;
   }
 
-  onClose() {
-    console.log('working')
+  onUserSearchClose() {
     this.searchUsers = false;
+  }
+
+  onLeagueSearchClose() {
+    this.searchLeagues = false;
   }
 
   onUserSelect(user) {
     this.formValues.players.push(user)
+  }
+
+  onLeagueSelect(league) {
+    this.formValues.leagues.push(league)
   }
 }

@@ -40,6 +40,7 @@
             <i class="fa fa-plus"></i>
             <p>Join a league</p>
           </div>
+          <app-leagues-search *ngIf="searchUsers" (close)="onClose()" (userSelect)="onLeagueSelect($event)"></app-leagues-search>
         </div>
       </div>
       <div class="form-row">

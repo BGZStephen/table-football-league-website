@@ -1,0 +1,13 @@
+<div class="modal-background" (click)="onBackgroundClick($event)">
+  <div id="leagues-search" class="modal">
+    <div class="modal-head">
+      <p>League search</p>
+      <i class="fa fa-times" (click)="onClose()"></i>
+    </div>
+    <div class="modal-body">
+      <div class="row" *ngFor="let league of leagues">
+        {{league.name}}
+      </div>
+    </div>
+  </div>
+</div>
