@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DashboardApiService } from 'app/services/dashboard-api.service';
 
 @Component({
   selector: 'app-leagues-search',
@@ -14,7 +15,12 @@ export class LeaguesSearchComponent implements OnInit {
     private dashboardApi: DashboardApiService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dashboardApi.leagues.getAll()
+    .subscribe(res => {
+      this.searchResult = res;
+    })
+  }
 
   onBackgroundClick(event) {
     if (event.target.className === 'modal-background') {
@@ -30,14 +36,4 @@ export class LeaguesSearchComponent implements OnInit {
     this.leagueSelect.emit(league);
     this.close.emit()
   }
-
-  onSearch() {
-    if (query) {
-      this.dashboardApi.leagues.getAll()
-      .subscribe(res => {
-        this.searchResult = res;
-      })
-    }
-  }
-
 }

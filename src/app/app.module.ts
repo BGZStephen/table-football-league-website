@@ -18,12 +18,10 @@ import { WebsiteModule } from 'app/modules/website/website.module';
 import { DashboardModule } from 'app/modules/dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
-import { LeaguesSearchComponent } from './components/modals/leagues/leagues-search/leagues-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LeaguesSearchComponent,
   ],
   imports: [
     BrowserModule,

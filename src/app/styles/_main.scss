@@ -16,15 +16,15 @@
 @import 'app/modules/website/components/login/login-view/login-view.component';
 @import 'app/modules/website/components/login/login-form/login-form.component';
 @import 'app/modules/website/components/contact/contact-view/contact-view.component';
-@import 'app/components/teams/panel-add-team/panel-add-team.component';
-@import 'app/components/teams/panel-no-teams/panel-no-teams.component';
-@import 'app/components/teams/panel-create-team/panel-create-team.component';
-@import 'app/components/fixtures/panel-add-fixture/panel-add-fixture.component';
-@import 'app/components/fixtures/panel-no-fixtures/panel-no-fixtures.component';
-@import 'app/components/leagues/panel-add-league/panel-add-league.component';
-@import 'app/components/leagues/panel-no-leagues/panel-no-leagues.component';
-@import 'app/components/account/panel-account-edit/panel-account-edit.component';
-@import 'app/components/users/users-search/users-search.component';
+@import 'app/components/panels/teams/panel-add-team/panel-add-team.component';
+@import 'app/components/panels/teams/panel-no-teams/panel-no-teams.component';
+@import 'app/components/panels/teams/panel-create-team/panel-create-team.component';
+@import 'app/components/panels/fixtures/panel-add-fixture/panel-add-fixture.component';
+@import 'app/components/panels/fixtures/panel-no-fixtures/panel-no-fixtures.component';
+@import 'app/components/panels/leagues/panel-add-league/panel-add-league.component';
+@import 'app/components/panels/leagues/panel-no-leagues/panel-no-leagues.component';
+@import 'app/components/panels/account/panel-account-edit/panel-account-edit.component';
+@import 'app/components/modals/users/users-search/users-search.component';
 
 @import 'app/modules/dashboard/components/view-wrapper/view-wrapper.component';
 @import 'app/modules/dashboard/components/navbar/navbar.component';
