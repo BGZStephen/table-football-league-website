@@ -24,7 +24,7 @@
             <i class="fa fa-plus"></i>
             <p>Add a player</p>
           </div>
-          <app-users-search *ngIf="searchUsers" (close)="onClose()" (userSelect)="onUserSelect($event)"></app-users-search>
+          <app-users-search *ngIf="searchUsers" (close)="UserSearchClose()" (userSelect)="onUserSelect($event)"></app-users-search>
         </div>
       </div>
       <div class="form-row">
@@ -36,11 +36,11 @@
             <i class="fa fa-times"></i>
           </div>
           <hr>
-          <div class="add-league">
+          <div class="add-league" (click)="LeagueSearchOpen()">
             <i class="fa fa-plus"></i>
             <p>Join a league</p>
           </div>
-          <app-leagues-search *ngIf="searchUsers" (close)="onClose()" (userSelect)="onLeagueSelect($event)"></app-leagues-search>
+          <app-leagues-search *ngIf="searchLeagues" (close)="LeagueSearchClose()" (leagueSelect)="onLeagueSelect($event)"></app-leagues-search>
         </div>
       </div>
       <div class="form-row">

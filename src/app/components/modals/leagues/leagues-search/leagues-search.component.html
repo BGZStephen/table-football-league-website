@@ -5,9 +5,30 @@
       <i class="fa fa-times" (click)="onClose()"></i>
     </div>
     <div class="modal-body">
-      <div class="row" *ngFor="let league of leagues">
-        {{league.name}}
+      <div *ngIf="leagues && leagues.length === 0">
+        <div class="row">
+          <div class="col-sm-12">
+            <p>No public leagues are currently available. Not to worry, finish up creating your team and simply click leagues to create your own.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 actions-container">
+            <button class="button-md button--blue" (click)="onClose()">Close</button>
+          </div>
+        </div>
       </div>
+      <table *ngIf="leagues && leagues.length >= 1">
+        <thead>
+          <td class="td-league-name">League name</td>
+          <td class="td-league-teams">Teams</td>
+          <td class="td-league-teams"></td>
+        </thead>
+        <tr *ngFor="let league of leagues">
+          <td class="td-league-name">{{league.name}}</td>
+          <td class="td-league-teams">{{league.teams.length}}</td>
+          <td class="td-action"><button class="buttom-sm button--yellow" (click)="onLeagueSelect(league)">Join</button></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

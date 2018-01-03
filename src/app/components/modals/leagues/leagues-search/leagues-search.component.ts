@@ -9,7 +9,7 @@ export class LeaguesSearchComponent implements OnInit {
 
   @Output() close: EventEmitter<number> = new EventEmitter<number>();
   @Output() leagueSelect: EventEmitter<number> = new EventEmitter<number>();
-  searchResult: object;
+  leagues: object;
 
   constructor(
     private dashboardApi: DashboardApiService
@@ -18,7 +18,7 @@ export class LeaguesSearchComponent implements OnInit {
   ngOnInit() {
     this.dashboardApi.leagues.getAll()
     .subscribe(res => {
-      this.searchResult = res;
+      this.leagues = res;
     })
   }
 
@@ -32,7 +32,7 @@ export class LeaguesSearchComponent implements OnInit {
     this.close.emit()
   }
 
-  onUserSelect(league) {
+  onLeagueSelect(league) {
     this.leagueSelect.emit(league);
     this.close.emit()
   }

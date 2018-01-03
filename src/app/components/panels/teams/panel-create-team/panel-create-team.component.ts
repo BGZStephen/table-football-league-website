@@ -55,11 +55,15 @@ export class PanelCreateTeamComponent implements OnInit {
     this.searchUsers = true;
   }
 
-  onUserSearchClose() {
+  UserSearchClose() {
     this.searchUsers = false;
   }
 
-  onLeagueSearchClose() {
+  LeagueSearchOpen() {
+    this.searchLeagues = true;
+  }
+
+  LeagueSearchClose() {
     this.searchLeagues = false;
   }
 
