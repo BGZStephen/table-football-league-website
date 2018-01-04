@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewContainerRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
@@ -58,7 +58,7 @@ export class PanelCreateTeamComponent implements OnInit {
   }
 
   removePlayer(index) {
-    this.formValues.plauers.splice(index, 1);
+    this.formValues.players.splice(index, 1);
   }
 
   onUserSelect(user) {
