@@ -14,7 +14,7 @@ export class PanelCreateLeagueComponent implements OnInit {
     },
     teams: [],
   };
-  searchUsers = false;
+  searchTeams = false;
 
   constructor (
     private dashboardApi: DashboardApiService,
@@ -41,7 +41,7 @@ export class PanelCreateLeagueComponent implements OnInit {
       const currentTeams = this.formValues.teams.map(team => team._id);
 
       for (const team in teams) {
-        if(currentTeams.indexOf(team._id) >= 0) {
+        if (currentTeams.indexOf(team['_id']) >= 0) {
           teamAddDuplicates.push(team);
         } else {
           this.formValues.teams.push(team);

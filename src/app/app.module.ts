@@ -18,12 +18,10 @@ import { WebsiteModule } from 'app/modules/website/website.module';
 import { DashboardModule } from 'app/modules/dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
-import { PanelCreateLeagueComponent } from './components/panels/leagues/panel-create-league/panel-create-league.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PanelCreateLeagueComponent,
   ],
   imports: [
     BrowserModule,

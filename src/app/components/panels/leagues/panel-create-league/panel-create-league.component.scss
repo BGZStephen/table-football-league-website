@@ -1,0 +1,105 @@
+app-panel-create-league {
+  width: 100%;
+}
+
+#panel-create-league {
+
+  .form-row {
+    i.fa-users,
+    i.fa-user {
+      color: $primary-blue-400;
+      position: absolute;
+      left: 8px;
+      width: 25px;
+      text-align: center;
+    }
+
+    input,
+    .team {
+      color: white;
+      font-size: 1em;
+      transition: 0.3s ease all;
+    }
+
+    input,
+    .team {
+      border: 2px solid $primary-black-400;
+
+      &:focus,
+      &:hover {
+        border: 2px solid $primary-blue-800;
+      }
+    }
+  }
+
+  .teams-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    > p {
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    hr {
+      margin: 5px 0;
+    }
+
+    .team {
+      align-items: center;
+      display: flex;
+      padding: 5px;
+      margin-bottom: 5px;
+      width: 100%;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      i.fa-users {
+        margin-right: 10px;
+      }
+
+      i.fa-times {
+        min-height: 100%;
+        margin-left: auto;
+        padding: 0 5px;
+        transition: 0.5s ease all;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-red-800;
+        }
+      }
+
+      p {
+        margin-left: 30px;
+        padding: 5px 0;
+      }
+    }
+
+    .add-team {
+      display: flex;
+      margin-bottom: 5px;
+      padding: 5px 5px 5px 15px;
+
+      i.fa-plus {
+        margin-right: 10px;
+      }
+    }
+
+    .add-team {
+      cursor: pointer;
+
+      &:hover {
+        i, p {
+          transition: 0.5s ease all;
+          color: $primary-green-400;
+        }
+      }
+    }
+  }
+}

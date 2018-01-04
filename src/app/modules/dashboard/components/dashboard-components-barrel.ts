@@ -6,3 +6,4 @@ export { TeamsViewComponent } from './teams/teams-view/teams-view.component';
 export { TeamsCreateComponent } from './teams/teams-create/teams-create.component';
 export { FixturesViewComponent } from './fixtures/fixtures-view/fixtures-view.component';
 export { LeaguesViewComponent } from './leagues/leagues-view/leagues-view.component';
+export { LeaguesCreateComponent } from './leagues/leagues-create/leagues-create.component';
