@@ -13,10 +13,8 @@ export class PanelCreateTeamComponent implements OnInit {
       display: 'Team name'
     },
     players: [],
-    leagues: [],
   };
   searchUsers = false;
-  searchLeagues = false;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -59,19 +57,20 @@ export class PanelCreateTeamComponent implements OnInit {
     this.searchUsers = false;
   }
 
-  LeagueSearchOpen() {
-    this.searchLeagues = true;
-  }
-
-  LeagueSearchClose() {
-    this.searchLeagues = false;
+  removePlayer(index) {
+    this.formValues.plauers.splice(index, 1);
   }
 
   onUserSelect(user) {
-    this.formValues.players.push(user)
-  }
+    for (let player of this.formValues.players) {
+      if (user._id === player._id) {
+        return this.globalService.notification.error({
+          message: 'Cannot add player, they are already part of your team',
+          time: 5000,
+        });
+      }
+    }
 
-  onLeagueSelect(league) {
-    this.formValues.leagues.push(league)
+    this.formValues.players.push(user)
   }
 }

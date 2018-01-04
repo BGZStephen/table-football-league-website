@@ -17,7 +17,7 @@
           <div *ngFor="let player of formValues.players; let playerIndex = index" class="player">
             <i class="fa fa-user"></i>
             <p>{{player.firstName}} {{player.lastName}} {{getPlayerPosition(playerIndex)}}</p>
-            <i *ngIf="playerIndex > 0" class="fa fa-times"></i>
+            <i *ngIf="playerIndex > 0" class="fa fa-times" (click)="removePlayer(playerIndex)"></i>
           </div>
           <hr>
           <div class="add-player" (click)="usersSearchOpen()">
@@ -25,22 +25,6 @@
             <p>Add a player</p>
           </div>
           <app-users-search *ngIf="searchUsers" (close)="UserSearchClose()" (userSelect)="onUserSelect($event)"></app-users-search>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="leagues-container">
-          <p>Leagues</p>
-          <div class="league">
-            <i class="fa fa-list-alt"></i>
-            <p>The premier league</p>
-            <i class="fa fa-times"></i>
-          </div>
-          <hr>
-          <div class="add-league" (click)="LeagueSearchOpen()">
-            <i class="fa fa-plus"></i>
-            <p>Join a league</p>
-          </div>
-          <app-leagues-search *ngIf="searchLeagues" (close)="LeagueSearchClose()" (leagueSelect)="onLeagueSelect($event)"></app-leagues-search>
         </div>
       </div>
       <div class="form-row">
