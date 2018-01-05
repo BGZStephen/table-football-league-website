@@ -8,7 +8,7 @@
         <i class="fa fa-users"></i>
         <input type="text" placeholder="League name" name="leagueName" #leagueName required ngModel>
       </div>
-      <div class="alert--error" *ngIf="formValues.teamName.hasError">
+      <div class="alert--error" *ngIf="formValues.leagueName.hasError">
         <p>{{formValues.leagueName.message}}</p>
       </div>
       <div class="form-row">
@@ -24,7 +24,7 @@
             <i class="fa fa-plus"></i>
             <p>Add teams</p>
           </div>
-          <app-teams-search *ngIf="searchTeams" (close)="TeamsSearchClose()" (teamsSelect)="onTeamsSelect($event)"></app-teams-search>
+          <app-teams-search *ngIf="searchTeams" (close)="teamsSearchClose()" (teamsSelect)="onTeamsSelect($event)"></app-teams-search>
         </div>
       </div>
       <div class="form-row">
