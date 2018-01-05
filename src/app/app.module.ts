@@ -18,10 +18,12 @@ import { WebsiteModule } from 'app/modules/website/website.module';
 import { DashboardModule } from 'app/modules/dashboard/dashboard.module';
 
 import { AppComponent } from './app.component';
+import { TeamsSearchComponent } from './components/modals/teams/teams-search/teams-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TeamsSearchComponent,
   ],
   imports: [
     BrowserModule,
