@@ -16,18 +16,21 @@ app-panel-create-league {
 
     input,
     .team {
+      background: none;
+      border: 1px solid $primary-black-400;
       color: white;
       font-size: 1em;
+      padding: 10px 10px 10px 35px;
       transition: 0.3s ease all;
-    }
-
-    input,
-    .team {
-      border: 2px solid $primary-black-400;
+      width: 100%;
 
       &:focus,
       &:hover {
-        border: 2px solid $primary-blue-800;
+        border: 1px solid $primary-blue-800;
+      }
+
+      &::placeholder {
+        color: #AAA;
       }
     }
   }

@@ -15,12 +15,12 @@
 .modal {
   background: $primary-black-400;
   margin-top: 30px;
-  
-  .modal-head {
+
+  > .modal-head {
     padding: 10px;
     position: relative;
 
-    .fa-times {
+    > .fa-times {
       cursor: pointer;
       padding: 10px;
       position: absolute;
@@ -34,11 +34,11 @@
     }
   }
 
-  .modal-body {
+  > .modal-body {
     padding: 10px;
   }
 
-  .modal-footer {
+  > .modal-footer {
     padding: 10px;
   }
 }

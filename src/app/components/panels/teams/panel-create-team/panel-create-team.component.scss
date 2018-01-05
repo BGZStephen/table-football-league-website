@@ -22,9 +22,13 @@ app-panel-create-team {
     input,
     .player,
     .league {
+      background: none;
+      border: 1px solid $primary-black-400;
       color: white;
       font-size: 1em;
+      padding: 10px 10px 10px 35px;
       transition: 0.3s ease all;
+      width: 100%;
     }
 
     input,

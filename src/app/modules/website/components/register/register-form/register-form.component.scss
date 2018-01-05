@@ -1,4 +1,4 @@
-#website-register-form {  
+#website-register-form {
   .form-row {
     i {
       color: $primary-blue-400;
@@ -13,7 +13,12 @@
     }
 
     input {
+      background: none;
+      border: 1px solid $primary-black-400;
+      color: #AAA;
+      padding: 10px 10px 10px 35px;
       transition: 0.3s ease all;
+      width: 100%;
 
       &:focus {
         border: 1px solid $primary-blue-800;
