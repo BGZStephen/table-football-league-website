@@ -20,6 +20,18 @@ form {
     }
   }
 
+  input {
+    background: none;
+    border: 1px solid $primary-black-400;
+    color: #AAA;
+    padding: 10px 10px 10px 35px;
+    width: 100%;
+
+    &::placeholder {
+      color: #AAA;
+    }
+  }
+
   > .input-error {
     color: $primary-red-600;
     font-size: 0.8em;
