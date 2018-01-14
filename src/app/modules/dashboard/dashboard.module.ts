@@ -24,6 +24,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     panels.PanelNoTeamsComponent,
     panels.PanelAddTeamComponent,
     panels.PanelCreateTeamComponent,
+    panels.PanelCurrentTeamsComponent,
     panels.PanelNoLeaguesComponent,
     panels.PanelAddLeagueComponent,
     panels.PanelCreateLeagueComponent,

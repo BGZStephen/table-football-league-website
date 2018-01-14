@@ -16,7 +16,7 @@ export class DashboardApiService {
   ) {}
 
   users = {
-    get: (id, params) => {
+    get: (id, params?) => {
       let query = '?';
       if (params) {
         for (const param of Object.keys(params)) {
