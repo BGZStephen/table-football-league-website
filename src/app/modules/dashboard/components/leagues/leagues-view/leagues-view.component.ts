@@ -22,8 +22,7 @@ export class LeaguesViewComponent implements OnInit {
     })
     .subscribe(
       res => {
-        this.leagues = res;
-        console.log(res)
+        this.leagues = res.leagues;
       },
       error => {
         this.globalService.errorHandler.process(error);

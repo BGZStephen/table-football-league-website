@@ -17,10 +17,12 @@ export class FixturesViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.getFixtures(this.userId)
+    this.dashboardApi.users.get(this.userId, {
+      fixtures: true,
+    })
     .subscribe(
       res => {
-        this.fixtures = res;
+        this.fixtures = res.fixtures;
       },
       error => {
         this.globalService.errorHandler.process(error);

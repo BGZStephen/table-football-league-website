@@ -18,8 +18,10 @@ export class DashboardApiService {
   users = {
     get: (id, params) => {
       let query = '?';
-      for (const param of Object.keys(params)) {
-        query += `${param}=${params[param]}&`;
+      if (params) {
+        for (const param of Object.keys(params)) {
+          query += `${param}=${params[param]}&`;
+        }
       }
       const callParams = {
         type: 'get',

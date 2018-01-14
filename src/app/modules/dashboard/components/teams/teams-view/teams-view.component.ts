@@ -17,10 +17,12 @@ export class TeamsViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.getTeams(this.userId)
+    this.dashboardApi.users.get(this.userId, {
+      teams: true,
+    })
     .subscribe(
       res => {
-        this.teams = res;
+        this.teams = res.teams;
       },
       error => {
         this.globalService.errorHandler.process(error);
