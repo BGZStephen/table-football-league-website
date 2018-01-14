@@ -16,10 +16,14 @@ export class DashboardApiService {
   ) {}
 
   users = {
-    get: (id) => {
+    get: (id, params) => {
+      let query = '?';
+      for (const param of Object.keys(params)) {
+        query += `${param}=${params[param]}&`;
+      }
       const callParams = {
         type: 'get',
-        url: `/private/users/${id}`,
+        url: `/private/users/${id}/${query}`,
       }
       return this.apiCall(callParams);
     },

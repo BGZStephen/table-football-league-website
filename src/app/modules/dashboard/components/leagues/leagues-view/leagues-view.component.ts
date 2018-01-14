@@ -17,11 +17,13 @@ export class LeaguesViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.getLeagues(this.userId)
+    this.dashboardApi.users.get(this.userId, {
+      leagues: true,
+    })
     .subscribe(
       res => {
         this.leagues = res;
-        console.log(res);
+        console.log(res)
       },
       error => {
         this.globalService.errorHandler.process(error);

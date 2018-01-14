@@ -37,6 +37,7 @@ export class LoginFormComponent implements OnInit {
           this.globalService.redirection.delayed('/dashboard', 300)
         },
         error => {
+          console.log(error)
           this.globalService.errorHandler.process(error);
         }
       )

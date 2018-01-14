@@ -19,7 +19,7 @@ export class PublicApiService {
     create: (user) => {
       const callParams = {
         type: 'post',
-        url: '/users',
+        url: '/public/users',
         body: user,
       }
       return this.apiCall(callParams);
@@ -28,7 +28,7 @@ export class PublicApiService {
     authenticate: (user) => {
       const callParams = {
         type: 'post',
-        url: '/users/authenticate',
+        url: '/public/users/authenticate',
         body: user,
       }
       return this.apiCall(callParams);
@@ -39,7 +39,7 @@ export class PublicApiService {
     contactForm: (message) => {
       const callParams = {
         type: 'post',
-        url: '/website/contact-form',
+        url: '/public/website/contact-form',
         body: message,
       }
       return this.apiCall(callParams);

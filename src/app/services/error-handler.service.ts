@@ -9,7 +9,8 @@ export class ErrorHandlerService {
   ) { }
 
   process(errorResponse) {
-    const errorMessage = errorResponse.error;
+    const errorMessage = errorResponse.error.message;
+    console.log(errorMessage)
     this.notification.error({
       message: errorMessage,
     });
