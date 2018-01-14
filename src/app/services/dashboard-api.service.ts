@@ -127,10 +127,17 @@ export class DashboardApiService {
   }
 
   teams = {
-    get: (id) => {
+    get: (id, params?) => {
+      let query = '?';
+      if (params) {
+        for (const param of Object.keys(params)) {
+          query += `${param}=${params[param]}&`;
+        }
+      }
+      console.log(query)
       const callParams = {
         type: 'get',
-        url: `/private/teams/${id}`,
+        url: `/private/teams/${id}/${query}`,
       }
       return this.apiCall(callParams);
     },

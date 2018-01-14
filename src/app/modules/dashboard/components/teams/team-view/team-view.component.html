@@ -1,0 +1,27 @@
+<div id="dashboard-team-view" class="outlet-container">
+  <div class="row">
+    <div class="col-sm-4">
+      <table *ngIf="team">
+        <tr>
+          <td>Team name</td>
+          <td>{{team.name}}</td>
+        </tr>
+        <tr>
+          <td>Players</td>
+          <td *ngFor="let user of team.users">{{user.username}}</td>
+        </tr>
+        <tr>
+          <td>Positions</td>
+          <td *ngFor="let player of team.players">
+            <div *ngIf="player.position.striker"class="position-selector striker {{user.position.striker ? 'selected' : ''}}">
+              <p>Striker</p>
+            </div>
+            <div *ngIf="player.position.defender"class="position-selector defender {{user.position.defender ? 'selected' : ''}}">
+              <p>Defender</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

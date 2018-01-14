@@ -15,6 +15,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     dashboardComponents.NavbarComponent,
     dashboardComponents.ViewWrapperComponent,
     dashboardComponents.FixturesViewComponent,
+    dashboardComponents.TeamViewComponent,
     dashboardComponents.TeamsViewComponent,
     dashboardComponents.TeamsCreateComponent,
     dashboardComponents.LeaguesViewComponent,

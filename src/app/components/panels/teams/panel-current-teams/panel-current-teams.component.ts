@@ -22,6 +22,7 @@ export class PanelCurrentTeamsComponent implements OnInit {
     })
     .subscribe(
       res => {
+        console.log(res)
         this.player = res;
       },
       error => {

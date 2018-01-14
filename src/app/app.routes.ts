@@ -16,6 +16,7 @@ const APP_ROUTES: Routes = [
     {path: '', component: dashboardComponents.HomeViewComponent},
     {path: 'teams', component: dashboardComponents.TeamsViewComponent},
     {path: 'teams/create', component: dashboardComponents.TeamsCreateComponent},
+    {path: 'teams/:id', component: dashboardComponents.TeamViewComponent},
     {path: 'leagues', component: dashboardComponents.LeaguesViewComponent},
     {path: 'leagues/create', component: dashboardComponents.LeaguesCreateComponent},
     {path: 'fixtures', component: dashboardComponents.FixturesViewComponent},

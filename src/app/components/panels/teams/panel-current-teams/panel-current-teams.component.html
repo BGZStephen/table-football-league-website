@@ -4,7 +4,7 @@
   </div>
   <div class="panel-body">
     <div *ngIf="player" id="current-teams-container">
-      <button *ngFor="let team of player.teams" routerLink="['/dashboard/teams/{{team._id}}']" class="button--yellow button-sm">{{team.name}}</button>
+      <button *ngFor="let team of player.teams" routerLink="/dashboard/teams/{{team._id}}" class="button--yellow button-sm">{{team.name}}</button>
     </div>
   </div>
 </div>
