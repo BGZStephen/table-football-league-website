@@ -25,7 +25,6 @@ export class TeamViewComponent implements OnInit {
       })
       .subscribe(
         res => {
-          console.log(res)
           this.team = res;
         },
         error => {
