@@ -9,4 +9,3 @@ export { RegisterViewComponent } from './register/register-view/register-view.co
 export { RegisterFormComponent } from './register/register-form/register-form.component';
 export { ContactViewComponent } from './contact/contact-view/contact-view.component';
 export { ContactFormComponent } from './contact/contact-form/contact-form.component';
-export { BrandGuidelinesComponent } from './brand-guidelines/brand-guidelines.component';

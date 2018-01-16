@@ -15,7 +15,6 @@ import * as websiteComponents from 'app/modules/website/components/website-compo
     websiteComponents.RegisterFormComponent,
     websiteComponents.ContactViewComponent,
     websiteComponents.ContactFormComponent,
-    websiteComponents.BrandGuidelinesComponent,
     websiteComponents.HomeFeaturesComponent,
     websiteComponents.HomeActionsComponent,
   ],

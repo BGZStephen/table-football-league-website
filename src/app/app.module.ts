@@ -16,6 +16,7 @@ import { AppRoutes } from './app.routes';
 
 import { WebsiteModule } from 'app/modules/website/website.module';
 import { DashboardModule } from 'app/modules/dashboard/dashboard.module';
+import { StylesModule } from 'app/modules/styles/styles.module';
 
 import { AppComponent } from './app.component';
 
@@ -29,6 +30,7 @@ import { AppComponent } from './app.component';
     AppRoutes,
     WebsiteModule,
     DashboardModule,
+    StylesModule,
   ],
   providers: [AuthGuard, GlobalService, PublicApiService, DashboardApiService, NotificationService, RedirectionService, ErrorHandlerService],
   bootstrap: [AppComponent]

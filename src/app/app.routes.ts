@@ -1,27 +1,30 @@
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'app/guards/auth.guard';
 
-import * as websiteComponents from 'app/modules/website/components/website-components-barrel';
-import * as dashboardComponents from 'app/modules/dashboard/components/dashboard-components-barrel';
+import * as website from 'app/modules/website/components/website-components-barrel';
+import * as dashboard from 'app/modules/dashboard/components/dashboard-components-barrel';
+import * as styles from 'app/modules/styles/components/styles-components-barrel';
 
 const APP_ROUTES: Routes = [
-  {path: '', component: websiteComponents.ViewWrapperComponent, children: [
-    {path: '', component: websiteComponents.HomeViewComponent},
-    {path: 'login', component: websiteComponents.LoginViewComponent},
-    {path: 'register', component: websiteComponents.RegisterViewComponent},
-    {path: 'contact', component: websiteComponents.ContactViewComponent},
-    {path: '__styles__', component: websiteComponents.BrandGuidelinesComponent},
+  {path: '', component: website.ViewWrapperComponent, children: [
+    {path: '', component: website.HomeViewComponent},
+    {path: 'login', component: website.LoginViewComponent},
+    {path: 'register', component: website.RegisterViewComponent},
+    {path: 'contact', component: website.ContactViewComponent},
   ]},
-  {path: 'dashboard', component: dashboardComponents.ViewWrapperComponent, children: [
-    {path: '', component: dashboardComponents.HomeViewComponent},
-    {path: 'teams', component: dashboardComponents.TeamsViewComponent},
-    {path: 'teams/create', component: dashboardComponents.TeamsCreateComponent},
-    {path: 'teams/:id', component: dashboardComponents.TeamViewComponent},
-    {path: 'leagues', component: dashboardComponents.LeaguesViewComponent},
-    {path: 'leagues/create', component: dashboardComponents.LeaguesCreateComponent},
-    {path: 'fixtures', component: dashboardComponents.FixturesViewComponent},
-    {path: 'account', component: dashboardComponents.AccountEditComponent},
+  {path: 'dashboard', component: dashboard.ViewWrapperComponent, children: [
+    {path: '', component: dashboard.HomeViewComponent},
+    {path: 'teams', component: dashboard.TeamsViewComponent},
+    {path: 'teams/create', component: dashboard.TeamsCreateComponent},
+    {path: 'teams/:id', component: dashboard.TeamViewComponent},
+    {path: 'leagues', component: dashboard.LeaguesViewComponent},
+    {path: 'leagues/create', component: dashboard.LeaguesCreateComponent},
+    {path: 'fixtures', component: dashboard.FixturesViewComponent},
+    {path: 'account', component: dashboard.AccountEditComponent},
   ], canActivate: [AuthGuard]},
+  {path: '__styles__', component: styles.ViewWrapperComponent, children: [
+    {path: '', component: styles.HomeViewComponent},,
+  ]},
 ]
 
 export const AppRoutes = RouterModule.forRoot(APP_ROUTES);
