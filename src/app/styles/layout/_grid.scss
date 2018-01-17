@@ -1,28 +1,26 @@
-.col {
-  align-items: center;
-  color: white;
-  display: flex;
-  margin-right: 10px;
-  width: 100%;
-
-  &:first-of-type {
-    margin-left: 10px;
-  }
+.row {
+  margin-bottom: 10px;
 
   &:last-of-type {
-    margin-right: 10px;
+    margin-bottom: 0;
+  }
+}
+
+.col {
+  margin: 0 10px 10px 10px;
+  width: 100%;
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 
 @for $i from 1 through 12 {
   .col-sm-#{$i} {
     @extend .col;
-    margin-bottom: 10px;
-
     @media(min-width: $screen-sm) {
       margin-bottom: 0;
-      margin-right: 10px;
-      width: calc(((100% - 10px) / 12) * #{$i} - 10px);
+      width: calc(((100% - 10px) / 12) * #{$i} - 20px);
     }
   }
 }
@@ -32,8 +30,8 @@
     @extend .col;
 
     @media(min-width: $screen-md) {
-      margin-right: 10px;
-      width: calc(((100% - 10px) / 12) * #{$i} - 10px);
+      margin-bottom: 0;
+      width: calc(((100% - 10px) / 12) * #{$i} - 20px);
     }
   }
 }
@@ -43,19 +41,8 @@
     @extend .col;
 
     @media(min-width: $screen-md) {
-      margin-right: 10px;
-      width: calc(((100% - 10px) / 12) * #{$i} - 10px);
+      margin-bottom: 0;
+      width: calc(((100% - 10px) / 12) * #{$i} - 20px);
     }
-  }
-}
-
-.row {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-
-  &:last-of-type {
-    margin-bottom: 0;
   }
 }
