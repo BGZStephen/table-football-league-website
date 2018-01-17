@@ -23,7 +23,7 @@ const APP_ROUTES: Routes = [
     {path: 'account', component: dashboard.AccountEditComponent},
   ], canActivate: [AuthGuard]},
   {path: '__styles__', component: styles.ViewWrapperComponent, children: [
-    {path: '', component: styles.HomeViewComponent},,
+    {path: '', component: styles.HomeViewComponent},
   ]},
 ]
 
