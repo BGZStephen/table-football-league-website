@@ -1,22 +1,17 @@
 #website-view-wrapper {
   display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column;
-
   #website-navbar-wrapper {
-
-    @media(min-width: $screen-md) {
-      width: 120px;
-    }
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
   }
 
   #website-outlet-wrapper {
-    @media(min-width: $screen-md) {
-      width: calc(100vw - 120px);
-    }
+    padding-top: 70px;
   }
 
-  @media(min-width: $screen-md) {
-    flex-direction: row;
+  .notification-bar-wrapper {
+    
   }
 }

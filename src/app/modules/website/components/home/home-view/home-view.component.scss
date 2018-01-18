@@ -1,19 +1,5 @@
-#website-home-view {
-  .heading-container {
-    align-items: center;
-    color: #DDD;
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0;
-  }
-
-  .features-container {
-    max-width: 90%;
-    margin: 120px auto 50px auto;
-  }
-
-  .actions-container {
-    display: flex;
-    justify-content: center;
-  }
+#content {
+  padding-top: 20px;
+  width: calc(100vw - 220px);
+  min-height: calc(100vh - 120px);
 }
