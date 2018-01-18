@@ -11,7 +11,8 @@
     justify-content: space-between;
     text-align: center;
 
-    i {
+    i.fa-bars,
+    i.fa-search {
       cursor: pointer;
       font-size: 18px;
       padding: 15px;
@@ -57,17 +58,22 @@
     overflow: hidden;
     transition: 0.3s ease all;
 
+    &:hover,
+    &.route-active {
+      background: $primary-black-800;
+      color: #EEE;
+    }
+
     @media(min-width: $screen-md) {
-      max-height: none;
+      max-height: 100%;
+      padding: 15px 0;
     }
   }
 
   .navbar-item-content {
-    color: #AAA;
     cursor: pointer;
     align-items: center;
     display: flex;
-    height: 100%;
     position: relative;
     transition: 0.3s ease all;
     z-index: 5;
@@ -77,24 +83,18 @@
       right: 10px;
     }
 
-    i {
+    > i {
       font-size: 20px;
-      margin-left: 15px;
-      margin-right: 15px;
+      margin: 0 15px;
 
       @media(min-width: $screen-md) {
-        font-size: 32px;
+        font-size: 28px;
+        margin-bottom: 8px;
       }
     }
 
-    span {
+    > p {
       font-size: 0.8em;
-    }
-
-    &:hover,
-    &.route-active {
-      background: $primary-black-800;
-      color: #EEE;
     }
 
     @media(min-width: $screen-md) {

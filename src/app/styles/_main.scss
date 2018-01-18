@@ -1,6 +1,6 @@
-@import './globals/index';
-@import './variables/media-queries';
 @import './variables/colors';
+@import './variables/media-queries';
+@import './globals/index';
 @import './layout/index';
 @import './components/index';
 @import './services/notification.service';
@@ -33,3 +33,5 @@
 @import 'app/modules/dashboard/components/navbar/navbar.component';
 @import 'app/modules/dashboard/components/account/account-edit/account-edit.component';
 @import 'app/modules/dashboard/components/teams/team-view/team-view.component';
+
+@import 'app/modules/styles/components/navbar/navbar.component';

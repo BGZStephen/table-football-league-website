@@ -9,7 +9,7 @@
       <li class="navbar-item" *ngFor="let menuItem of menuItems; let i = index" [ngStyle]="submenuActiveStyle(i)">
         <div class="navbar-item-content" routerLink="{{menuItem.link}}" (click)="toggleSubmenuActive(i)">
           <i class="{{menuItem.iconClass}}"></i>
-          <span>{{menuItem.name}}</span>
+          <p>{{menuItem.name}}</p>
         </div>
       </li>
     </ul>
