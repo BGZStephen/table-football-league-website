@@ -39,9 +39,9 @@ export class NavbarComponent implements OnInit {
   submenuActiveStyle = (index) => {
     if (index === this.currentSubmenuActive && document.getElementsByClassName('navbar-submenu')[index]) {
       const height = document.getElementsByClassName('navbar-submenu')[index].clientHeight;
-      return {'height': `${76 + height}px`}
+      return {'height': `${68 + height}px`}
     } else {
-      return {'height': '76px'};
+      return {'height': '68px'};
     }
   }
 

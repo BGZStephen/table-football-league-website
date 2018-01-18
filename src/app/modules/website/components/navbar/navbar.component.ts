@@ -9,9 +9,9 @@ export class NavbarComponent implements OnInit {
   currentSubmenuActive: number = -1;
   menuVisible: boolean = false;
   menuItems: Array<object> = [
-    {name: 'Home', iconClass: 'fa fa-home fa-2x', link: '/'},
-    {name: 'Register', iconClass: 'fa fa-pencil fa-2x', link: '/register'},
-    {name: 'Login', iconClass: 'fa fa-sign-in fa-2x', link: '/login'},
+    {name: 'Home', iconClass: 'fa fa-home fa-sm', link: '/'},
+    {name: 'Register', iconClass: 'fa fa-pencil fa-sm', link: '/register'},
+    {name: 'Login', iconClass: 'fa fa-sign-in fa-sm', link: '/login'},
   ]
 
   constructor() { }
@@ -29,9 +29,9 @@ export class NavbarComponent implements OnInit {
   submenuActiveStyle(index) {
     if (index === this.currentSubmenuActive && document.getElementsByClassName('navbar-submenu')[index]) {
       const height = document.getElementsByClassName('navbar-submenu')[index].clientHeight;
-      return {'height': `${76 + height}px`}
+      return {'height': `${68 + height}px`}
     } else {
-      return {'height': '76px'};
+      return {'height': '68px'};
     }
   }
 
