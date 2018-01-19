@@ -6,9 +6,9 @@ import * as dashboard from 'app/modules/dashboard/components/dashboard-component
 import * as styles from 'app/modules/styles/components/styles-components-barrel';
 
 const APP_ROUTES: Routes = [
+  {path: 'login', component: website.LoginViewComponent},
   {path: '', component: website.ViewWrapperComponent, children: [
     {path: '', component: website.HomeViewComponent},
-    {path: 'login', component: website.LoginViewComponent},
     {path: 'register', component: website.RegisterViewComponent},
     {path: 'contact', component: website.ContactViewComponent},
   ]},

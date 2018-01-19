@@ -4,12 +4,12 @@
 // @import './layout/index';
 // @import './components/index';
 // @import './services/notification.service';
+@import './vendor/matrix/css/font-awesome';
 @import './vendor/matrix/css/bootstrap.min';
 @import './vendor/matrix/css/bootstrap-responsive.min';
 @import './vendor/matrix/css/bootstrap-wysihtml5';
 @import './vendor/matrix/css/colorpicker';
 @import './vendor/matrix/css/datepicker';
-@import './vendor/matrix/css/font-awesome';
 // @import './vendor/matrix/css/fullcalendar';
 @import './vendor/matrix/css/jquery.easy-pie-chart';
 @import './vendor/matrix/css/jquery.gritter';
@@ -21,3 +21,4 @@
 
 @import '../modules/website/components/view-wrapper/view-wrapper.component';
 @import '../modules/website/components/home/home-view/home-view.component';
+@import '../modules/website/components/login/login-form/login-form.component';
