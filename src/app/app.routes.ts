@@ -7,9 +7,9 @@ import * as styles from 'app/modules/styles/components/styles-components-barrel'
 
 const APP_ROUTES: Routes = [
   {path: 'login', component: website.LoginViewComponent},
+  {path: 'register', component: website.RegisterViewComponent},
   {path: '', component: website.ViewWrapperComponent, children: [
     {path: '', component: website.HomeViewComponent},
-    {path: 'register', component: website.RegisterViewComponent},
     {path: 'contact', component: website.ContactViewComponent},
   ]},
   {path: 'dashboard', component: dashboard.ViewWrapperComponent, children: [
