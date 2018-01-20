@@ -37,10 +37,11 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(user) {
-    const validation = this.validateForm(user);
+  onRegister(formValues) {
+    const validation = this.validateForm(formValues);
     if (validation) {
-      this.publicApi.users.create(user)
+      console.log('validation passed')
+      this.publicApi.users.create(formValues)
       .subscribe(
         res => {
           localStorage.setItem('token', res['token']);
@@ -78,5 +79,10 @@ export class RegisterFormComponent implements OnInit {
     }
 
     return true;
+  }
+
+  clearFormError(field) {
+    this.formValues[field].hasError = false;
+    this.formValues[field].message = null;
   }
 }
