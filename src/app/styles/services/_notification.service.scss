@@ -2,7 +2,7 @@
   color: white;
   display: flex;
   font-weight: 700;
-  height: 40px;
+  height: 20px;
   padding: 10px;
   position: absolute;
   top: calc(100vh - 40px);
@@ -10,17 +10,17 @@
 }
 
 .notification-success {
-  background: $primary-green-400
+  background: #468847;
 }
 
 .notification-error {
-  background: $primary-red-400
+  background: #f74d4d;
 }
 
 .notification-info {
-  background: $primary-blue-400
+  background: #3a87ad;
 }
 
 .notification-warning {
-  background: $primary-yellow-400
+  background: #f89406;
 }
