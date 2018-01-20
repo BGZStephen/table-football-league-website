@@ -1,0 +1,18 @@
+#dashboard-view-wrapper {
+  display: flex;
+  #dashboard-navbar-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+  }
+
+  #dashboard-outlet-wrapper {
+    padding-top: 70px;
+    width: 100%;
+  }
+
+  .notification-bar-wrapper {
+
+  }
+}

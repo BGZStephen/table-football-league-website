@@ -62,4 +62,9 @@ export class LoginFormComponent implements OnInit {
 
     return true;
   }
+
+  clearFormError(field) {
+    this.formValues[field].hasError = false;
+    this.formValues[field].message = null;
+  }
 }

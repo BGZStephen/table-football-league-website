@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutes } from 'app/app.routes';
 import { FormsModule } from '@angular/forms';
 import * as websiteComponents from 'app/modules/website/components/website-components-barrel';
-import { NotificationBarComponent } from './components/notification-bar/notification-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { NotificationBarComponent } from './components/notification-bar/notifica
     websiteComponents.ContactFormComponent,
     websiteComponents.HomeFeaturesComponent,
     websiteComponents.HomeActionsComponent,
-    websiteComponents.NotificationBarComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-website-notification-bar',
+  selector: 'app-dashboard-notification-bar',
   templateUrl: './notification-bar.component.html',
 })
 export class NotificationBarComponent implements OnInit {
