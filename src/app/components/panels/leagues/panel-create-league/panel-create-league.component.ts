@@ -15,24 +15,27 @@ export class PanelCreateLeagueComponent implements OnInit {
     teams: [],
   };
   searchTeams = false;
+  league: object = {
+    name: '',
+    teams: []
+  }
 
   constructor (
     private dashboardApi: DashboardApiService,
     private globalService: GlobalService,
   ) {}
 
-  ngOnInit() {}
-
-  teamsSearchOpen() {
-    this.searchTeams = true;
-  }
-
-  teamsSearchClose() {
-    this.searchTeams = false;
-  }
-
-  removeTeam(index) {
-    this.formValues.teams.splice(index, 1);
+  ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'))
+    this.dashboardApi.users.get(user._id)
+    .subscribe(
+      res => {
+        this.team['users'].push(res);
+      },
+      error => {
+        this.globalService.errorHandler.process(error);
+      }
+    )
   }
 
   onTeamsSelect(teams) {
@@ -56,5 +59,9 @@ export class PanelCreateLeagueComponent implements OnInit {
     } else {
       this.formValues.teams = this.formValues.teams.concat(teams);
     }
+  }
+
+  resetLeague() {
+    this.league = {name: '', teams: []};
   }
 }

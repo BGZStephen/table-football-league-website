@@ -10,6 +10,7 @@ export class LeaguesViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
   leagues: Array<object>;
+  leagueAction: string = '';
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -28,6 +29,10 @@ export class LeaguesViewComponent implements OnInit {
         this.globalService.errorHandler.process(error);
       }
     )
+  }
+
+  setLeagueAction(action) {
+    this.leagueAction = action;
   }
 
 }

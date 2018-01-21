@@ -6,3 +6,4 @@ export { PanelAccountEditComponent } from 'app/components/panels/account/panel-a
 export { PanelCurrentTeamsComponent } from 'app/components/panels/teams/panel-current-teams/panel-current-teams.component';
 export { PanelCurrentLeaguesComponent } from 'app/components/panels/leagues/panel-current-leagues/panel-current-leagues.component';
 export { PanelSearchTeamsComponent } from 'app/components/panels/teams/panel-search-teams/panel-search-teams.component';
+export { PanelSearchLeaguesComponent } from 'app/components/panels/leagues/panel-search-leagues/panel-search-leagues.component';

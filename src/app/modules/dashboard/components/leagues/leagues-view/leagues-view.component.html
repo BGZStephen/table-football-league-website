@@ -2,7 +2,7 @@
   <div id="content-header">
     <div id="breadcrumb">
       <a routerLink="/dashboard" class="tip-bottom">
-        <i class="icon-home"></i> Home</a>
+        <i class="fa fa-home"></i> Home</a>
         <a href="/dashboard/leagues" class="current tip-bottom">Leagues</a>
       </div>
     <h1>Your leagues</h1>
@@ -12,6 +12,23 @@
     <div class="row-fluid">
       <div class="span6">
         <app-panel-current-leagues></app-panel-current-leagues>
+      </div>
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="fa fa-cog"></i> </span>
+            <h5>Actions</h5>
+          </div>
+          <div class="widget-content">
+            <a class="btn btn-success" (click)="setLeagueAction('find')">Find a league</a>
+            <a class="btn btn-success" (click)="setLeagueAction('create')">Create a league</a>
+          </div>
+        </div>
+        <div *ngIf="leagueAction === 'create'">
+          <app-panel-create-league></app-panel-create-league>
+        </div>
+        <div *ngIf="leagueAction === 'find'">
+          <app-panel-search-leagues></app-panel-search-leagues>
+        </div>
       </div>
     </div>
   </div>

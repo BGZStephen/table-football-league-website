@@ -1,0 +1,34 @@
+<div id="panel-create-team" class="widget-box">
+  <div class="widget-title">
+    <span class="icon">
+      <i class="fa fa-table"></i>
+    </span>
+    <h5>New league</h5>
+  </div>
+  <div class="widget-content nopadding" *ngIf="league">
+    <form #f="ngForm" class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label">League name :</label>
+        <div class="controls">
+          <input type="text" class="span11" placeholder="Table Foosball league 1" [(ngModel)]="league.name" name="name" >
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Teams :</label>
+        <div class="controls">
+          <a *ngIf="league.teams.length === 0" class="btn btn-primary">Add Team</a>
+          <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <a *ngIf="league.teams.length >= 1" class="btn btn-primary">Add Player</a>
+        </div>
+      </div>
+      <div class="form-actions">
+        <a class="btn btn-info" (click)="resetLeague()">Reset</a>
+        <button class="btn btn-success">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
