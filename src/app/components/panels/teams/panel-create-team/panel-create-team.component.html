@@ -5,29 +5,29 @@
     </span>
     <h5>New team</h5>
   </div>
-  <div class="widget-content nopadding">
+  <div class="widget-content nopadding" *ngIf="team">
     <form #f="ngForm" class="form-horizontal">
       <div class="control-group">
-        <label class="control-label">First Name :</label>
+        <label class="control-label">Team name :</label>
         <div class="controls">
-          <input type="text" class="span11" placeholder="First name" name="firstName" >
+          <input type="text" class="span11" placeholder="Manchester United" [(ngModel)]="team.name" name="name" >
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label">Last Name :</label>
+        <label class="control-label">Players :</label>
         <div class="controls">
-          <input type="text" class="span11" placeholder="Last name" name="lastName" >
+          <a *ngIf="team.users.length === 0" class="btn btn-primary">Add Player</a>
+          <p *ngFor="let user of team.users">{{user.firstName}} {{user.lastName}}</p>
         </div>
       </div>
       <div class="control-group">
-        <label class="control-label">Email :</label>
         <div class="controls">
-          <input type="text" class="span11" placeholder="Email" name="email" >
+          <a *ngIf="team.users.length >= 1" class="btn btn-primary">Add Player</a>
         </div>
       </div>
       <div class="form-actions">
         <button class="btn btn-success">Save</button>
-        <a class="btn btn-info">Reset password</a>
+        <a class="btn btn-info" (click)="resetTeam()">Reset</a>
       </div>
     </form>
   </div>

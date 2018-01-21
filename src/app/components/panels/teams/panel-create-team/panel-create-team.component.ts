@@ -12,9 +12,12 @@ export class PanelCreateTeamComponent implements OnInit {
     teamName: {
       display: 'Team name'
     },
-    players: [],
   };
   searchUsers = false;
+  team: object = {
+    name: '',
+    users: []
+  }
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -72,5 +75,9 @@ export class PanelCreateTeamComponent implements OnInit {
     }
 
     this.formValues.players.push(user)
+  }
+
+  resetTeam() {
+    this.team = {name: '', users: []};
   }
 }
