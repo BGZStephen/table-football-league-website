@@ -31,9 +31,9 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     panels.PanelNoFixturesComponent,
     panels.PanelAddFixtureComponent,
     panels.PanelAccountEditComponent,
+    panels.PanelSearchTeamsComponent,
     UsersSearchComponent,
     LeaguesSearchComponent,
-    TeamsSearchComponent,
   ],
   imports: [
     CommonModule,
