@@ -1,44 +1,54 @@
-<div id="panel-account-edit" class="panel">
-  <div class="panel-head">
-    <p>Account details</p>
+<div class="widget-box">
+  <div class="widget-title">
+    <span class="icon">
+      <i class="fa fa-align-justify"></i>
+    </span>
+    <h5>Account info</h5>
   </div>
-  <div class="panel-body" *ngIf="user">
-    <form #f="ngForm" (ngSubmit)="onUserUpdate(f.value)">
-      <div class="form-row vertical-row">
-        <label>First name</label>
-        <input type="text" name="firstName" #firstName name="firstName" ngModel="{{user.firstName}}">
-      </div>
-      <div class="form-row vertical-row">
-        <label>Last name</label>
-        <input type="text" name="lastName" #lastName name="lastName" ngModel="{{user.lastName}}">
-      </div>
-      <div class="form-row vertical-row">
-        <label>Username</label>
-        <input type="text" name="username" #username name="username" ngModel="{{user.username}}">
-      </div>
-      <div class="form-row vertical-row">
-        <label>Email</label>
-        <input type="text" name="email" #email name="email" ngModel="{{user.email}}">
-      </div>
-      <div class="form-row">
-        <div class="position-selector striker {{user.position.striker ? 'selected' : ''}}" (click)="toggleStriker()">
-          <p>Striker</p>
-        </div>
-        <div class="position-selector defender {{user.position.defender ? 'selected' : ''}}" (click)="toggleDefender()">
-          <p>Defender</p>
+  <div class="widget-content nopadding">
+    <form #f="ngForm" class="form-horizontal" (ngSubmit)="onUserUpdate(f.value)" *ngIf="user">
+      <div class="control-group">
+        <label class="control-label">First Name :</label>
+        <div class="controls">
+          <input type="text" class="span11" placeholder="First name" name="firstName" [(ngModel)]="user.firstName">
         </div>
       </div>
-      <div *ngIf="passwordChange" class="form-row vertical-row">
-        <label>New password</label>
-        <input type="password" name="newPassword" #newPassword name="newPassword" ngModel="{{user.newPassword}}">
+      <div class="control-group">
+        <label class="control-label">Last Name :</label>
+        <div class="controls">
+          <input type="text" class="span11" placeholder="Last name" name="lastName" [(ngModel)]="user.lastName">
+        </div>
       </div>
-      <div *ngIf="passwordChange" class="form-row vertical-row">
-        <label>Confirm password</label>
-        <input type="password" name="confirmNewPassword" #confirmNewPassword name="confirmNewPassword" ngModel="{{user.confirmNewPassword}}">
+      <div class="control-group">
+        <label class="control-label">Email :</label>
+        <div class="controls">
+          <input type="text" class="span11" placeholder="Email" name="email" [(ngModel)]="user.email">
+        </div>
       </div>
-      <div class="row">
-        <a class="button button-md button--blue" (click)="enablePasswordChange()">Reset Password</a>
-        <button class="button-md button--purple">Submit</button>
+      <div class="control-group">
+        <label class="control-label">Position :</label>
+        <div class="controls">
+          <a class="btn {{user.position.striker ? 'btn-success' : ''}}" (click)="toggleStriker()">Striker</a>
+          <a class="btn {{user.position.defender ? 'btn-success' : ''}}" (click)="toggleDefender()">Defender</a>
+        </div>
+      </div>
+      <div *ngIf="passwordChange">
+        <div class="control-group">
+          <label class="control-label">New password :</label>
+          <div class="controls">
+            <input type="password" class="span11" placeholder="Enter new password"  />
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Confirm password :</label>
+          <div class="controls">
+            <input type="password" class="span11" placeholder="Confirm new password"  />
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-success">Save</button>
+        <a class="btn btn-info" (click)="enablePasswordChange()">Reset password</a>
       </div>
     </form>
   </div>

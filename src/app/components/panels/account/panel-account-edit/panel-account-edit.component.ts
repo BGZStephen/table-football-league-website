@@ -29,7 +29,6 @@ export class PanelAccountEditComponent implements OnInit {
   }
 
   onUserUpdate(form) {
-    console.log(this.user);
     if (form.newPassword && !form.confirmNewPassword) {
       return this.globalService.notification.error({message: 'Please confirm your password'});
     }
@@ -49,7 +48,6 @@ export class PanelAccountEditComponent implements OnInit {
     this.dashboardApi.users.update(this.user)
     .subscribe(
       user => {
-        console.log(user);
         this.user = user;
         this.globalService.notification.show({message: 'Account update successful'});
       },
