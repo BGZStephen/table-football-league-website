@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCurrentTeamsComponent implements OnInit {
 
-  player: object = {};
+  user: object = {};
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -22,8 +22,7 @@ export class PanelCurrentTeamsComponent implements OnInit {
     })
     .subscribe(
       res => {
-        console.log(res)
-        this.player = res;
+        this.user = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

@@ -1,10 +1,21 @@
-<div id="panel-current-teams" class="panel">
-  <div class="panel-head">
-    <p>Your teams</p>
+<div class="widget-box">
+  <div class="widget-title"> <span class="icon"> <i class="fa fa-users"></i> </span>
+    <h5>Current teams</h5>
   </div>
-  <div class="panel-body">
-    <div *ngIf="player" id="current-teams-container">
-      <button *ngFor="let team of player.teams" routerLink="/dashboard/teams/{{team._id}}" class="button--yellow button-sm">{{team.name}}</button>
-    </div>
+  <div class="widget-content nopadding">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Team name</th>
+          <th>Players</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of user.teams" class="odd gradeX">
+          <td>{{team.name}}</td>
+          <td>Stephen w, Jon V</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
