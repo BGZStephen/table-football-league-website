@@ -1,13 +1,18 @@
-<div id="dashboard-teams-view" class="outlet-container">
-  <div class="row">
-    <div class="col-sm-3" *ngIf="teams && teams.length === 0">
-      <app-panel-no-teams></app-panel-no-teams>
-    </div>
-    <div class="col-sm-2" *ngIf="teams && teams.length >= 1">
-      <app-panel-current-teams></app-panel-current-teams>
-    </div>
-    <div class="col-sm-3" *ngIf="teams && teams.length >= 1">
-      <app-panel-add-team></app-panel-add-team>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb">
+      <a routerLink="/dashboard" class="tip-bottom">
+        <i class="icon-home"></i> Home</a>
+        <a href="/dashboard/teams" class="current tip-bottom">Teams</a>
+      </div>
+    <h1>Your teams</h1>
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span6">
+
+      </div>
     </div>
   </div>
 </div>
