@@ -1462,7 +1462,7 @@ form {
 }
  @media (min-width: 481px) and (max-width: 970px) {
 body {
-	background:#49CCED
+	/* background:#49CCED */
 }
 #header h1 {
 	top:10px; left:35px;

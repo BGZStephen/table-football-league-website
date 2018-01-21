@@ -1,5 +1,8 @@
 #content {
-  padding-top: 20px;
-  width: calc(100vw - 220px);
-  min-height: calc(100vh - 120px);
+  width: 100%;
+  @media(min-width: 480px) {
+    min-height: calc(100vh - 120px);
+    padding-top: 20px;
+    margin-left: 0;
+  }
 }
