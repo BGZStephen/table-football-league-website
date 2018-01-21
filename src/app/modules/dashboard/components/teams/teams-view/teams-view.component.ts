@@ -10,7 +10,7 @@ export class TeamsViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
   teams: Array<object>;
-  teamAction: string = 'create';
+  teamAction: string = '';
 
   constructor(
     private dashboardApi: DashboardApiService,

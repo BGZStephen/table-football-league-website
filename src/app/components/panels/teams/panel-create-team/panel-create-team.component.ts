@@ -29,52 +29,13 @@ export class PanelCreateTeamComponent implements OnInit {
     this.dashboardApi.users.get(user._id)
     .subscribe(
       res => {
-        this.formValues.players.push(res);
+        console.log(this.team)
+        this.team['users'].push(res);
       },
       error => {
         this.globalService.errorHandler.process(error);
       }
     )
-  }
-
-  getPlayerPosition(index) {
-    const player = this.formValues.players[index];
-    if (player.position.striker && player.position.defender) {
-      return '(Striker / Defender)';
-    }
-
-    if (player.position.striker) {
-      return '(Striker)';
-    }
-
-    if (player.position.defender) {
-      return '(Defender)';
-    }
-  }
-
-  usersSearchOpen() {
-    this.searchUsers = true;
-  }
-
-  UserSearchClose() {
-    this.searchUsers = false;
-  }
-
-  removePlayer(index) {
-    this.formValues.players.splice(index, 1);
-  }
-
-  onUserSelect(user) {
-    for (let player of this.formValues.players) {
-      if (user._id === player._id) {
-        return this.globalService.notification.error({
-          message: 'Cannot add player, they are already part of your team',
-          time: 5000,
-        });
-      }
-    }
-
-    this.formValues.players.push(user)
   }
 
   resetTeam() {

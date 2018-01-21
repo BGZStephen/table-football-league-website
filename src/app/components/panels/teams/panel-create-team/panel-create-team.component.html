@@ -1,4 +1,4 @@
-<div class="widget-box">
+<div id="panel-create-team" class="widget-box">
   <div class="widget-title">
     <span class="icon">
       <i class="fa fa-users"></i>
@@ -17,7 +17,7 @@
         <label class="control-label">Players :</label>
         <div class="controls">
           <a *ngIf="team.users.length === 0" class="btn btn-primary">Add Player</a>
-          <p *ngFor="let user of team.users">{{user.firstName}} {{user.lastName}}</p>
+          <p class="player-name" *ngFor="let user of team.users">{{user.firstName}} {{user.lastName}}</p>
         </div>
       </div>
       <div class="control-group">
@@ -26,8 +26,8 @@
         </div>
       </div>
       <div class="form-actions">
-        <button class="btn btn-success">Save</button>
         <a class="btn btn-info" (click)="resetTeam()">Reset</a>
+        <button class="btn btn-success">Save</button>
       </div>
     </form>
   </div>
