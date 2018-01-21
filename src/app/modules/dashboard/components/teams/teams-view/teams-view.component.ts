@@ -10,6 +10,7 @@ export class TeamsViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
   teams: Array<object>;
+  teamAction: string = '';
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -28,6 +29,11 @@ export class TeamsViewComponent implements OnInit {
         this.globalService.errorHandler.process(error);
       }
     )
+  }
+
+  setTeamAction(action) {
+    console.log(action)
+    this.teamAction = action;
   }
 
 }

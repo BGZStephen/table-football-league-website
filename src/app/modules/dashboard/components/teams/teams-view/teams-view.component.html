@@ -11,7 +11,24 @@
     <hr>
     <div class="row-fluid">
       <div class="span6">
-
+        <app-panel-current-teams></app-panel-current-teams>
+      </div>
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="fa fa-cog"></i> </span>
+            <h5>Actions</h5>
+          </div>
+          <div class="widget-content">
+            <a class="btn btn-success" (click)="setTeamAction('find')">Find a team</a>
+            <a class="btn btn-success" (click)="setTeamAction('create')">Create a team</a>
+          </div>
+        </div>
+        <div *ngIf="teamAction === 'create'">
+          <app-panel-create-team></app-panel-create-team>
+        </div>
+        <div *ngIf="teamAction === 'search'">
+          <app-panel-search-teams></app-panel-search-teams>
+        </div>
       </div>
     </div>
   </div>
