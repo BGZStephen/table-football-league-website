@@ -26,6 +26,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     panels.PanelCreateLeagueComponent,
     panels.PanelCurrentLeaguesComponent,
     panels.PanelCurrentFixturesComponent,
+    panels.PanelCreateFixtureComponent,
     panels.PanelSearchTeamsComponent,
     panels.PanelSearchLeaguesComponent,
     panels.PanelAccountEditComponent,

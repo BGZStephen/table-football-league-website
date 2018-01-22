@@ -1,5 +1,6 @@
 export { PanelCreateTeamComponent } from 'app/components/panels/teams/panel-create-team/panel-create-team.component';
 export { PanelCreateLeagueComponent } from 'app/components/panels/leagues/panel-create-league/panel-create-league.component';
+export { PanelCreateFixtureComponent } from 'app/components/panels/fixtures/panel-create-fixture/panel-create-fixture.component';
 export { PanelCurrentTeamsComponent } from 'app/components/panels/teams/panel-current-teams/panel-current-teams.component';
 export { PanelCurrentLeaguesComponent } from 'app/components/panels/leagues/panel-current-leagues/panel-current-leagues.component';
 export { PanelCurrentFixturesComponent } from 'app/components/panels/fixtures/panel-current-fixtures/panel-current-fixtures.component';

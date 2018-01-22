@@ -13,6 +13,19 @@
       <div class="span6">
         <app-panel-current-fixtures></app-panel-current-fixtures>
       </div>
+      <div class="span6">
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="fa fa-cog"></i> </span>
+            <h5>Actions</h5>
+          </div>
+          <div class="widget-content">
+            <a class="btn btn-success" (click)="setFixtureAction('create')">Arrange a game</a>
+          </div>
+        </div>
+        <div *ngIf="fixtureAction === 'create'">
+          <app-panel-create-fixture></app-panel-create-fixture>
+        </div>
+      </div>
     </div>
   </div>
 </div>

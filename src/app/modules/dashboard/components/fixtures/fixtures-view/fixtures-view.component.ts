@@ -30,4 +30,8 @@ export class FixturesViewComponent implements OnInit {
     )
   }
 
+  setFixtureAction(action) {
+    this.fixtureAction = action;
+  }
+
 }
