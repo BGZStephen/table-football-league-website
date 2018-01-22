@@ -15,10 +15,11 @@ export class PanelCreateLeagueComponent implements OnInit {
     teams: [],
   };
   searchTeams = false;
+  user: object = {};
   league: object = {
     name: '',
     teams: []
-  }
+  };
 
   constructor (
     private dashboardApi: DashboardApiService,
@@ -27,10 +28,12 @@ export class PanelCreateLeagueComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
-    this.dashboardApi.users.get(user._id)
+    this.dashboardApi.users.get(user._id, {
+      teams: true,
+    })
     .subscribe(
       res => {
-        this.team['users'].push(res);
+        this.user = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

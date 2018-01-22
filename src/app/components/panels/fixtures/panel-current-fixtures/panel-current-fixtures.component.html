@@ -1,0 +1,25 @@
+<div class="widget-box">
+  <div class="widget-title"> <span class="icon"> <i class="fa fa-users"></i> </span>
+    <h5>Current teams</h5>
+  </div>
+  <div class="widget-content nopadding">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Fixture date</th>
+          <th>Teams</th>
+          <th>Score</th>
+          <th>League</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let fixture of user.fixtures" class="odd gradeX">
+          <td>{{fixture.fixtureDate}}</td>
+          <td>{{fixture.teams}}</td>
+          <td>0 - 0</td>
+          <td>{{fixture.league? fixture.league : ''}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
