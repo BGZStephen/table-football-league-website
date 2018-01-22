@@ -17,19 +17,7 @@ export class TeamsViewComponent implements OnInit {
     private globalService: GlobalService,
   ) { }
 
-  ngOnInit() {
-    this.dashboardApi.users.get(this.userId, {
-      teams: true,
-    })
-    .subscribe(
-      res => {
-        this.teams = res.teams;
-      },
-      error => {
-        this.globalService.errorHandler.process(error);
-      }
-    )
-  }
+  ngOnInit() {}
 
   setTeamAction(action) {
     this.teamAction = action;

@@ -13,11 +13,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let fixture of user.fixtures" class="odd gradeX">
+        <tr *ngFor="let fixture of fixtures" class="odd gradeX">
           <td>{{fixture.fixtureDate}}</td>
-          <td>{{fixture.teams}}</td>
-          <td>0 - 0</td>
-          <td>{{fixture.league? fixture.league : ''}}</td>
+          <td>{{fixture.teams[0].name}} V {{fixture.teams[1].name}}</td>
+          <td>{{fixture.played ? fixture.score.home + ' - ' + fixture.score.away : 'To be played'}}</td>
+          <td>{{fixture.leagueId ? fixture.leagueId.name : 'Friendly'}}</td>
         </tr>
       </tbody>
     </table>

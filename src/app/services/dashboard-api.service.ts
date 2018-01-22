@@ -30,38 +30,20 @@ export class DashboardApiService {
       return this.apiCall(callParams);
     },
 
-    getByEmail: (query) => {
+    getFixtures: (id, query = {}) => {
       const callParams = {
         type: 'post',
-        url: `/private/users/getByEmail`,
+        url: `/private/users/${id}/fixtures`,
         body: query,
       }
       return this.apiCall(callParams);
     },
 
-    getTeams: (id) => {
+    getByEmail: (query) => {
       const callParams = {
         type: 'post',
-        url: `/private/users/${id}/teams`,
-        body: {},
-      }
-      return this.apiCall(callParams);
-    },
-
-    getLeagues: (id) => {
-      const callParams = {
-        type: 'post',
-        url: `/private/users/${id}/leagues`,
-        body: {},
-      }
-      return this.apiCall(callParams);
-    },
-
-    getFixtures: (id) => {
-      const callParams = {
-        type: 'post',
-        url: `/private/users/${id}/fixtures`,
-        body: {},
+        url: `/private/users/getByEmail`,
+        body: query,
       }
       return this.apiCall(callParams);
     },
@@ -85,7 +67,14 @@ export class DashboardApiService {
   }
 
   leagues = {
-    get: (id) => {
+    get: (id, params?) => {
+      let query = '?';
+      if (params) {
+        for (const param of Object.keys(params)) {
+          query += `${param}=${params[param]}&`;
+        }
+      }
+      console.log(query)
       const callParams = {
         type: 'get',
         url: `/private/leagues/${id}`,
@@ -177,7 +166,14 @@ export class DashboardApiService {
   }
 
   fixtures = {
-    get: (id) => {
+    get: (id, params?) => {
+      let query = '?';
+      if (params) {
+        for (const param of Object.keys(params)) {
+          query += `${param}=${params[param]}&`;
+        }
+      }
+      console.log(query)
       const callParams = {
         type: 'get',
         url: `/private/fixtures/${id}`,

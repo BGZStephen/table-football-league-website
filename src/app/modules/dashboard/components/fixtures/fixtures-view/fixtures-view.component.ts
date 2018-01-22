@@ -10,6 +10,7 @@ export class FixturesViewComponent implements OnInit {
 
   userId: String = JSON.parse(localStorage.getItem('user'))._id;
   fixtures: Array<object>;
+  fixtureAction: string = '';
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -17,17 +18,7 @@ export class FixturesViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dashboardApi.users.get(this.userId, {
-      fixtures: true,
-    })
-    .subscribe(
-      res => {
-        this.fixtures = res.fixtures;
-      },
-      error => {
-        this.globalService.errorHandler.process(error);
-      }
-    )
+    
   }
 
   setFixtureAction(action) {

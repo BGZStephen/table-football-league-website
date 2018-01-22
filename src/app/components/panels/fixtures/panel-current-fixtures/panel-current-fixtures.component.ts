@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCurrentFixturesComponent implements OnInit {
 
-  user: object = {};
+  fixtures: array<object> = [];
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -16,13 +16,15 @@ export class PanelCurrentFixturesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    this.dashboardApi.users.get(user._id, {
-      fixtures: true,
+    const user = JSON.parse(localStorage.getItem('user'))
+    this.dashboardApi.users.getFixtures(user._id, {
+      leagueId: true,
+      teams: true,
     })
     .subscribe(
       res => {
-        this.user = res;
+        console.log(res)
+        this.fixtures = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

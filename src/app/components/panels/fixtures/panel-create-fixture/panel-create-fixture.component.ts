@@ -19,43 +19,7 @@ export class PanelCreateFixtureComponent implements OnInit {
     private globalService: GlobalService,
   ) {}
 
-  ngOnInit() {
-    const user = JSON.parse(localStorage.getItem('user'))
-    this.dashboardApi.users.get(user._id, {
-      teams: true,
-    })
-    .subscribe(
-      res => {
-        this.user = res;
-      },
-      error => {
-        this.globalService.errorHandler.process(error);
-      }
-    )
-  }
-
-  onTeamsSelect(teams) {
-    if (this.formValues.teams.length > 0) {
-      const teamAddDuplicates = [];
-      const currentTeams = this.formValues.teams.map(team => team._id);
-
-      for (const team in teams) {
-        if (currentTeams.indexOf(team['_id']) >= 0) {
-          teamAddDuplicates.push(team);
-        } else {
-          this.formValues.teams.push(team);
-        }
-      }
-
-      if (teamAddDuplicates.length === 1) {
-        this.globalService.notification.error({message: 'One of the teams you selected is already part of this league'})
-      } else if (teamAddDuplicates.length > 1) {
-        this.globalService.notification.error({message: 'Some of the teams you selected is already part of this league'})
-      }
-    } else {
-      this.formValues.teams = this.formValues.teams.concat(teams);
-    }
-  }
+  ngOnInit() {}
 
   resetFixture() {
     this.fixture = {teams: []};

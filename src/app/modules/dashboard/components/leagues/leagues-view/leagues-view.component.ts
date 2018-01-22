@@ -17,19 +17,7 @@ export class LeaguesViewComponent implements OnInit {
     private globalService: GlobalService,
   ) { }
 
-  ngOnInit() {
-    this.dashboardApi.users.get(this.userId, {
-      leagues: true,
-    })
-    .subscribe(
-      res => {
-        this.leagues = res.leagues;
-      },
-      error => {
-        this.globalService.errorHandler.process(error);
-      }
-    )
-  }
+  ngOnInit() {}
 
   setLeagueAction(action) {
     this.leagueAction = action;
