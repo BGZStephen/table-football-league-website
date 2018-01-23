@@ -39,6 +39,15 @@ export class DashboardApiService {
       return this.apiCall(callParams);
     },
 
+    getLeagues: (id, query = {}) => {
+      const callParams = {
+        type: 'post',
+        url: `/private/users/${id}/leagues`,
+        body: query,
+      }
+      return this.apiCall(callParams);
+    },
+
     getByEmail: (query) => {
       const callParams = {
         type: 'post',

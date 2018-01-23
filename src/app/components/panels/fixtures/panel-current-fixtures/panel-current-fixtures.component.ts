@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCurrentFixturesComponent implements OnInit {
 
-  fixtures: array<object> = [];
+  fixtures: Array<object> = [];
 
   constructor(
     private dashboardApi: DashboardApiService,

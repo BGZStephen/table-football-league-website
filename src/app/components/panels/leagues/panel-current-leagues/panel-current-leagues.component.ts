@@ -8,7 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCurrentLeaguesComponent implements OnInit {
 
-  user: object = {};
+  leagues: Array<object> = [];
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -17,12 +17,14 @@ export class PanelCurrentLeaguesComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'));
-    this.dashboardApi.users.get(user._id, {
-      leagues: true,
+    this.dashboardApi.users.getLeagues(user._id, {
+      teams: true,
+      fixtures: true,
     })
     .subscribe(
       res => {
-        this.user = res;
+        console.log(res)
+        this.leagues = res;
       },
       error => {
         this.globalService.errorHandler.process(error);
