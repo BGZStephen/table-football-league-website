@@ -13,7 +13,6 @@ export class PanelCreateTeamComponent implements OnInit {
       display: 'Team name'
     },
   };
-  searchUsers = false;
   team: object = {
     name: '',
     users: []
@@ -29,7 +28,6 @@ export class PanelCreateTeamComponent implements OnInit {
     this.dashboardApi.users.get(user._id)
     .subscribe(
       res => {
-        console.log(this.team)
         this.team['users'].push(res);
       },
       error => {

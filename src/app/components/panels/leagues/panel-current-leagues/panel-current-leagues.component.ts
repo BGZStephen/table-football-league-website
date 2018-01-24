@@ -23,7 +23,6 @@ export class PanelCurrentLeaguesComponent implements OnInit {
     })
     .subscribe(
       res => {
-        console.log(res)
         this.leagues = res;
       },
       error => {

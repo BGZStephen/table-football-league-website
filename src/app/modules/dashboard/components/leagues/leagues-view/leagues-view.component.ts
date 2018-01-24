@@ -8,8 +8,6 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class LeaguesViewComponent implements OnInit {
 
-  userId: String = JSON.parse(localStorage.getItem('user'))._id;
-  leagues: Array<object>;
   leagueAction: string = '';
 
   constructor(

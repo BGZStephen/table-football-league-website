@@ -14,8 +14,6 @@ export class PanelCreateLeagueComponent implements OnInit {
     },
     teams: [],
   };
-  searchTeams = false;
-  user: object = {};
   league: object = {
     name: '',
     teams: []

@@ -23,7 +23,6 @@ export class PanelCurrentFixturesComponent implements OnInit {
     })
     .subscribe(
       res => {
-        console.log(res)
         this.fixtures = res;
       },
       error => {

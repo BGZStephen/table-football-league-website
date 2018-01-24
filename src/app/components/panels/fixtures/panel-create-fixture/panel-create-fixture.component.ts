@@ -8,8 +8,6 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCreateFixtureComponent implements OnInit {
 
-  searchTeams = false;
-  user: object = {};
   fixture: object = {
     teams: []
   };

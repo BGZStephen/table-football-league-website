@@ -8,8 +8,6 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class FixturesViewComponent implements OnInit {
 
-  userId: String = JSON.parse(localStorage.getItem('user'))._id;
-  fixtures: Array<object>;
   fixtureAction: string = '';
 
   constructor(
@@ -18,7 +16,7 @@ export class FixturesViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
   }
 
   setFixtureAction(action) {

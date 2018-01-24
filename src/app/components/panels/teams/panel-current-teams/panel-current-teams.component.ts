@@ -8,8 +8,6 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelCurrentTeamsComponent implements OnInit {
 
-  user: object = {};
-
   constructor(
     private dashboardApi: DashboardApiService,
     private globalService: GlobalService,

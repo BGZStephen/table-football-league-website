@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-panel-search-leagues',
-  templateUrl: './panel-search-leagues.component.html',
-  styleUrls: ['./panel-search-leagues.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: './panel-search-leagues.component.html'
 })
 export class PanelSearchLeaguesComponent implements OnInit {
 

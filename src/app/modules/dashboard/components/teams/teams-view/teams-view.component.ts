@@ -8,8 +8,6 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class TeamsViewComponent implements OnInit {
 
-  userId: String = JSON.parse(localStorage.getItem('user'))._id;
-  teams: Array<object>;
   teamAction: string = '';
 
   constructor(
