@@ -13,8 +13,12 @@
           <input type="text" class="span11" placeholder="Enter a team name to search" name="searchTerm">
         </div>
       </div>
+      <span *ngFor="let team of searchResults" class="search-results-row">
+        <button class="btn btn-mini btn-success">Add to fixture</button> {{team.name}}
+      </span>
       <div class="form-actions">
-        <button class="btn btn-success">Search</button>
+        <a class="btn btn-primary" (click)="getMyTeams()">My teams</a>
+        <a class="btn btn-success">Search</a>
       </div>
     </form>
   </div>

@@ -10,13 +10,8 @@
       <div class="control-group">
         <label class="control-label">Teams :</label>
         <div class="controls">
-          <a *ngIf="fixture.teams.length === 0" class="btn btn-primary">Add Team</a>
-          <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <a *ngIf="fixture.teams.length >= 1" class="btn btn-primary">Add Team</a>
+          <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
+          <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
         </div>
       </div>
       <div class="form-actions">
