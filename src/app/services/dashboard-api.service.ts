@@ -16,221 +16,73 @@ export class DashboardApiService {
   ) {}
 
   users = {
-    get: (id, params?) => {
-      let query = '?';
-      if (params) {
-        for (const param of Object.keys(params)) {
-          query += `${param}=${params[param]}&`;
-        }
-      }
-      const callParams = {
-        type: 'get',
-        url: `/private/users/${id}/${query}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getFixtures: (id, query = {}) => {
-      const callParams = {
-        type: 'post',
-        url: `/private/users/${id}/fixtures`,
-        body: query,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getLeagues: (id, query = {}) => {
-      const callParams = {
-        type: 'post',
-        url: `/private/users/${id}/leagues`,
-        body: query,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getByEmail: (query) => {
-      const callParams = {
-        type: 'post',
-        url: `/private/users/getByEmail`,
-        body: query,
-      }
-      return this.apiCall(callParams);
-    },
-
-    delete: (id) => {
-      const callParams = {
-        type: 'delete',
-        url: `/private/users/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    update: (user) => {
-      const callParams = {
-        type: 'put',
-        url: `/private/users/${user._id}`,
-        body: user,
-      }
-      return this.apiCall(callParams);
-    },
+    get: (options) => this.apiCall('/private/users/:userId', 'get', options),
+    getFixtures: (options) => this.apiCall('/private/users/:userId/fixtures', 'get', options),
+    getLeagues: (options) => this.apiCall('/private/users/:userId/leagues', 'get', options),
+    getByEmail: (options) => this.apiCall('/private/users/getByEmail', 'get', options),
+    delete: (options) => this.apiCall('/private/users/:userId/leagues', 'delete', options),
+    update: (options) => this.apiCall('/private/users/:userId/leagues', 'put', options),
   }
 
   leagues = {
-    get: (id, params?) => {
-      let query = '?';
-      if (params) {
-        for (const param of Object.keys(params)) {
-          query += `${param}=${params[param]}&`;
-        }
-      }
-      console.log(query)
-      const callParams = {
-        type: 'get',
-        url: `/private/leagues/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getAll: () => {
-      const callParams = {
-        type: 'get',
-        url: '/private/leagues',
-      }
-      return this.apiCall(callParams);
-    },
-
-    create: (league) => {
-      const callParams = {
-        type: 'post',
-        url: '/private/leagues', body: league,
-      }
-      return this.apiCall(callParams);
-    },
-
-    delete: (id) => {
-      const callParams = {
-        type: 'delete',
-        url: `/private/leagues/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    update: (league) => {
-      const callParams = {
-        type: 'put',
-        url: `/private/leagues/${league._id}`, body: league,
-      }
-      return this.apiCall(callParams);
-    },
+    get: (options) => this.apiCall('/private/leagues/:leagueId', 'get', options),
+    getAll: (options) => this.apiCall('/private/leagues', 'get', options),
+    create: (options) => this.apiCall('/private/leagues', 'post', options),
+    delete: (options) => this.apiCall('/private/leagues/:leagueId', 'delete', options),
+    update: (options) => this.apiCall('/private/leagues/:leagueId', 'put', options)
   }
 
   teams = {
-    get: (id, params?) => {
-      let query = '?';
-      if (params) {
-        for (const param of Object.keys(params)) {
-          query += `${param}=${params[param]}&`;
-        }
-      }
-      console.log(query)
-      const callParams = {
-        type: 'get',
-        url: `/private/teams/${id}/${query}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getAll: () => {
-      const callParams = {
-        type: 'get',
-        url: '/private/teams',
-      }
-      return this.apiCall(callParams);
-    },
-
-    create: (team) => {
-      const callParams = {
-        type: 'post',
-        url: '/private/teams', body: team,
-      }
-      return this.apiCall(callParams);
-    },
-
-    delete: (id) => {
-      const callParams = {
-        type: 'delete',
-        url: `/private/teams/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    update: (team) => {
-      const callParams = {
-        type: 'put',
-        url: `/private/teams/${team._id}`,
-        body: team,
-      }
-      return this.apiCall(callParams);
-    },
+    get: (options) => this.apiCall('/private/teams/:teamId', 'get', options),
+    getAll: (options) => this.apiCall('/private/teams', 'get', options),
+    create: (options) => this.apiCall('/private/teams', 'post', options),
+    delete: (options) => this.apiCall('/private/teams/:teamId', 'delete', options),
+    update: (options) => this.apiCall('/private/teams/:teamId', 'put', options),
   }
 
   fixtures = {
-    get: (id, params?) => {
-      let query = '?';
-      if (params) {
-        for (const param of Object.keys(params)) {
-          query += `${param}=${params[param]}&`;
-        }
-      }
-      console.log(query)
-      const callParams = {
-        type: 'get',
-        url: `/private/fixtures/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    getAll: () => {
-      const callParams = {
-        type: 'get',
-        url: '/private/fixtures',
-      }
-      return this.apiCall(callParams);
-    },
-
-    create: (fixture) => {
-      const callParams = {
-        type: 'post',
-        url: '/private/fixtures',
-        body: fixture,
-      }
-      return this.apiCall(callParams);
-    },
-
-    delete: (id) => {
-      const callParams = {
-        type: 'delete',
-        url: `/private/fixtures/${id}`,
-      }
-      return this.apiCall(callParams);
-    },
-
-    update: (fixture) => {
-      const callParams = {
-        type: 'put',
-        url: `/private/fixtures/${fixture._id}`,
-        body: fixture,
-      }
-      return this.apiCall(callParams);
-    },
+    get: (options) => this.apiCall('/private/fixtures/:fixtureId', {type: 'get'}, options),
+    getAll: (options) => this.apiCall('/private/fixtures', 'get', options),
+    create: (options) => this.apiCall('/private/fixtures', 'post', options),
+    delete: (options) => this.apiCall('/private/fixtures/:fixtureId', 'delete', options),
+    update: (options) => this.apiCall('/private/fixtures/:fixtureId', 'put', options),
   }
 
-  apiCall(callParams) {
+  apiCall(url, callType, options) {
+    let queryParams = '';
+
+    if (options.params) {
+      url = setUrlParams(url, options.params);
+    }
+
+    if (options.query) {
+      queryParams = parseQueryParams(options.query);
+      url += `/${queryParams}`
+    }
+
     const jwt = localStorage.getItem('token');
     let headers = new HttpHeaders({'Authorization': `${this.authorization}`});
     if (jwt) {
       headers = headers.set('token', jwt);
     }
-    return this.http[callParams.type](`${this.baseUrl}${callParams.url}`, callParams.body ? callParams.body : {headers: headers}, callParams.body ? {headers: headers} : undefined);
+
+    return this.http[callType](`${this.baseUrl}${url}`, options.body ? options.body : {headers: headers}, options.body ? {headers: headers} : undefined);
+  }
+
+  parseQueryParams(queryParams) {
+    let query = ''
+    for (const param of Object.keys(queryParams)) {
+      query += `${param}=${queryParams[param]}&`;
+    }
+    return query;
+  }
+
+  setUrlParams(url, params) {
+    for (const param of params) {
+      const urlParam = `:${param}`;
+      const paramRegexp = new RegExp(urlParam, 'g');
+      url.replace(paramRegexp, param);
+    }
+    return url;
   }
 }
