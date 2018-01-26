@@ -15,8 +15,9 @@ export class PanelCurrentTeamsComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'));
-    this.dashboardApi.users.get(user._id, {
-      teams: true,
+    this.dashboardApi.users.get({
+      params: {userId: user._id},
+      query: {teams: 1}
     })
     .subscribe(
       res => {

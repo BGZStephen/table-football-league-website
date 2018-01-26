@@ -17,9 +17,12 @@ export class PanelCurrentLeaguesComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'));
-    this.dashboardApi.users.getLeagues(user._id, {
-      teams: true,
-      fixtures: true,
+    this.dashboardApi.users.getLeagues({
+      params: {userId: user._id},
+      query: {
+        teams: 1,
+        fixtures: 1,
+      }
     })
     .subscribe(
       res => {

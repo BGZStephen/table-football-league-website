@@ -20,8 +20,9 @@ export class TeamViewComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params
     .subscribe(params => {
-      this.dashboardApi.teams.get(params.id, {
-        users: true,
+      this.dashboardApi.teams.get({
+        params: {userId: params.id},
+        query: {users: 1}
       })
       .subscribe(
         res => {

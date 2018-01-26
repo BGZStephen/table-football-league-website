@@ -17,9 +17,12 @@ export class PanelCurrentFixturesComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
-    this.dashboardApi.users.getFixtures(user._id, {
-      leagueId: true,
-      teams: true,
+    this.dashboardApi.users.getFixtures({
+      params: {userId: user._id},
+      query: {
+        leagueId: 1,
+        teams: 1
+      }
     })
     .subscribe(
       res => {

@@ -17,7 +17,9 @@ export class PanelAccountEditComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
-    this.dashboardApi.users.get(user._id)
+    this.dashboardApi.users.get({
+      params: {userId: user._id}
+    })
     .subscribe(
       res => {
         this.user = res;
