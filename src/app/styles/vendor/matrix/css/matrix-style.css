@@ -415,11 +415,11 @@ hr{ border-top-color:#dadada;}
 
 .quick-actions li:active, .quick-actions-horizontal li:active {
 	background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#EEEEEE), to(#F4F4F4));
-	background-image: -webkit-linear-gradient(top, #EEEEEE 0%, #F4F4F4 100%);
-	background-image: -moz-linear-gradient(top, #EEEEEE 0%, #F4F4F4 100%);
-	background-image: -ms-linear-gradient(top, #EEEEEE 0%, #F4F4F4 100%);
-	background-image: -o-linear-gradient(top, #EEEEEE 0%, #F4F4F4 100%);
-	background-image: linear-gradient(top, #EEEEEE 0%, #F4F4F4 100%);
+	background-image: -webkit-linear-gradient(to bottom, #EEEEEE 0%, #F4F4F4 100%);
+	background-image: -moz-linear-gradient(to bottom, #EEEEEE 0%, #F4F4F4 100%);
+	background-image: -ms-linear-gradient(to bottom, #EEEEEE 0%, #F4F4F4 100%);
+	background-image: -o-linear-gradient(to bottom, #EEEEEE 0%, #F4F4F4 100%);
+	background-image: linear-gradient(to bottom, #EEEEEE 0%, #F4F4F4 100%);
 	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2) inset, 0 1px 0 rgba(255,255,255,0.4);
 }
 .stat-boxes .left, .stat-boxes .right {

@@ -1,23 +1,26 @@
-<div id="panel-create-team" class="widget-box">
-  <div class="widget-title">
-    <span class="icon">
-      <i class="fa fa-table"></i>
-    </span>
-    <h5>New Team</h5>
-  </div>
-  <div class="widget-content nopadding" *ngIf="fixture">
-    <form #f="ngForm" class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label">Teams :</label>
-        <div class="controls">
-          <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
-          <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
+<div id="panel-create-team">
+  <div class="widget-box">
+    <div class="widget-title">
+      <span class="icon">
+        <i class="fa fa-table"></i>
+      </span>
+      <h5>New Team</h5>
+    </div>
+    <div class="widget-content nopadding" *ngIf="fixture">
+      <form #f="ngForm" class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label">Teams :</label>
+          <div class="controls">
+            <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
+            <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
+          </div>
         </div>
-      </div>
-      <div class="form-actions">
-        <a class="btn btn-info" (click)="resetLeague()">Reset</a>
-        <button class="btn btn-success">Save</button>
-      </div>
-    </form>
+        <div class="form-actions">
+          <a class="btn btn-info" (click)="resetLeague()">Reset</a>
+          <button class="btn btn-success">Save</button>
+        </div>
+      </form>
+    </div>
   </div>
+  <app-panel-search-teams></app-panel-search-teams>
 </div>

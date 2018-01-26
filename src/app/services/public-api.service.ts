@@ -28,11 +28,11 @@ export class PublicApiService {
     let queryParams = '';
 
     if (options.params) {
-      url = setUrlParams(url, options.params);
+      url = this.setUrlParams(url, options.params);
     }
 
     if (options.query) {
-      queryParams = parseQueryParams(options.query);
+      queryParams = this.parseQueryParams(options.query);
       url += `/${queryParams}`
     }
 
@@ -54,10 +54,10 @@ export class PublicApiService {
   }
 
   setUrlParams(url, params) {
-    for (const param of params) {
+    for (const param of Object.keys(params)) {
       const urlParam = `:${param}`;
       const paramRegexp = new RegExp(urlParam, 'g');
-      url.replace(paramRegexp, param);
+      url = url.replace(paramRegexp, params[param]);
     }
     return url;
   }

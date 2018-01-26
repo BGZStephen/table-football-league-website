@@ -24,21 +24,7 @@ export class PanelCreateLeagueComponent implements OnInit {
     private globalService: GlobalService,
   ) {}
 
-  ngOnInit() {
-    const user = JSON.parse(localStorage.getItem('user'))
-    this.dashboardApi.users.get({
-      params: {userId: user._id},
-      query: {teams: 1}
-    })
-    .subscribe(
-      res => {
-        this.user = res;
-      },
-      error => {
-        this.globalService.errorHandler.process(error);
-      }
-    )
-  }
+  ngOnInit() {}
 
   onTeamsSelect(teams) {
     if (this.formValues.teams.length > 0) {

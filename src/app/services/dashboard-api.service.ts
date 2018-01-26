@@ -52,12 +52,12 @@ export class DashboardApiService {
     let queryParams = '';
 
     if (options.params) {
-      url = setUrlParams(url, options.params);
+      url = this.setUrlParams(url, options.params);
     }
 
     if (options.query) {
-      queryParams = parseQueryParams(options.query);
-      url += `/${queryParams}`
+      queryParams = this.parseQueryParams(options.query);
+      url += `${queryParams}`
     }
 
     const jwt = localStorage.getItem('token');
@@ -70,7 +70,7 @@ export class DashboardApiService {
   }
 
   parseQueryParams(queryParams) {
-    let query = ''
+    let query = '?'
     for (const param of Object.keys(queryParams)) {
       query += `${param}=${queryParams[param]}&`;
     }
@@ -78,10 +78,10 @@ export class DashboardApiService {
   }
 
   setUrlParams(url, params) {
-    for (const param of params) {
+    for (const param of Object.keys(params)) {
       const urlParam = `:${param}`;
       const paramRegexp = new RegExp(urlParam, 'g');
-      url.replace(paramRegexp, param);
+      url = url.replace(paramRegexp, params[param]);
     }
     return url;
   }
