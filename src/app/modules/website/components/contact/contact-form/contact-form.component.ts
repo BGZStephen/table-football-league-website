@@ -17,7 +17,9 @@ export class ContactFormComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.publicApi.website.contactForm(form.value)
+    this.publicApi.website.contactForm({
+      body: {message: form.value},
+    })
     .subscribe(
       res => {
         this.globalService.notification.show({message: 'Message sent'});

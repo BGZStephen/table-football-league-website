@@ -40,8 +40,9 @@ export class RegisterFormComponent implements OnInit {
   onRegister(formValues) {
     const validation = this.validateForm(formValues);
     if (validation) {
-      console.log('validation passed')
-      this.publicApi.users.create(formValues)
+      this.publicApi.users.create({
+        body: {user: formValues},
+      })
       .subscribe(
         res => {
           localStorage.setItem('token', res['token']);

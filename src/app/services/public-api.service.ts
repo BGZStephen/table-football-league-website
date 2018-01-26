@@ -16,42 +16,49 @@ export class PublicApiService {
   ) {}
 
   users = {
-    create: (user) => {
-      const callParams = {
-        type: 'post',
-        url: '/public/users',
-        body: user,
-      }
-      return this.apiCall(callParams);
-    },
-
-    authenticate: (user) => {
-      const callParams = {
-        type: 'post',
-        url: '/public/users/authenticate',
-        body: user,
-      }
-      return this.apiCall(callParams);
-    },
+    create: (options) => this.apiCall('/public/users', 'post', options),
+    authenticate: (options) => this.apiCall('/public/users/authenticate', 'post', options),
   }
 
   website = {
-    contactForm: (message) => {
-      const callParams = {
-        type: 'post',
-        url: '/public/website/contact-form',
-        body: message,
-      }
-      return this.apiCall(callParams);
-    },
+    contactForm: (options) => this.apiCall('/public/users/contact-form', 'post', options),
   }
 
-  apiCall(callParams) {
+  apiCall(url, callType, options) {
+    let queryParams = '';
+
+    if (options.params) {
+      url = setUrlParams(url, options.params);
+    }
+
+    if (options.query) {
+      queryParams = parseQueryParams(options.query);
+      url += `/${queryParams}`
+    }
+
     const jwt = localStorage.getItem('token');
     let headers = new HttpHeaders({'Authorization': `${this.authorization}`});
     if (jwt) {
       headers = headers.set('token', jwt);
     }
-    return this.http[callParams.type](`${this.baseUrl}${callParams.url}`, callParams.body ? callParams.body : {headers: headers}, callParams.body ? {headers: headers} : null);
+
+    return this.http[callType](`${this.baseUrl}${url}`, options.body ? options.body : {headers: headers}, options.body ? {headers: headers} : undefined);
+  }
+
+  parseQueryParams(queryParams) {
+    let query = ''
+    for (const param of Object.keys(queryParams)) {
+      query += `${param}=${queryParams[param]}&`;
+    }
+    return query;
+  }
+
+  setUrlParams(url, params) {
+    for (const param of params) {
+      const urlParam = `:${param}`;
+      const paramRegexp = new RegExp(urlParam, 'g');
+      url.replace(paramRegexp, param);
+    }
+    return url;
   }
 }

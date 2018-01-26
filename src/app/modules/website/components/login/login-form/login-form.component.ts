@@ -28,7 +28,9 @@ export class LoginFormComponent implements OnInit {
   onLogin(user) {
     const validation = this.validateForm(user);
     if (validation) {
-      this.publicApi.users.authenticate(user)
+      this.publicApi.users.authenticate({
+        body: {user},
+      })
       .subscribe(
         res => {
           localStorage.setItem('token', res['token']);
