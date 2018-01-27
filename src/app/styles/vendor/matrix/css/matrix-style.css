@@ -165,7 +165,7 @@ hr{ border-top-color:#dadada;}
 	margin-right: 10px;
 }
 #sidebar > ul > li.active > a {
-	background: url("/app/styles/vendor/matrix/img/menu-active.png") no-repeat scroll right center transparent !important;
+	background: url("/assets/images/menu-active.png") no-repeat scroll right center transparent !important;
 	text-decoration:none;
 }
 #sidebar > ul > li > a > .label {
@@ -243,7 +243,7 @@ hr{ border-top-color:#dadada;}
 #breadcrumb a {
 	padding: 8px 20px 8px 10px;
 	display: inline-block;
-	background-image: url('/app/styles/vendor/matrix/img/breadcrumb.png');
+	background-image: url('/assets/images/breadcrumb.png');
 	background-position: center right;
 	background-repeat: no-repeat;
 	font-size: 11px;
@@ -1407,7 +1407,7 @@ form {
 	font-size:12px;
 }
 #sidebar > ul li a i {
-	background-image: url("/app/styles/vendor/matrix/img/glyphicons-halflings-white.png");
+	background-image: url("/assets/images/glyphicons-halflings-white.png");
 	margin-top:4px;
 	vertical-align: top;
 }
