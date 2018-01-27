@@ -15,6 +15,12 @@
             <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
           </div>
         </div>
+        <div class="control-group">
+          <label class="control-label">Date :</label>
+          <div class="controls">
+            <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker span11">
+          </div>
+        </div>
         <div class="form-actions">
           <a class="btn btn-info" (click)="resetLeague()">Reset</a>
           <button class="btn btn-success">Save</button>
@@ -22,5 +28,5 @@
       </form>
     </div>
   </div>
-  <app-panel-search-teams></app-panel-search-teams>
+  <app-panel-search-teams (onTeamSelect)="addTeam($event)"></app-panel-search-teams>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
@@ -8,6 +8,8 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelSearchTeamsComponent implements OnInit {
 
+  @Output()
+  onTeamSelect: EventEmitter<number> = new EventEmitter<number>();
   searchResults: Array<object> = [];
   searchTerm: String;
 
@@ -49,6 +51,10 @@ export class PanelSearchTeamsComponent implements OnInit {
         this.globalService.errorHandler.process(error);
       }
     )
+  }
+
+  onClick(team) {
+    this.onTeamSelect.emit(team)
   }
 
 }
