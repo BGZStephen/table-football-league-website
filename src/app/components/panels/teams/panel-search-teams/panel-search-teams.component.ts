@@ -9,6 +9,7 @@ import { GlobalService } from 'app/services/global.service';
 export class PanelSearchTeamsComponent implements OnInit {
 
   searchResults: Array<object> = [];
+  searchTerm: String;
 
   constructor(
     private dashboardApi: DashboardApiService,
@@ -27,6 +28,22 @@ export class PanelSearchTeamsComponent implements OnInit {
     .subscribe(
       res => {
         this.searchResults = res.teams;
+      },
+      error => {
+        this.globalService.errorHandler.process(error);
+      }
+    )
+  }
+
+  searchTeams(form) {
+    this.dashboardApi.teams.search({
+      query: {
+        name: form.searchTerm,
+      }
+    })
+    .subscribe(
+      res => {
+        this.searchResults = res;
       },
       error => {
         this.globalService.errorHandler.process(error);

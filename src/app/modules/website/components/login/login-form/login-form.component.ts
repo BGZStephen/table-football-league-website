@@ -29,7 +29,7 @@ export class LoginFormComponent implements OnInit {
     const validation = this.validateForm(user);
     if (validation) {
       this.publicApi.users.authenticate({
-        body: {user},
+        body: user,
       })
       .subscribe(
         res => {

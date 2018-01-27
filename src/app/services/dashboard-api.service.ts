@@ -17,9 +17,9 @@ export class DashboardApiService {
 
   users = {
     get: (options) => this.apiCall('/private/users/:userId', 'get', options),
-    getFixtures: (options) => this.apiCall('/private/users/:userId/fixtures', 'get', options),
-    getLeagues: (options) => this.apiCall('/private/users/:userId/leagues', 'get', options),
-    getByEmail: (options) => this.apiCall('/private/users/getByEmail', 'get', options),
+    getFixtures: (options) => this.apiCall('/private/users/:userId/fixtures', 'post', options),
+    getLeagues: (options) => this.apiCall('/private/users/:userId/leagues', 'post', options),
+    getByEmail: (options) => this.apiCall('/private/users/getByEmail', 'post', options),
     delete: (options) => this.apiCall('/private/users/:userId/leagues', 'delete', options),
     update: (options) => this.apiCall('/private/users/:userId/leagues', 'put', options),
   }
@@ -38,6 +38,7 @@ export class DashboardApiService {
     create: (options) => this.apiCall('/private/teams', 'post', options),
     delete: (options) => this.apiCall('/private/teams/:teamId', 'delete', options),
     update: (options) => this.apiCall('/private/teams/:teamId', 'put', options),
+    search: (options) => this.apiCall('/private/teams/search', 'get', options),
   }
 
   fixtures = {
@@ -50,6 +51,10 @@ export class DashboardApiService {
 
   apiCall(url, callType, options) {
     let queryParams = '';
+
+    if (callType === 'post' && !options.body) {
+      options.body = {};
+    }
 
     if (options.params) {
       url = this.setUrlParams(url, options.params);

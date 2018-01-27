@@ -37,11 +37,11 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(formValues) {
-    const validation = this.validateForm(formValues);
+  onRegister(user) {
+    const validation = this.validateForm(user);
     if (validation) {
       this.publicApi.users.create({
-        body: {user: formValues},
+        body: user,
       })
       .subscribe(
         res => {
