@@ -1,0 +1,23 @@
+.dashboard-menu-sidebar {
+  .logo-container {
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    height: 42px;
+    width: 100%;
+
+    > p {
+      color: white;
+      margin-bottom: 0;
+    }
+
+    > i,
+    > svg, {
+      color: white;
+      position: absolute;
+      left: 10px;
+      padding: 5px;
+    }
+  }
+}

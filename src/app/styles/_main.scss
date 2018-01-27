@@ -11,7 +11,9 @@
 
 @import '../modules/dashboard/components/view-wrapper/view-wrapper.component';
 @import '../modules/dashboard/components/home/home-view/home-view.component';
-@import '../modules/dashboard/components/navbar/navbar.component';
+@import '../modules/dashboard/components/menu/menu-view/menu-view.component';
+@import '../modules/dashboard/components/menu/menu-item/menu-item.component';
+@import '../modules/dashboard/components/menu/menu-sidebar/menu-sidebar.component';
 @import '../modules/dashboard/components/notification-bar/notification-bar.component';
 
 @import '../components/panels/teams/panel-create-team/panel-create-team.component';

@@ -3,10 +3,10 @@ import { GlobalService } from 'app/services/global.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard-navbar',
-  templateUrl: './navbar.component.html',
+  selector: 'app-dashboard-menu-sidebar',
+  templateUrl: './menu-sidebar.component.html',
 })
-export class NavbarComponent implements OnInit {
+export class MenuSidebarComponent implements OnInit {
 
   currentSubmenuActive: number = -1;
   menuVisible: boolean = false;
@@ -27,6 +27,12 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onMenuItemClick(menuItem) {
+    if (menuItem.link) {
+      this.router.navigate([menuItem.link])
+    }
+  }
 
   toggleSubmenuActive = (index) => {
     if (index === this.currentSubmenuActive) {

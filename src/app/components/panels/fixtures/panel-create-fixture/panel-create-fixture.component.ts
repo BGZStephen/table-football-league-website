@@ -10,7 +10,7 @@ import * as moment from 'moment'
 export class PanelCreateFixtureComponent implements OnInit {
 
   fixture: object = {
-    date: moment().startOf('day').format('YYYY-MM-D')
+    date: moment().startOf('day').format('YYYY-MM-D'),
     teams: []
   };
 
@@ -30,7 +30,7 @@ export class PanelCreateFixtureComponent implements OnInit {
       }
     }
 
-    this.fixture.teams.push(team)
+    this.fixture['teams'].push(team)
   }
 
   resetFixture() {

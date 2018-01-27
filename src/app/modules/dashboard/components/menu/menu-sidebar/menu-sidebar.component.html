@@ -1,0 +1,11 @@
+<!--sidebar-menu-->
+<div id="sidebar" class="dashboard-menu-sidebar">
+  <div class="logo-container">
+    <i class="fa fa-bars"></i>
+    <p>My Table Football</p>
+  </div>
+  <ul>
+    <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
+  </ul>
+</div>
+<!--sidebar-menu-->

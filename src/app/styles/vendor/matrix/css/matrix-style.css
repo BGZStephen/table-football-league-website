@@ -152,44 +152,44 @@ hr{ border-top-color:#dadada;}
 	position: absolute;
 	width: 220px;
 }
-#sidebar > ul > li {
+#sidebar > ul > app-dashboard-menu-item > li {
 	display: block;
 	position: relative;
 }
-#sidebar > ul > li > a {
+#sidebar > ul > app-dashboard-menu-item > li > a {
 	padding: 10px 0 10px 15px;
 	display: block;
 	color: #939da8;
 }
-#sidebar > ul > li > a > i {
+#sidebar > ul > app-dashboard-menu-item > li > a > i {
 	margin-right: 10px;
 }
-#sidebar > ul > li.active > a {
+#sidebar > ul > app-dashboard-menu-item > li.active > a {
 	background: url("/assets/images/menu-active.png") no-repeat scroll right center transparent !important;
 	text-decoration:none;
 }
-#sidebar > ul > li > a > .label {
+#sidebar > ul > app-dashboard-menu-item > li > a > .label {
 	margin: 0 20px 0 0;
 	float: right;
 	padding: 3px 5px 2px;
 }
-#sidebar > ul li ul {
+#sidebar > ul app-dashboard-menu-item li ul {
 	display: none;
 	margin: 0;
 	padding: 0;
 }
-#sidebar > ul li.open ul {
+#sidebar > ul app-dashboard-menu-item li.open ul {
 	display: block;
 }
-#sidebar > ul li ul li a {
+#sidebar > ul app-dashboard-menu-item li ul li a {
 	padding: 10px 0 10px 25px;
 	display: block;
 	color: #777777;
 }
-#sidebar > ul li ul li:first-child a {
+#sidebar > ul app-dashboard-menu-item li ul li:first-child a {
 	border-top: 0;
 }
-#sidebar > ul li ul li:last-child a {
+#sidebar > ul app-dashboard-menu-item li ul li:last-child a {
 	border-bottom: 0;
 }
 /* Content */
@@ -1353,7 +1353,7 @@ form {
 	z-index:999;
 	position:relative
 }
-#sidebar > ul > li {
+#sidebar > ul > app-dashboard-menu-item > li {
 	list-style-type:none;
 	display:block;
 	border-top:1px solid #41BEDD;
@@ -1363,16 +1363,16 @@ form {
 	padding:2px 10px;
 	cursor:pointer
 }
-#sidebar > ul > li:hover ul {
+#sidebar > ul > app-dashboard-menu-item > li:hover ul {
 	display:none;
 }
-#sidebar > ul > li:hover {
+#sidebar > ul > app-dashboard-menu-item > li:hover {
 	background-color:#27a9e3;
 }
-#sidebar > ul > li:hover a {
+#sidebar > ul > app-dashboard-menu-item > li:hover a {
 	background:none;
 }
-#sidebar > ul li ul {
+#sidebar > ul app-dashboard-menu-item li ul {
 	margin:0px;
 	padding:0px;
 	top:35px; left:0px;
@@ -1383,30 +1383,30 @@ form {
 	min-width:100%;
 	border-radius:none;
 }
-#sidebar > ul li ul li {
+#sidebar > ul app-dashboard-menu-item li ul li {
 	list-style-type:none;
 	margin:0px;
 	font-size:12px;
 	line-height:30px;
 }
-#sidebar > ul li ul li a {
+#sidebar > ul app-dashboard-menu-item li ul li a {
 	display:block;
 	padding:5px 10px;
 	color:#fff;
 	text-decoration:none;
 	font-weight:bold;
 }
-#sidebar > ul li ul li:hover a {
+#sidebar > ul app-dashboard-menu-item li ul li:hover a {
 	border-radius:0px;
 }
-#sidebar > ul li span {
+#sidebar > ul app-dashboard-menu-item li span {
 	cursor:pointer;
 	margin:0px 2px 0 5px;
 	font-weight:bold;
 	color:#fff;
 	font-size:12px;
 }
-#sidebar > ul li a i {
+#sidebar > ul app-dashboard-menu-item li a i {
 	background-image: url("/assets/images/glyphicons-halflings-white.png");
 	margin-top:4px;
 	vertical-align: top;
@@ -1419,7 +1419,7 @@ form {
 	font-size:12px;
 	font-weight:bold
 }
-#sidebar > ul > li > a {
+#sidebar > ul > app-dashboard-menu-item > li > a {
 	padding:5px;
 	display:block;
 	color: #AAAAAA;
@@ -1479,10 +1479,10 @@ body {
 #content {
 	margin-top:0px;
 }
-#sidebar > ul > li {
+#sidebar > ul > app-dashboard-menu-item > li {
 	float:none;
 }
-#sidebar > ul > li:hover ul {
+#sidebar > ul > app-dashboard-menu-item > li:hover ul {
 	display:block;
 }
 #sidebar, #sidebar > ul {
@@ -1523,10 +1523,10 @@ body {
 #sidebar > a {
 	display: none !important;
 }
-#sidebar > ul > li.open.submenu > a {
+#sidebar > ul > app-dashboard-menu-item > li.open.submenu > a {
 	border-bottom: none !important;
 }
-#sidebar > ul > li > a > span {
+#sidebar > ul > app-dashboard-menu-item > li > a > span {
 	display: none;
 }
 #content {

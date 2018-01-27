@@ -10,9 +10,9 @@ export class PanelCreateTeamComponent implements OnInit {
 
   formValues = {
     teamName: {
-      display: 'Team name'
-    },
-  };
+      display: 'Team name',
+    }
+  }
   team: object = {
     name: '',
     users: []
