@@ -1,10 +1,12 @@
 <!--sidebar-menu-->
 <div id="sidebar" class="dashboard-menu-sidebar">
   <div class="logo-container">
-    <i class="fa fa-bars"></i>
+    <div class="menuToggle" (click)="toggleMenuVisible()">
+      <i class="fa fa-bars"></i>
+    </div>
     <p>My Table Football</p>
   </div>
-  <ul>
+  <ul [ngStyle]="primaryMenuStyle()" (window:resize)="menuResizeToggle()">
     <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
   </ul>
 </div>

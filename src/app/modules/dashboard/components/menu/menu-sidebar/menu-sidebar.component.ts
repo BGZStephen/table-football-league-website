@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class MenuSidebarComponent implements OnInit {
 
-  currentSubmenuActive: number = -1;
   menuVisible: boolean = false;
   menuItems: Array<object> = [];
 
@@ -22,41 +21,25 @@ export class MenuSidebarComponent implements OnInit {
       {name: 'Teams', iconClass: 'fa fa-users fa-2x', link: '/dashboard/teams'},
       {name: 'Leagues', iconClass: 'fa fa-list-alt fa-2x', link: '/dashboard/leagues'},
       {name: 'Account', iconClass: 'fa fa-cog fa-2x', link: '/dashboard/account'},
-      {name: 'Logout', iconClass: 'fa fa-power-off fa-2x', clickAction: this.onLogout},
+      {name: 'Logout', iconClass: 'fa fa-power-off fa-2x', action: this.onLogout},
     ]
   }
 
   ngOnInit() {}
 
   onMenuItemClick(menuItem) {
-    if (menuItem.link) {
-      this.router.navigate([menuItem.link])
-    }
-  }
-
-  toggleSubmenuActive = (index) => {
-    if (index === this.currentSubmenuActive) {
-      this.currentSubmenuActive = -1;
-    } else {
-      this.currentSubmenuActive = index;
-    }
-  }
-
-  submenuActiveStyle = (index) => {
-    if (index === this.currentSubmenuActive && document.getElementsByClassName('navbar-submenu')[index]) {
-      const height = document.getElementsByClassName('navbar-submenu')[index].clientHeight;
-      return {'height': `${68 + height}px`}
-    } else {
-      return {'height': '68px'};
+    if (menuItem.action) {
+      return menuItem.action();
     }
   }
 
   toggleMenuVisible = () => {
+    console.log(this.menuVisible)
     this.menuVisible = !this.menuVisible;
   }
 
   menuResizeToggle = () => {
-    if (screen.width > 1024) {
+    if (screen.width > 400) {
       this.menuVisible = true;
     } else {
       this.menuVisible = false;
@@ -64,10 +47,12 @@ export class MenuSidebarComponent implements OnInit {
   }
 
   primaryMenuStyle = () => {
+    const primaryMenuHeight = `${document.getElementsByClassName('dashboard-menu-sidebar')[0].querySelector('ul').children.length *  36}px`
+
     if (screen.width > 1024) {
-      return {'max-height': `100vh`}
+      return {'max-height': primaryMenuHeight}
     } else if (this.menuVisible) {
-      return {'max-height': `100vh`}
+      return {'max-height': primaryMenuHeight}
     } else {
       return {'max-height': '0'};
     }
