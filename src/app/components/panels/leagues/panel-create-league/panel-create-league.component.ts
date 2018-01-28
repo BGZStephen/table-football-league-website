@@ -12,7 +12,6 @@ export class PanelCreateLeagueComponent implements OnInit {
     leagueName: {
       display: 'League name'
     },
-    teams: [],
   };
   league: object = {
     name: '',
@@ -26,27 +25,14 @@ export class PanelCreateLeagueComponent implements OnInit {
 
   ngOnInit() {}
 
-  onTeamsSelect(teams) {
-    if (this.formValues.teams.length > 0) {
-      const teamAddDuplicates = [];
-      const currentTeams = this.formValues.teams.map(team => team._id);
-
-      for (const team in teams) {
-        if (currentTeams.indexOf(team['_id']) >= 0) {
-          teamAddDuplicates.push(team);
-        } else {
-          this.formValues.teams.push(team);
-        }
+  addTeam(team) {
+    for (const currentTeam of this.league['teams']) {
+      if (currentTeam._id === team._id) {
+        return this.globalService.notification.error({message: 'This team is already a part of the league'});
       }
-
-      if (teamAddDuplicates.length === 1) {
-        this.globalService.notification.error({message: 'One of the teams you selected is already part of this league'})
-      } else if (teamAddDuplicates.length > 1) {
-        this.globalService.notification.error({message: 'Some of the teams you selected is already part of this league'})
-      }
-    } else {
-      this.formValues.teams = this.formValues.teams.concat(teams);
     }
+
+    this.league['teams'].push(team)
   }
 
   resetLeague() {

@@ -19,9 +19,7 @@ export class PanelCreateFixtureComponent implements OnInit {
     private globalService: GlobalService,
   ) {}
 
-  ngOnInit() {
-    console.log(this.fixture);
-  }
+  ngOnInit() {}
 
   addTeam(team) {
     for (const currentTeam of this.fixture['teams']) {
