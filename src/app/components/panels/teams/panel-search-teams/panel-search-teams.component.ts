@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
@@ -8,6 +8,7 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class PanelSearchTeamsComponent implements OnInit {
 
+  @Input() selectLabel: string;
   @Output()
   onTeamSelect: EventEmitter<number> = new EventEmitter<number>();
   searchResults: Array<object> = [];
@@ -16,9 +17,10 @@ export class PanelSearchTeamsComponent implements OnInit {
   constructor(
     private dashboardApi: DashboardApiService,
     private globalService: GlobalService,
-  ) { }
+  ) {}
 
   ngOnInit() {
+    console.log(this.selectLabel)
   }
 
   getMyTeams() {

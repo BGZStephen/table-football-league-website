@@ -14,7 +14,7 @@
         </div>
       </div>
       <span *ngFor="let team of searchResults" class="search-results-row">
-        <a class="btn btn-mini btn-success" (click)="onClick(team)">Add to fixture</a> {{team.name}}
+        <a *ngIf="onTeamSelect" class="btn btn-mini btn-success" (click)="onClick(team)">{{selectLabel || 'Add'}}</a> {{team.name}}
       </span>
       <div class="form-actions">
         <a class="btn btn-primary" (click)="getMyTeams()">My teams</a>
