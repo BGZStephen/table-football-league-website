@@ -16,13 +16,8 @@
       <div class="control-group">
         <label class="control-label">Players :</label>
         <div class="controls">
-          <a *ngIf="team.users.length === 0" class="btn btn-primary">Add Player</a>
+          <p *ngIf="team.users.length === 0">No teams currently selected, you can search for teams using the search box below.</p>
           <p class="player-name" *ngFor="let user of team.users">{{user.firstName}} {{user.lastName}}</p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="controls">
-          <a *ngIf="team.users.length >= 1" class="btn btn-primary">Add Player</a>
         </div>
       </div>
       <div class="form-actions">
@@ -31,4 +26,5 @@
       </div>
     </form>
   </div>
+  <app-panel-search-players (onPlayerSelect)="addPlayer($event)"></app-panel-search-players>
 </div>

@@ -14,7 +14,7 @@
         </div>
       </div>
       <span *ngFor="let player of searchResults" class="search-results-row">
-        <a class="btn btn-mini btn-success" (click)="onClick(team)">{{selectLabel || 'Add'}}</a> {{player.firstName}} {{player.lastName}}
+        <a class="btn btn-mini btn-success" (click)="onClick(player)">{{selectLabel || 'Add'}}</a> {{player.firstName}} {{player.lastName}}
       </span>
       <div class="form-actions">
         <a class="btn btn-success" (click)="searchPlayers(f.value)">Search</a>

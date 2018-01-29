@@ -24,6 +24,10 @@ export class PanelCreateTeamComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.populateCurrentUser();
+  }
+
+  populateCurrentUser() {
     const user = JSON.parse(localStorage.getItem('user'))
     this.dashboardApi.users.get({
       params: {userId: user._id}
@@ -38,7 +42,18 @@ export class PanelCreateTeamComponent implements OnInit {
     )
   }
 
+  addPlayer(player) {
+    for (const user of this.team.users) {
+      if (user._id === player._id) {
+        return this.globalService.notification.error({message: 'This player is already part of the team'})
+      }
+    }
+
+    this.team.users.push(player);
+  }
+
   resetTeam() {
     this.team = {name: '', users: []};
+    this.populateCurrentUser();
   }
 }

@@ -7,3 +7,4 @@ export { PanelCurrentFixturesComponent } from 'app/components/panels/fixtures/pa
 export { PanelSearchTeamsComponent } from 'app/components/panels/teams/panel-search-teams/panel-search-teams.component';
 export { PanelSearchLeaguesComponent } from 'app/components/panels/leagues/panel-search-leagues/panel-search-leagues.component';
 export { PanelAccountEditComponent } from 'app/components/panels/account/panel-account-edit/panel-account-edit.component';
+export { PanelSearchPlayersComponent } from 'app/components/panels/players/panel-search-players/panel-search-players.component';

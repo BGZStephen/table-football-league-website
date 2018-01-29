@@ -22,6 +22,7 @@ export class DashboardApiService {
     getByEmail: (options) => this.apiCall('/private/users/getByEmail', 'post', options),
     delete: (options) => this.apiCall('/private/users/:userId/leagues', 'delete', options),
     update: (options) => this.apiCall('/private/users/:userId/leagues', 'put', options),
+    search: (options) => this.apiCall('/private/users/search', 'get', options),
   }
 
   leagues = {
@@ -29,7 +30,8 @@ export class DashboardApiService {
     getAll: (options) => this.apiCall('/private/leagues', 'get', options),
     create: (options) => this.apiCall('/private/leagues', 'post', options),
     delete: (options) => this.apiCall('/private/leagues/:leagueId', 'delete', options),
-    update: (options) => this.apiCall('/private/leagues/:leagueId', 'put', options)
+    update: (options) => this.apiCall('/private/leagues/:leagueId', 'put', options),
+    search: (options) => this.apiCall('/private/leagues/search', 'get', options),
   }
 
   teams = {

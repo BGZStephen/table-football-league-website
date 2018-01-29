@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DashboardApiService } from 'app/services/dashboard-api.service'
+import { GlobalService } from 'app/services/global.service'
 
 @Component({
   selector: 'app-panel-search-players',
   templateUrl: './panel-search-players.component.html',
-  styleUrls: ['./panel-search-players.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class PanelSearchPlayersComponent implements OnInit {
 
   @Input() selectLabel: string;
   @Output()
-  onTeamSelect: EventEmitter<number> = new EventEmitter<number>();
+  onPlayerSelect: EventEmitter<number> = new EventEmitter<number>();
   searchResults: Array<object> = [];
   searchTerm: String;
 
@@ -21,10 +21,10 @@ export class PanelSearchPlayersComponent implements OnInit {
 
   ngOnInit() {}
 
-  searchTeams(form) {
-    this.dashboardApi.players.search({
+  searchPlayers(form) {
+    this.dashboardApi.users.search({
       query: {
-        name: form.searchTerm,
+        q: form.searchTerm,
       }
     })
     .subscribe(

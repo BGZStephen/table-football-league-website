@@ -28,6 +28,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     panels.PanelSearchTeamsComponent,
     panels.PanelSearchLeaguesComponent,
     panels.PanelAccountEditComponent,
+    panels.PanelSearchPlayersComponent,
   ],
   imports: [
     CommonModule,

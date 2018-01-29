@@ -16,7 +16,7 @@
       <div class="control-group">
         <label class="control-label">Teams :</label>
         <div class="controls">
-          <p *ngIf="league.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
+          <p *ngIf="league.teams.length === 0" class="player-name">No teams currently selected, you can search for teams using the search box below.</p>
           <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
         </div>
       </div>
