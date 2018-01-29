@@ -19,10 +19,12 @@ import { DashboardModule } from 'app/modules/dashboard/dashboard.module';
 import { StylesModule } from 'app/modules/styles/styles.module';
 
 import { AppComponent } from './app.component';
+import { PanelSearchPlayersComponent } from './components/panels/players/panel-search-players/panel-search-players.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PanelSearchPlayersComponent,
   ],
   imports: [
     BrowserModule,

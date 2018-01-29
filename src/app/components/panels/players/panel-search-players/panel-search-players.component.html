@@ -1,0 +1,24 @@
+<div class="widget-box">
+  <div class="widget-title">
+    <span class="icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <h5>Search players</h5>
+  </div>
+  <div class="widget-content nopadding">
+    <form #f="ngForm" class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label">Player :</label>
+        <div class="controls">
+          <input type="text" class="span11" placeholder="Enter a player name or email address to search" name="searchTerm" ngModel>
+        </div>
+      </div>
+      <span *ngFor="let player of searchResults" class="search-results-row">
+        <a class="btn btn-mini btn-success" (click)="onClick(team)">{{selectLabel || 'Add'}}</a> {{player.firstName}} {{player.lastName}}
+      </span>
+      <div class="form-actions">
+        <a class="btn btn-success" (click)="searchPlayers(f.value)">Search</a>
+      </div>
+    </form>
+  </div>
+</div>
