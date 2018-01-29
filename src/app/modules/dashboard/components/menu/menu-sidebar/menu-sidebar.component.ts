@@ -47,12 +47,21 @@ export class MenuSidebarComponent implements OnInit {
   }
 
   primaryMenuStyle = () => {
-    const primaryMenuHeight = `${document.getElementsByClassName('dashboard-menu-sidebar')[0].querySelector('ul').children.length *  36}px`
+    const menu = document.getElementsByClassName('dashboard-menu-sidebar')[0].querySelector('ul')
+    let menuHeight;
+
+    if (screen.width >= 1024) {
+      menuHeight = `${42 * menu.children.length}px`
+    }
+
+    if (screen.width < 1024) {
+      menuHeight = `${36 * menu.children.length + 36}px`
+    }
 
     if (screen.width > 1024) {
-      return {'max-height': primaryMenuHeight}
+      return {'max-height': menuHeight}
     } else if (this.menuVisible) {
-      return {'max-height': primaryMenuHeight}
+      return {'max-height': menuHeight}
     } else {
       return {'max-height': '0'};
     }
