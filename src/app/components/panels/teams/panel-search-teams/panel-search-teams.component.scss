@@ -2,6 +2,9 @@
   display: block;
   margin: 10px 0;
   > a.btn {
-    margin: 0 25px 0 145px;
+    margin: 0 10px 0 32px;
+    @media(min-width: 567px) {
+      margin: 0 25px 0 145px;
+    }
   }
 }
