@@ -6,18 +6,20 @@
     <h5>New league</h5>
   </div>
   <div class="widget-content nopadding" *ngIf="league">
-    <form #f="ngForm" class="form-horizontal">
-      <div class="control-group">
+    <form #f="ngForm" (ngSubmit)="createLeague()" class="form-horizontal">
+      <div class="control-group {{formValues.leagueName.hasError ? 'error' : ''}}">
         <label class="control-label">League name :</label>
         <div class="controls">
-          <input type="text" class="span11" placeholder="Table Foosball league 1" [(ngModel)]="league.name" name="name" >
+          <input type="text" class="span11" placeholder="Table Foosball league 1" [(ngModel)]="league.name" name="name" required>
+          <span *ngIf="formValues.leagueName.hasError" class="help-inline">{{formValues.leagueName.message}}</span>
         </div>
       </div>
-      <div class="control-group">
+      <div class="control-group {{formValues.teams.hasError ? 'error' : ''}}">
         <label class="control-label">Teams :</label>
         <div class="controls">
           <p *ngIf="league.teams.length === 0" class="player-name">No teams currently selected, you can search for teams using the search box below.</p>
           <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
+          <span *ngIf="formValues.teams.hasError" class="help-inline">{{formValues.teams.message}}</span>
         </div>
       </div>
       <div class="form-actions">

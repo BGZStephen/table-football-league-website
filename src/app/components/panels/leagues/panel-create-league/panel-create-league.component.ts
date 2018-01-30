@@ -10,12 +10,20 @@ export class PanelCreateLeagueComponent implements OnInit {
 
   formValues = {
     leagueName: {
-      display: 'League name'
+      display: 'League name',
+      hasError: false,
+      message: '',
+    },
+    teams: {
+      display: 'Teams',
+      hasError: false,
+      message: '',
     },
   };
   league: object = {
     name: '',
-    teams: []
+    teams: [],
+    administrators: [],
   };
 
   constructor (
@@ -37,5 +45,43 @@ export class PanelCreateLeagueComponent implements OnInit {
 
   resetLeague() {
     this.league = {name: '', teams: []};
+  }
+
+  createLeague() {
+    if(this.validateLeague()) {
+      const user = JSON.parse(localStorage.getItem('user'))
+      this.league.administrators.push(user._id);
+      this.dashboardApi.leagues.create({
+        body: this.league
+      })
+      .subscribe(
+        res => {
+          this.globalService.notification.show({message: 'League created successfully'})
+        },
+        error => {
+          this.globalService.errorHandler.process(error);
+        }
+      )
+    } else {
+      return;
+    }
+  }
+
+  validateLeague() {
+    let hasError = false;
+
+    if (!this.league.name) {
+      this.formValues.leagueName.hasError = true;
+      this.formValues.leagueName.message = 'A league name is required';
+      hasError = true;
+    }
+
+    if (this.league.teams.length < 1) {
+      this.formValues.teams.hasError = true;
+      this.formValues.teams.message = 'A league requires at least 1 team';
+      hasError = true;
+    }
+
+    return hasError ? false : true;
   }
 }
