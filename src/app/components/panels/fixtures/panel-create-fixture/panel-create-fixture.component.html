@@ -7,22 +7,24 @@
       <h5>New Fixture</h5>
     </div>
     <div class="widget-content nopadding" *ngIf="fixture">
-      <form #f="ngForm" class="form-horizontal">
-        <div class="control-group">
+      <form #f="ngForm" (ngSubmit)="createFixture()" class="form-horizontal">
+        <div class="control-group {{formValues.date.hasError ? 'error' : ''}}">
+          <label class="control-label">Date :</label>
+          <div class="controls">
+            <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker span11">
+            <span *ngIf="formValues.date.hasError" class="help-inline">{{formValues.date.message}}</span>
+          </div>
+        </div>
+        <div class="control-group {{formValues.teams.hasError ? 'error' : ''}}">
           <label class="control-label">Teams :</label>
           <div class="controls">
             <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
             <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">Date :</label>
-          <div class="controls">
-            <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker span11">
+            <span *ngIf="formValues.teams.hasError" class="help-inline">{{formValues.teams.message}}</span>
           </div>
         </div>
         <div class="form-actions">
-          <a class="btn btn-info" (click)="resetLeague()">Reset</a>
+          <a class="btn btn-info" (click)="resetFixture()">Reset</a>
           <button class="btn btn-success">Save</button>
         </div>
       </form>

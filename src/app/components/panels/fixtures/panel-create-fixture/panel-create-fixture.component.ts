@@ -9,6 +9,19 @@ import * as moment from 'moment'
 })
 export class PanelCreateFixtureComponent implements OnInit {
 
+  formValues = {
+    date: {
+      display: 'Date',
+      hasError: false,
+      message: '',
+    },
+    teams: {
+      display: 'Teams',
+      hasError: false,
+      message: '',
+    }
+  }
+
   fixture: object = {
     date: moment().startOf('day').format('YYYY-MM-D'),
     teams: []
@@ -33,5 +46,39 @@ export class PanelCreateFixtureComponent implements OnInit {
 
   resetFixture() {
     this.fixture = {teams: []};
+  }
+
+  createFixture() {
+    if (this.validateFixture()) {
+      this.dashboardApi.fixtures.create({
+        body: this.fixture
+      })
+      .subscribe(
+        res => {
+          this.globalService.notification.show({message: 'Fixture created successfully'})
+        },
+        error => {
+          this.globalService.errorHandler.process(error)
+        }
+      )
+    }
+  }
+
+  validateFixture() {
+    let hasError = false;
+
+    if (!this.fixture['date']) {
+      this.formValues.date.hasError = true;
+      this.formValues.date.message = 'Please selsect a date for the fixture';
+      hasError = true;
+    }
+
+    if (this.fixture['teams'].length < 2) {
+      this.formValues.teams.hasError = true;
+      this.formValues.teams.message = 'A requires requires 2 teams';
+      hasError = true;
+    }
+
+    return hasError ? false : true;
   }
 }

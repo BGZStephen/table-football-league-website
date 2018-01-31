@@ -50,7 +50,7 @@ export class PanelCreateLeagueComponent implements OnInit {
   createLeague() {
     if(this.validateLeague()) {
       const user = JSON.parse(localStorage.getItem('user'))
-      this.league.administrators.push(user._id);
+      this.league['administrators'].push(user._id);
       this.dashboardApi.leagues.create({
         body: this.league
       })
@@ -70,13 +70,13 @@ export class PanelCreateLeagueComponent implements OnInit {
   validateLeague() {
     let hasError = false;
 
-    if (!this.league.name) {
+    if (!this.league['name']) {
       this.formValues.leagueName.hasError = true;
       this.formValues.leagueName.message = 'A league name is required';
       hasError = true;
     }
 
-    if (this.league.teams.length < 1) {
+    if (this.league['teams'].length < 1) {
       this.formValues.teams.hasError = true;
       this.formValues.teams.message = 'A league requires at least 1 team';
       hasError = true;
