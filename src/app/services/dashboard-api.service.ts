@@ -21,7 +21,7 @@ export class DashboardApiService {
     getLeagues: (options) => this.apiCall('/private/users/:userId/leagues', 'post', options),
     getByEmail: (options) => this.apiCall('/private/users/getByEmail', 'post', options),
     delete: (options) => this.apiCall('/private/users/:userId/leagues', 'delete', options),
-    update: (options) => this.apiCall('/private/users/:userId/leagues', 'put', options),
+    update: (options) => this.apiCall('/private/users/:userId', 'put', options),
     search: (options) => this.apiCall('/private/users/search', 'get', options),
   }
 

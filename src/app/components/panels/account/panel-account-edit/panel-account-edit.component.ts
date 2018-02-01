@@ -47,7 +47,10 @@ export class PanelAccountEditComponent implements OnInit {
       this.user.password = form.newpassword;
     }
 
-    this.dashboardApi.users.update(this.user)
+    this.dashboardApi.users.update({
+      params: {userId: this.user._id},
+      body: this.user,
+    })
     .subscribe(
       user => {
         this.user = user;
