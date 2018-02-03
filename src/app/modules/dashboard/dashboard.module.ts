@@ -19,6 +19,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     dashboardComponents.LeaguesViewComponent,
     dashboardComponents.AccountEditComponent,
     dashboardComponents.NotificationBarComponent,
+    dashboardComponents.MessagesViewComponent,
     panels.PanelCreateTeamComponent,
     panels.PanelCurrentTeamsComponent,
     panels.PanelCreateLeagueComponent,

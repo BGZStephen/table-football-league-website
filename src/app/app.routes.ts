@@ -19,6 +19,7 @@ const APP_ROUTES: Routes = [
     {path: 'leagues', component: dashboard.LeaguesViewComponent},
     {path: 'fixtures', component: dashboard.FixturesViewComponent},
     {path: 'account', component: dashboard.AccountEditComponent},
+    {path: 'messages', component: dashboard.MessagesViewComponent},
   ], canActivate: [AuthGuard]},
   {path: '__styles__', component: styles.ViewWrapperComponent, children: [
     {path: '', component: styles.HomeViewComponent},
