@@ -10,3 +10,4 @@ export { TeamViewComponent } from './teams/team-view/team-view.component';
 export { FixturesViewComponent } from './fixtures/fixtures-view/fixtures-view.component';
 export { LeaguesViewComponent } from './leagues/leagues-view/leagues-view.component';
 export { MessagesViewComponent } from './messages/messages-view/messages-view.component';
+export { MessageComposeComponent } from './messages/message-compose/message-compose.component';

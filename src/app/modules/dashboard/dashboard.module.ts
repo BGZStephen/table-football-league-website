@@ -20,6 +20,7 @@ import * as panels from 'app/modules/dashboard/components/panel-components-barre
     dashboardComponents.AccountEditComponent,
     dashboardComponents.NotificationBarComponent,
     dashboardComponents.MessagesViewComponent,
+    dashboardComponents.MessageComposeComponent,
     panels.PanelCreateTeamComponent,
     panels.PanelCurrentTeamsComponent,
     panels.PanelCreateLeagueComponent,

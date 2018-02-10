@@ -1,12 +1,9 @@
+@import './vendor/coreui/style';
 @import './services/notification.service';
-@import './vendor/matrix/css/bootstrap.min';
-@import './vendor/matrix/css/bootstrap-responsive.min';
-@import './vendor/matrix/css/matrix-login';
-@import './vendor/matrix/css/matrix-media';
-@import './vendor/matrix/css/matrix-style';
 
 @import '../modules/website/components/view-wrapper/view-wrapper.component';
 @import '../modules/website/components/home/home-view/home-view.component';
+@import '../modules/website/components/login/login-view/login-view.component';
 @import '../modules/website/components/login/login-form/login-form.component';
 
 @import '../modules/dashboard/components/view-wrapper/view-wrapper.component';
