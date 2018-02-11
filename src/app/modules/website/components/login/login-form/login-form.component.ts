@@ -26,6 +26,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {}
 
   onLogin(user) {
+    console.log(user)
     const validation = this.validateForm(user);
     if (validation) {
       this.publicApi.users.authenticate({

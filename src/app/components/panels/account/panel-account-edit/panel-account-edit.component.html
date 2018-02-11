@@ -56,11 +56,11 @@
 
 <div class="card">
   <div class="card-header">
-    <i class="fa fa-user"></i> 
+    <i class="fa fa-user"></i>
     <strong>Account</strong>
   </div>
-  <div class="card-body">
-    <form #f="ngForm" class="form-horizontal" (ngSubmit)="onUserUpdate(f.value)" *ngIf="user">
+  <form #f="ngForm" class="form-horizontal" (ngSubmit)="onUserUpdate(f.value)" *ngIf="user">
+    <div class="card-body">
       <div class="form-group row">
         <label class="col-md-3 col-form-label">First Name :</label>
         <div class="col-md-9">
@@ -82,28 +82,27 @@
       <div class="form-group row">
         <label class="col-md-3 col-form-label">Position :</label>
         <div class="col-md-9">
-          <a class="btn {{user.position.striker ? 'btn-success' : ''}}" (click)="toggleStriker()">Striker</a>
-          <a class="btn {{user.position.defender ? 'btn-success' : ''}}" (click)="toggleDefender()">Defender</a>
+          <button type="button" class="btn {{user.position.striker ? 'btn-success' : ''}}" (click)="toggleStriker()">Striker</button>
+          <button type="button" class="btn {{user.position.defender ? 'btn-success' : ''}}" (click)="toggleDefender()">Defender</button>
         </div>
       </div>
-    </form>
-  </div>
-  <div *ngIf="passwordChange">
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label">New password :</label>
-      <div class="col-md-9">
-        <input type="password" class="span11" placeholder="Enter new password"  />
+      <div *ngIf="passwordChange">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">New password :</label>
+          <div class="col-md-9">
+            <input type="password" class="span11" placeholder="Enter new password"  />
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label">Confirm password :</label>
+          <div class="col-md-9">
+            <input type="password" class="span11" placeholder="Confirm new password"  />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="form-group row">
-      <label class="col-md-3 col-form-label">Confirm password :</label>
-      <div class="col-md-9">
-        <input type="password" class="span11" placeholder="Confirm new password"  />
-      </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Submit</button>
     </div>
-  </div>
-  <div class="card-footer">
-    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-  </div>
+  </form>
 </div>
