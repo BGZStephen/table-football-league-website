@@ -1,7 +1,11 @@
 <div class="sidebar ng-scope">
-  <nav class="sidebar-nav">
+  <div class="menu-toggle">
+    <i class="fa fa-bars" (click)="toggleMenuVisibility()"></i>
+    My Table Football
+  </div>
+  <nav class="sidebar-nav" (window:resize)="resizeMenuToggle()" [ngStyle]="menuStyle()">
     <ul class="nav">
-      <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
+      <li class="nav-item nav-dropdown">
         <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
       </li>
     </ul>

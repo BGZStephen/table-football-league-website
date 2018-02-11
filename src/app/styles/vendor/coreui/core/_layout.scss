@@ -102,67 +102,6 @@ app-root {
   }
 }
 
-@include media-breakpoint-up(lg) {
-  .sidebar-compact {
-    .sidebar {
-      flex: 0 0 $sidebar-compact-width;
-    }
-
-    &.sidebar-hidden {
-      .sidebar {
-        margin-left: - $sidebar-compact-width;
-      }
-    }
-
-    &.sidebar-fixed {
-      .main, .app-footer {
-        margin-left: $sidebar-compact-width;
-      }
-
-      .sidebar {
-        width: $sidebar-compact-width;
-      }
-
-      &.sidebar-hidden {
-        .main, .app-footer {
-          margin-left: 0;
-        }
-      }
-    }
-    .sidebar-minimizer {
-      display: none;
-    }
-  }
-
-  .sidebar-minimized {
-    .sidebar {
-      flex: 0 0 $sidebar-minimized-width;
-    }
-
-    &.sidebar-hidden {
-      .sidebar {
-        margin-left: - $sidebar-minimized-width;
-      }
-    }
-
-    &.sidebar-fixed {
-      .main, .app-footer {
-        margin-left: $sidebar-minimized-width;
-      }
-
-      .sidebar {
-        width: $sidebar-minimized-width;
-      }
-
-      &.sidebar-hidden {
-        .main, .app-footer {
-          margin-left: 0;
-        }
-      }
-    }
-  }
-}
-
 //
 // Aside Menu
 //
@@ -341,24 +280,6 @@ app-root {
     }
   }
 
-  .sidebar {
-    position: fixed;
-    z-index: $zindex-sticky - 1;
-    width: $mobile-sidebar-width;
-    height: calc(100vh - #{$navbar-height});
-    margin-left: - $mobile-sidebar-width;
-
-    .sidebar-nav,
-    .nav {
-      width: $mobile-sidebar-width;
-      min-height: calc(100vh - #{$navbar-height});
-    }
-
-    .sidebar-minimizer {
-      display: none;
-    }
-  }
-
   .main, .app-footer {
     margin-left: 0 !important;
   }
@@ -366,22 +287,4 @@ app-root {
   // .aside-menu {
   //   margin-right: - $aside-menu-width;
   // }
-
-  .sidebar-hidden {
-    .sidebar {
-      margin-left: - $mobile-sidebar-width;
-    }
-  }
-
-  .sidebar-mobile-show {
-    .sidebar {
-      width: $mobile-sidebar-width;
-      margin-left: 0;
-    }
-
-    .main {
-      margin-right: - $mobile-sidebar-width !important;
-      margin-left: $mobile-sidebar-width !important;
-    }
-  }
 }

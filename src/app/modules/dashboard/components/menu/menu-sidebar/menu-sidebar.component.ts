@@ -25,24 +25,37 @@ export class MenuSidebarComponent implements OnInit {
     ]
   }
 
-  ngOnInit() {}
+  toggleMenuVisibility() {
+    this.menuVisible = !this.menuVisible;
+  }
+
+  resizeMenuToggle() {
+    if (screen.width > 992) {
+      this.menuVisible = true;
+    }
+  }
+
+  menuStyle() {
+    if (screen.width > 992 && this.menuVisible) {
+      return {'left': '0'}
+    }
+
+    if (screen.width < 992 && this.menuVisible) {
+      return {'left': '0'}
+    }
+
+    if (screen.width < 992 && !this.menuVisible) {
+      return {'left': '-100%'}
+    }
+  }
+
+  ngOnInit() {
+    this.resizeMenuToggle()
+  }
 
   onMenuItemClick(menuItem) {
     if (menuItem.action) {
       return menuItem.action();
-    }
-  }
-
-  toggleMenuVisible = () => {
-    console.log(this.menuVisible)
-    this.menuVisible = !this.menuVisible;
-  }
-
-  menuResizeToggle = () => {
-    if (screen.width > 400) {
-      this.menuVisible = true;
-    } else {
-      this.menuVisible = false;
     }
   }
 
