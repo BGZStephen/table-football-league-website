@@ -41,7 +41,16 @@ export class PanelCreateFixtureComponent implements OnInit {
       }
     }
 
-    this.fixture['teams'].push(team)
+    if (this.fixture['teams'][0]) {
+      this.fixture['teams'][1] = team
+      return;
+    }
+
+    this.fixture['teams'][0] = team
+  }
+
+  removeTeam(index) {
+    this.fixture['teams'].splice(index, 1)
   }
 
   resetFixture() {

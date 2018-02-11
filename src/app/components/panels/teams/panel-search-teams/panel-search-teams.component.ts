@@ -19,9 +19,7 @@ export class PanelSearchTeamsComponent implements OnInit {
     private globalService: GlobalService,
   ) {}
 
-  ngOnInit() {
-    console.log(this.selectLabel)
-  }
+  ngOnInit() {}
 
   getMyTeams() {
     const user = JSON.parse(localStorage.getItem('user'));

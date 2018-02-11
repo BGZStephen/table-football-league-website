@@ -1,24 +1,29 @@
-<div class="widget-box">
-  <div class="widget-title">
-    <span class="icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <h5>Search teams</h5>
-  </div>
-  <div class="widget-content nopadding">
-    <form #f="ngForm" class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label">Team name :</label>
-        <div class="controls">
-          <input type="text" class="span11" placeholder="Enter a team name to search" name="searchTerm" ngModel>
+<div id="fixture-create">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-futbol fa-fw"></i>
+      <strong>Search teams</strong>
+    </div>
+    <form #f="ngForm" (ngSubmit)="searchTeams(f.value)" class="form-horizontal">
+      <div class="card-body">
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label text-right">Team name :</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" placeholder="Enter a team name to search" name="searchTerm" ngModel>
+          </div>
+        </div>
+        <div class="form-group row search-result" *ngFor="let team of searchResults">
+          <div class="col-md-2 text-right">
+            <button type="button" *ngIf="onTeamSelect" class="btn btn-sm btn-success" (click)="onClick(team)"><i class="fa fa-plus"></i> {{selectLabel || 'Add'}}</button>
+          </div>
+          <div class="col-md-10">
+            {{team.name}}
+          </div>
         </div>
       </div>
-      <span *ngFor="let team of searchResults" class="search-results-row">
-        <a *ngIf="onTeamSelect" class="btn btn-mini btn-success" (click)="onClick(team)">{{selectLabel || 'Add'}}</a> {{team.name}}
-      </span>
-      <div class="form-actions">
-        <a class="btn btn-primary" (click)="getMyTeams()">My teams</a>
-        <a class="btn btn-success" (click)="searchTeams(f.value)">Search</a>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" (click)="getMyTeams()"><i class="fa fa-users"></i> My teams</button>
+        <button type="submit" class="btn btn-success" (click)="searchTeams(f.value)"><i class="fa fa-search"></i> Search</button>
       </div>
     </form>
   </div>

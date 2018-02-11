@@ -4,7 +4,15 @@
     align-items: center;
 
     p {
-      margin-bottom: 0;
+      margin: 0 10px;
+    }
+
+    button {
+      &:hover, &:active, &:focus,
+      &::selection, &:target {
+        background: #f64846;
+        border-color: #f63c3a;
+      }
     }
   }
 }

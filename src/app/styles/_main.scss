@@ -19,3 +19,13 @@
 @import '../components/panels/fixtures/panel-create-fixture/panel-create-fixture.component';
 @import '../components/panels/teams/panel-create-team/panel-create-team.component';
 @import '../components/panels/teams/panel-search-teams/panel-search-teams.component';
+
+.btn {
+  > i {
+    margin-right: 5px;
+  }
+
+  > svg {
+    margin-right: 5px;
+  }
+}

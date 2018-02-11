@@ -7,23 +7,27 @@
     <form #f="ngForm" (ngSubmit)="createFixture()" class="form-horizontal">
       <div class="card-body">
         <div class="form-group row {{formValues.date.hasError ? 'error' : ''}}">
-          <label class="col-md-2 col-form-label">Date :</label>
+          <label class="col-md-2 col-form-label text-right">Date :</label>
           <div class="col-md-10">
             <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker form-control">
           </div>
         </div>
         <div class="form-group row {{formValues.teams.hasError ? 'error' : ''}}">
-          <label class="col-md-2 col-form-label">Teams :</label>
+          <label class="col-md-2 col-form-label text-right">Teams :</label>
           <div class="col-md-10 fixture-teams">
-            <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
-            <p class="" *ngFor="let team of fixture.teams">{{team.name}}</p>
+            <p *ngIf="fixture.teams.length === 0">None currently selected, you can search for teams using the search box below.</p>
+            <button *ngIf="fixture.teams[0]" (click)="removeTeam(0)" class="btn btn-primary">{{fixture.teams[0].name}}</button>
+            <p *ngIf="fixture.teams.length > 1">VS</p>
+            <button *ngIf="fixture.teams[1]" (click)="removeTeam(1)" class="btn btn-primary">{{fixture.teams[1].name}}</button>
           </div>
         </div>
       </div>
       <div class="card-footer">
-        <a class="btn btn-info" (click)="resetFixture()">Reset</a>
-        <button class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-danger" (click)="resetFixture()"><i class="fa fa-ban"></i> Reset</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
       </div>
     </form>
   </div>
 </div>
+
+<app-panel-search-teams (onTeamSelect)="addTeam($event)"></app-panel-search-teams>
