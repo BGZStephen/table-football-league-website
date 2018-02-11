@@ -1,66 +1,51 @@
-<div id="website-register-form">
-  <div id="loginbox">
-    <form id="loginform" class="form-vertical" #f="ngForm" (submit)="onRegister(f.value)">
-      <div class="control-group normal_text"> <h3>Register</h3></div>
-      <div class="control-group {{formValues.firstName.hasError ? 'error' : ''}}">
-        <div class="controls">
-          <div class="main_input_box">
-            <span class="add-on bg_lb">
-              <i class="fa fa-user"></i>
-            </span>
-            <input type="text" name="firstName" (keyup)="clearFormError('firstName')" ngModel placeholder="First name">
-            <span *ngIf="formValues.firstName.hasError" class="help-inline">{{formValues.firstName.message}}</span>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+          <h1>Register</h1>
+          <p class="text-muted">Create your account</p>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username">
           </div>
-        </div>
-      </div>
-      <div class="control-group {{formValues.lastName.hasError ? 'error' : ''}}">
-        <div class="controls">
-          <div class="main_input_box">
-            <span class="add-on bg_lb">
-              <i class="fa fa-user"></i>
-            </span>
-            <input type="text" name="lastName" (keyup)="clearFormError('lastName')" ngModel placeholder="Last name">
-            <span *ngIf="formValues.lastName.hasError" class="help-inline">{{formValues.lastName.message}}</span>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Email">
           </div>
-        </div>
-      </div>
-      <div class="control-group {{formValues.email.hasError ? 'error' : ''}}">
-        <div class="controls">
-          <div class="main_input_box">
-            <span class="add-on bg_lg">
-              <i class="fa fa-envelope"></i>
-            </span>
-            <input type="email" name="email" (keyup)="clearFormError('email')" ngModel placeholder="Email address">
-            <span *ngIf="formValues.email.hasError" class="help-inline">{{formValues.email.message}}</span>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password">
           </div>
-        </div>
-      </div>
-      <div class="control-group {{formValues.password.hasError ? 'error' : ''}}">
-        <div class="controls">
-          <div class="main_input_box">
-            <span class="add-on bg_lr">
-              <i class="fa fa-lock"></i>
-            </span>
-            <input type="password" name="password" (keyup)="clearFormError('password')" ngModel placeholder="Password">
-            <span *ngIf="formValues.password.hasError" class="help-inline">{{formValues.password.message}}</span>
+          <div class="input-group mb-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-lock"></i></span>
+            </div>
+            <input type="password" class="form-control" placeholder="Repeat password">
           </div>
+          <button type="button" class="btn btn-block btn-success">Create Account</button>
         </div>
-      </div>
-      <div class="control-group {{formValues.confirmPassword.hasError ? 'error' : ''}}">
-        <div class="controls">
-          <div class="main_input_box">
-            <span class="add-on bg_lr">
-              <i class="fa fa-lock"></i>
-            </span>
-            <input type="password" name="confirmPassword" (keyup)="clearFormError('confirmPassword')" ngModel placeholder="Confirm password">
-            <span *ngIf="formValues.confirmPassword.hasError" class="help-inline">{{formValues.confirmPassword.message}}</span>
+        <!-- <div class="card-footer p-4">
+          <div class="row">
+            <div class="col-6">
+              <button class="btn btn-block btn-facebook" type="button">
+                <span>facebook</span>
+              </button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-block btn-twitter" type="button">
+                <span>twitter</span>
+              </button>
+            </div>
           </div>
-        </div>
+        </div> -->
       </div>
-      <div class="form-actions">
-        <span class="pull-left"><a class="flip-link btn btn-info" id="to-recover">Already registered?</a></span>
-        <span class="pull-right"><button class="btn btn-success">Register</button></span>
-      </div>
-    </form>
+    </div>
   </div>
 </div>
