@@ -1,6 +1,9 @@
-<li routerLink="{{menuItem.link ? menuItem.link : undefined}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick(menuItem)" class="menu-item">
-  <a>
+<li routerLink="{{menuItem.link ? menuItem.link : undefined}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick(menuItem)" class="nav-item">
+  <a class="nav-link">
     <i class="fa {{menuItem.iconClass}} fa-fw"></i>
     <span>{{menuItem.name}}</span>
   </a>
+  <ul class="nav-dropdown-items">
+    <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
+  </ul>
 </li>

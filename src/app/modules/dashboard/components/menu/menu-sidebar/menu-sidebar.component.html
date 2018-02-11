@@ -1,13 +1,12 @@
-<!--sidebar-menu-->
-<div id="sidebar" class="dashboard-menu-sidebar">
-  <div class="logo-container">
-    <div class="menuToggle" (click)="toggleMenuVisible()">
-      <i class="fa fa-bars"></i>
-    </div>
-    <p>My Table Football</p>
-  </div>
-  <ul [ngStyle]="primaryMenuStyle()" (window:resize)="menuResizeToggle()">
-    <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
-  </ul>
+<div class="sidebar ng-scope">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link active" ui-sref-active="active" ui-sref="app.main" href="#!/dashboard"><i class="fa fa-tachometer-alt"></i> Dashboard <span class="badge badge-info">NEW</span></a>
+      </li>
+      <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.components')}">
+        <app-dashboard-menu-item *ngFor="let menuItem of this.menuItems" (onClick)="onMenuItemClick($event)" [menuItem]="menuItem"></app-dashboard-menu-item>
+      </li>
+    </ul>
+  </nav>
 </div>
-<!--sidebar-menu-->
