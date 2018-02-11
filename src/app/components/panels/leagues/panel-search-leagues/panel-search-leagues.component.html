@@ -1,20 +1,28 @@
-<div class="widget-box">
-  <div class="widget-title">
-    <span class="icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <h5>Search leagues</h5>
-  </div>
-  <div class="widget-content nopadding">
-    <form #f="ngForm" class="form-horizontal">
-      <div class="control-group">
-        <label class="control-label">League name :</label>
-        <div class="controls">
-          <input type="text" class="span11" placeholder="Enter a league name to search" name="searchTerm">
+<div id="leagues-search">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-list-alt fa-fw"></i>
+      <strong>Search Leagues</strong>
+    </div>
+    <form #f="ngForm" (ngSubmit)="searchTeams(f.value)" class="form-horizontal">
+      <div class="card-body">
+        <div class="form-group row">
+          <label class="col-md-2 col-form-label text-right">League :</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" placeholder="Enter a league name to search" name="searchTerm" ngModel>
+          </div>
+        </div>
+        <div class="form-group row search-result" *ngFor="let player of searchResults">
+          <div class="col-md-2 text-right">
+            <button type="button" *ngIf="onLeagueSelect" class="btn btn-sm btn-success" (click)="onClick(league)"><i class="fa fa-plus"></i> {{selectLabel || 'Add'}}</button>
+          </div>
+          <div class="col-md-10">
+            {{league.name}}
+          </div>
         </div>
       </div>
-      <div class="form-actions">
-        <button class="btn btn-success">Search</button>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-success" (click)="searchLeague(f.value)"><i class="fa fa-search"></i> Search</button>
       </div>
     </form>
   </div>

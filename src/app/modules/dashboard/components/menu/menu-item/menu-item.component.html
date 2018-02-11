@@ -1,6 +1,6 @@
-<li routerLink="{{menuItem.link ? menuItem.link : undefined}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="onMenuItemClick(menuItem)" class="nav-item">
-  <a class="nav-link">
-    <i class="fa {{menuItem.iconClass}} fa-fw"></i>
+<li routerLinkActive="active"  (click)="onMenuItemClick(menuItem)" class="nav-item">
+  <a class="nav-link" routerLink="{{menuItem.link ? menuItem.link : undefined}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <i class="fa {{menuItem.iconClass}}"></i>
     <span>{{menuItem.name}}</span>
   </a>
   <ul class="nav-dropdown-items">
