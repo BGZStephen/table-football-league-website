@@ -1,25 +1,27 @@
-<div class="widget-box">
-  <div class="widget-title"> <span class="icon"> <i class="fa fa-users"></i> </span>
-    <h5>Current teams</h5>
-  </div>
-  <div class="widget-content nopadding">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Fixture date</th>
-          <th>Teams</th>
-          <th>Score</th>
-          <th>League</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let fixture of fixtures" class="odd gradeX">
-          <td>{{fixture.fixtureDate}}</td>
-          <td>{{fixture.teams[0].name}} V {{fixture.teams[1].name}}</td>
-          <td>{{fixture.played ? fixture.score.home + ' - ' + fixture.score.away : 'To be played'}}</td>
-          <td>{{fixture.leagueId ? fixture.leagueId.name : 'Friendly'}}</td>
-        </tr>
-      </tbody>
-    </table>
+<div id="fixture-create">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Condensed Table
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>Fixture date</th>
+            <th>Teams</th>
+            <th>Score</th>
+            <th>League</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let fixture of fixtures" class="odd gradeX">
+            <td>{{fixture.fixtureDate}}</td>
+            <td>{{fixture.teams[0].name}} V {{fixture.teams[1].name}}</td>
+            <td>{{fixture.played ? fixture.score.home + ' - ' + fixture.score.away : 'To be played'}}</td>
+            <td>{{fixture.leagueId ? fixture.leagueId.name : 'Friendly'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

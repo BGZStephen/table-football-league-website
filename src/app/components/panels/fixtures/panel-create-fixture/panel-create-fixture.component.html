@@ -1,34 +1,29 @@
-<div id="panel-create-team">
-  <div class="widget-box">
-    <div class="widget-title">
-      <span class="icon">
-        <i class="fa fa-futbol"></i>
-      </span>
-      <h5>New Fixture</h5>
+<div id="fixture-create">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-futbol fa-fw"></i>
+      <strong>New fixture</strong>
     </div>
-    <div class="widget-content nopadding" *ngIf="fixture">
-      <form #f="ngForm" (ngSubmit)="createFixture()" class="form-horizontal">
-        <div class="control-group {{formValues.date.hasError ? 'error' : ''}}">
-          <label class="control-label">Date :</label>
-          <div class="controls">
-            <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker span11">
-            <span *ngIf="formValues.date.hasError" class="help-inline">{{formValues.date.message}}</span>
+    <form #f="ngForm" (ngSubmit)="createFixture()" class="form-horizontal">
+      <div class="card-body">
+        <div class="form-group row {{formValues.date.hasError ? 'error' : ''}}">
+          <label class="col-md-2 col-form-label">Date :</label>
+          <div class="col-md-10">
+            <input type="date" name="fixtureDate" ngModel="{{fixture.date}}" class="datepicker form-control">
           </div>
         </div>
-        <div class="control-group {{formValues.teams.hasError ? 'error' : ''}}">
-          <label class="control-label">Teams :</label>
-          <div class="controls">
+        <div class="form-group row {{formValues.teams.hasError ? 'error' : ''}}">
+          <label class="col-md-2 col-form-label">Teams :</label>
+          <div class="col-md-10 fixture-teams">
             <p *ngIf="fixture.teams.length === 0" class="player-name">None currently selected, you can search for teams using the search box below.</p>
-            <p class="player-name" *ngFor="let team of fixture.teams">{{team.name}}</p>
-            <span *ngIf="formValues.teams.hasError" class="help-inline">{{formValues.teams.message}}</span>
+            <p class="" *ngFor="let team of fixture.teams">{{team.name}}</p>
           </div>
         </div>
-        <div class="form-actions">
-          <a class="btn btn-info" (click)="resetFixture()">Reset</a>
-          <button class="btn btn-success">Save</button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div class="card-footer">
+        <a class="btn btn-info" (click)="resetFixture()">Reset</a>
+        <button class="btn btn-success">Save</button>
+      </div>
+    </form>
   </div>
-  <app-panel-search-teams (onTeamSelect)="addTeam($event)"></app-panel-search-teams>
 </div>
