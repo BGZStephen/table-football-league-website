@@ -1,21 +1,23 @@
-<div class="widget-box">
-  <div class="widget-title"> <span class="icon"> <i class="fa fa-users"></i> </span>
-    <h5>Current teams</h5>
-  </div>
-  <div class="widget-content nopadding">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>Team name</th>
-          <th>Players</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let team of user.teams" class="odd gradeX">
-          <td>{{team.name}}</td>
-          <td>Stephen w, Jon V</td>
-        </tr>
-      </tbody>
-    </table>
+<div id="fixture-create">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-users"></i> Current teams
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>Team name</th>
+            <th>Players</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let team of user.teams" class="odd gradeX">
+            <td>{{team.name}}</td>
+            <td>Stephen w, Jon V</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
