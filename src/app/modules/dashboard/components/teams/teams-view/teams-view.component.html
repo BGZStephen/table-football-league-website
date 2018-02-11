@@ -1,34 +1,26 @@
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb">
-      <a routerLink="/dashboard" class="tip-bottom">
-        <i class="fa fa-home"></i> Home</a>
-        <a href="/dashboard/teams" class="current tip-bottom">Teams</a>
-      </div>
-    <h1>Your teams</h1>
-  </div>
-  <div class="container-fluid">
-    <hr>
-    <div class="row-fluid">
-      <div class="span6">
-        <app-panel-current-teams></app-panel-current-teams>
-      </div>
-      <div class="span6">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="fa fa-cog"></i> </span>
-            <h5>Actions</h5>
-          </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <app-panel-current-teams></app-panel-current-teams>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-futbol fa-fw"></i>
+          <strong>Actions</strong>
+        </div>
+        <div class="card-body">
           <div class="widget-content">
-            <a class="btn btn-success" (click)="setTeamAction('find')">Find a team</a>
-            <a class="btn btn-success" (click)="setTeamAction('create')">Create a team</a>
+            <button type="button" class="btn btn-success" (click)="setTeamAction('find')"><i class="fa fa-search"></i> Find a team</button>
+            <button type="button" class="btn btn-success" (click)="setTeamAction('create')"><i class="fa fa-pencil-alt"></i> Create a team</button>
           </div>
         </div>
-        <div *ngIf="teamAction === 'create'">
-          <app-panel-create-team></app-panel-create-team>
-        </div>
-        <div *ngIf="teamAction === 'find'">
-          <app-panel-search-teams [selectLabel]="'View'"></app-panel-search-teams>
-        </div>
+      </div>
+      <div *ngIf="teamAction === 'create'">
+        <app-panel-create-team></app-panel-create-team>
+      </div>
+      <div *ngIf="teamAction === 'find'">
+        <app-panel-search-teams [selectLabel]="'View'"></app-panel-search-teams>
       </div>
     </div>
   </div>

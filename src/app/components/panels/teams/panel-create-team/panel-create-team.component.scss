@@ -1,6 +1,18 @@
-#panel-create-team {
-  .player-name {
-    position: relative;
-    top: 5px;
+#team-create {
+  .team-players {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0 10px;
+    }
+
+    button {
+      &:hover, &:active, &:focus,
+      &::selection, &:target {
+        background: #f64846;
+        border-color: #f63c3a;
+      }
+    }
   }
 }
