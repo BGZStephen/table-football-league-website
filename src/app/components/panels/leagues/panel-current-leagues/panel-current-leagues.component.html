@@ -1,25 +1,27 @@
-<div class="widget-box">
-  <div class="widget-title"> <span class="icon"> <i class="fa fa-table"></i> </span>
-    <h5>Current leagues</h5>
-  </div>
-  <div class="widget-content nopadding">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th>League name</th>
-          <th>No. of teams</th>
-          <th>Current position</th>
-          <th>Next fixture date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let league of leagues" class="odd gradeX">
-          <td>{{league.name}}</td>
-          <td>{{league.teams.length}}</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+<div id="fixture-current">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-futbol"></i> Current Leagues
+    </div>
+    <div class="card-body">
+      <table class="table table-responsive-sm">
+        <thead>
+          <tr>
+            <th>League name</th>
+            <th>No. of teams</th>
+            <th>Current position</th>
+            <th>Next fixture date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let league of leagues" class="odd gradeX">
+            <td>{{league.name}}</td>
+            <td>{{league.teams.length}}</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

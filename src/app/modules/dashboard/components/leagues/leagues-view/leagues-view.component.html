@@ -1,34 +1,24 @@
-<div id="content">
-  <div id="content-header">
-    <div id="breadcrumb">
-      <a routerLink="/dashboard" class="tip-bottom">
-        <i class="fa fa-home"></i> Home</a>
-        <a href="/dashboard/leagues" class="current tip-bottom">Leagues</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <app-panel-current-leagues></app-panel-current-leagues>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-futbol fa-fw"></i>
+          <strong>Actions</strong>
+        </div>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" (click)="setLeagueAction('find')"><i class="fa fa-search"></i> Find a league</button>
+          <button type="button" class="btn btn-success" (click)="setLeagueAction('create')"><i class="fa fa-pencil-alt"></i> Create a league</button>
+        </div>
       </div>
-    <h1>Your leagues</h1>
-  </div>
-  <div class="container-fluid">
-    <hr>
-    <div class="row-fluid">
-      <div class="span6">
-        <app-panel-current-leagues></app-panel-current-leagues>
+      <div *ngIf="leagueAction === 'create'">
+        <app-panel-create-league></app-panel-create-league>
       </div>
-      <div class="span6">
-        <div class="widget-box">
-          <div class="widget-title"> <span class="icon"> <i class="fa fa-cog"></i> </span>
-            <h5>Actions</h5>
-          </div>
-          <div class="widget-content">
-            <a class="btn btn-success" (click)="setLeagueAction('find')">Find a league</a>
-            <a class="btn btn-success" (click)="setLeagueAction('create')">Create a league</a>
-          </div>
-        </div>
-        <div *ngIf="leagueAction === 'create'">
-          <app-panel-create-league></app-panel-create-league>
-        </div>
-        <div *ngIf="leagueAction === 'find'">
-          <app-panel-search-leagues></app-panel-search-leagues>
-        </div>
+      <div *ngIf="leagueAction === 'find'">
+        <app-panel-search-leagues></app-panel-search-leagues>
       </div>
     </div>
   </div>

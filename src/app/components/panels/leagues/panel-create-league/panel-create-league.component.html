@@ -1,30 +1,30 @@
-<div id="panel-create-team" class="widget-box">
-  <div class="widget-title">
-    <span class="icon">
-      <i class="fa fa-table"></i>
-    </span>
-    <h5>New league</h5>
-  </div>
-  <div class="widget-content nopadding" *ngIf="league">
-    <form #f="ngForm" (ngSubmit)="createLeague()" class="form-horizontal">
-      <div class="control-group {{formValues.leagueName.hasError ? 'error' : ''}}">
-        <label class="control-label">League name :</label>
-        <div class="controls">
-          <input type="text" class="span11" placeholder="Table Foosball league 1" [(ngModel)]="league.name" name="name" required>
-          <span *ngIf="formValues.leagueName.hasError" class="help-inline">{{formValues.leagueName.message}}</span>
+<div id="league-create">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-futbol fa-fw"></i>
+      <strong>New fixture</strong>
+    </div>
+    <form #f="ngForm" (ngSubmit)="createFixture()" class="form-horizontal">
+      <div class="card-body">
+        <div class="form-group row {{formValues.leagueName.hasError ? 'error' : ''}}">
+          <label class="col-md-2 col-form-label text-right">League name :</label>
+          <div class="col-md-10">
+            <input type="text" class="form-control" placeholder="Table Foosball league 1" [(ngModel)]="league.name" name="name" required>
+            <span *ngIf="formValues.leagueName.hasError" class="help-inline">{{formValues.leagueName.message}}</span>
+          </div>
+        </div>
+        <div class="form-group row {{formValues.teams.hasError ? 'error' : ''}}">
+          <label class="col-md-2 col-form-label text-right">Teams :</label>
+          <div class="col-md-10 league-teams">
+            <p *ngIf="league.teams.length === 0" class="player-name">No teams currently selected, you can search for teams using the search box below.</p>
+            <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
+            <span *ngIf="formValues.teams.hasError" class="help-inline">{{formValues.teams.message}}</span>
+          </div>
         </div>
       </div>
-      <div class="control-group {{formValues.teams.hasError ? 'error' : ''}}">
-        <label class="control-label">Teams :</label>
-        <div class="controls">
-          <p *ngIf="league.teams.length === 0" class="player-name">No teams currently selected, you can search for teams using the search box below.</p>
-          <p class="player-name" *ngFor="let team of league.teams">{{team.name}}</p>
-          <span *ngIf="formValues.teams.hasError" class="help-inline">{{formValues.teams.message}}</span>
-        </div>
-      </div>
-      <div class="form-actions">
-        <a class="btn btn-info" (click)="resetLeague()">Reset</a>
-        <button class="btn btn-success">Save</button>
+      <div class="card-footer">
+        <button type="button" class="btn btn-danger" (click)="resetLeague()"><i class="fa fa-ban"></i> Reset</button>
+        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
       </div>
     </form>
   </div>
