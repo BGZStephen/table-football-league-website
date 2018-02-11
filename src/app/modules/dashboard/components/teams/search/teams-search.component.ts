@@ -3,10 +3,10 @@ import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-panel-search-teams',
-  templateUrl: './panel-search-teams.component.html',
+  selector: 'app-teams-search',
+  templateUrl: './teams-search.component.html',
 })
-export class PanelSearchTeamsComponent implements OnInit {
+export class TeamsSearchComponent implements OnInit {
 
   @Input() selectLabel: string;
   @Output()

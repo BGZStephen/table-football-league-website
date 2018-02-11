@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PanelSearchTeamsComponent } from './panel-search-teams.component';
+import { TeamsSearchComponent } from './panel-search-teams.component';
 
-describe('PanelSearchTeamsComponent', () => {
-  let component: PanelSearchTeamsComponent;
-  let fixture: ComponentFixture<PanelSearchTeamsComponent>;
+describe('TeamsSearchComponent', () => {
+  let component: TeamsSearchComponent;
+  let fixture: ComponentFixture<TeamsSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PanelSearchTeamsComponent ]
+      declarations: [ TeamsSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PanelSearchTeamsComponent);
+    fixture = TestBed.createComponent(TeamsSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

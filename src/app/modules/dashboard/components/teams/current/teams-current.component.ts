@@ -3,10 +3,10 @@ import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-panel-current-teams',
-  templateUrl: './panel-current-teams.component.html'
+  selector: 'app-teams-current',
+  templateUrl: './teams-current.component.html'
 })
-export class PanelCurrentTeamsComponent implements OnInit {
+export class TeamsCurrentComponent implements OnInit {
 
   user: Object = {};
 

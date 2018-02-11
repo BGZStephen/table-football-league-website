@@ -3,10 +3,10 @@ import { DashboardApiService } from 'app/services/dashboard-api.service';
 import { GlobalService } from 'app/services/global.service';
 
 @Component({
-  selector: 'app-panel-create-team',
-  templateUrl: './panel-create-team.component.html',
+  selector: 'app-team-create',
+  templateUrl: './team-create.component.html',
 })
-export class PanelCreateTeamComponent implements OnInit {
+export class TeamCreateComponent implements OnInit {
 
   formValues = {
     teamName: {
