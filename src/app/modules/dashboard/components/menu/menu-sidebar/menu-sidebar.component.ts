@@ -20,6 +20,7 @@ export class MenuSidebarComponent implements OnInit {
       {name: 'Fixtures', iconClass: 'fa fa-calendar fa-fw', link: '/dashboard/fixtures'},
       {name: 'Teams', iconClass: 'fa fa-users fa-fw', link: '/dashboard/teams'},
       {name: 'Leagues', iconClass: 'fa fa-list-alt fa-fw', link: '/dashboard/leagues'},
+      {name: 'Messages', iconClass: 'fa fa-envelope fa-fw', link: '/messages'},
       {name: 'Account', iconClass: 'fa fa-cog fa-fw', link: '/dashboard/account'},
       {name: 'Logout', iconClass: 'fa fa-power-off fa-fw', action: this.onLogout},
     ]

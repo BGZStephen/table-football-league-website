@@ -1,5 +1,22 @@
-#user-nav {
-  .nav {
-    max-width: 100%;
+#notification-bar {
+  padding: 0 10px;
+  .search-container {
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    i {
+      color: #AAA;
+      left: 8px;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    input {
+      border: 1px solid #AAA;
+      border-radius: 5px;
+      font-size: 0.8em;
+      padding: 4px 10px 4px 25px;
+    }
   }
 }
