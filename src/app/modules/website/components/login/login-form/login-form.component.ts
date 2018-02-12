@@ -1,3 +1,4 @@
+import { User } from 'app/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
@@ -25,8 +26,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  onLogin(user) {
-    console.log(user)
+  onLogin(user: User) {
     const validation = this.validateForm(user);
     if (validation) {
       this.publicApi.users.authenticate({

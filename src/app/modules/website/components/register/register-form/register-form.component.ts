@@ -1,3 +1,4 @@
+import { User, RegistrationForm } from 'app/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
@@ -37,9 +38,16 @@ export class RegisterFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(user) {
-    const validation = this.validateForm(user);
+  onRegister(form: RegistrationForm) {
+    const validation = this.validateForm(form);
     if (validation) {
+      const user: User = {
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        password: form.password
+      }
+
       this.publicApi.users.create({
         body: user,
       })
@@ -56,7 +64,7 @@ export class RegisterFormComponent implements OnInit {
     }
   }
 
-  validateForm(form) {
+  validateForm(form: RegistrationForm) {
     let errorFlag;
     Object.keys(this.formValues).forEach((key) => {
       if(!form[key]) {
