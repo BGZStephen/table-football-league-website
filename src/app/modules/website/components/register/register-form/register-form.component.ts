@@ -1,5 +1,6 @@
 import { User, RegistrationForm } from 'app/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 
@@ -9,89 +10,42 @@ import { GlobalService } from 'app/services/global.service';
 })
 export class RegisterFormComponent implements OnInit {
 
-  formValues = {
-    firstName: {
-      display: 'First name'
-    },
-    lastName: {
-      display: 'Last name'
-    },
-    username: {
-      display: 'Username'
-    },
-    email: {
-      display: 'Email'
-    },
-    password: {
-      display: 'Password'
-    },
-    confirmPassword: {
-      display: 'Password confirmation'
-    },
-  };
+  registrationForm: FormGroup;
 
   constructor(
     private publicApi: PublicApiService,
     private globalService: GlobalService,
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit() {
+    this.registrationForm = this.fb.group({
+      name: ['', [<any>Validators.required]],
+      email: ['', [<any>Validators.required]],
+      password: ['', [<any>Validators.required]],
+      repeatPassword: ['', [<any>Validators.required]],
+    });
   }
 
-  onRegister(form: RegistrationForm) {
-    const validation = this.validateForm(form);
-    if (validation) {
-      const user: User = {
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        password: form.password
-      }
-
-      this.publicApi.users.create({
-        body: user,
-      })
-      .subscribe(
-        res => {
-          localStorage.setItem('token', res['token']);
-          this.globalService.notification.show({message: 'Registration successful'});
-          this.globalService.redirection.delayed('/dashboard', 300);
-        },
-        error => {
-          this.globalService.errorHandler.process(error);
-        }
-      )
+  onRegister({form, valid}: {form: RegistrationForm, valid: boolean}) {
+    const user: User = {
+      name: form.name,
+      email: form.email,
+      password: form.password
     }
-  }
 
-  validateForm(form: RegistrationForm) {
-    let errorFlag;
-    Object.keys(this.formValues).forEach((key) => {
-      if(!form[key]) {
-        errorFlag = true;
-        this.formValues[key]['hasError'] = true;
-        this.formValues[key]['message'] = `${this.formValues[key].display} is required`;
-      } else {
-        this.formValues[key]['hasError'] = false;
-        this.formValues[key]['message'] = undefined;
-      }
+    this.publicApi.users.create({
+      body: user,
     })
-
-    if (form.confirmPassword !== form.password) {
-      errorFlag = true;
-      this.formValues.confirmPassword['hasError'] = true;
-      this.formValues.confirmPassword['message'] = 'The entered passwords do not match';
-    }
-
-    if(errorFlag) {
-      return false;
-    }
-
-    return true;
-  }
-
-  clearFormError(field) {
-    this.formValues[field].hasError = false;
-    this.formValues[field].message = null;
+    .subscribe(
+      res => {
+        localStorage.setItem('token', res['token']);
+        this.globalService.notification.show({message: 'Registration successful'});
+        this.globalService.redirection.delayed('/dashboard', 300);
+      },
+      error => {
+        this.globalService.errorHandler.process(error);
+      }
+    )
   }
 }
