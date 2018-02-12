@@ -27,11 +27,11 @@ export class RegisterFormComponent implements OnInit {
     });
   }
 
-  onRegister({form, valid}: {form: RegistrationForm, valid: boolean}) {
+  onRegister() {
     const user: User = {
-      name: form.name,
-      email: form.email,
-      password: form.password
+      name: this.registrationForm.value.name,
+      email: this.registrationForm.value.email,
+      password: this.registrationForm.value.password
     }
 
     this.publicApi.users.create({
@@ -44,6 +44,7 @@ export class RegisterFormComponent implements OnInit {
         this.globalService.redirection.delayed('/dashboard', 300);
       },
       error => {
+        console.log(error)
         this.globalService.errorHandler.process(error);
       }
     )
