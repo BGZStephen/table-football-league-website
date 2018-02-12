@@ -28,6 +28,10 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onRegister() {
+    if (!this.registrationForm.valid) {
+      this.globalService.notification.error({message: 'An error occured during registration, please try logging in again'})
+    }
+
     const user: User = {
       name: this.registrationForm.value.name,
       email: this.registrationForm.value.email,

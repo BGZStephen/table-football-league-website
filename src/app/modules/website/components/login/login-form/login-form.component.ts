@@ -1,5 +1,6 @@
-import { User } from 'app/interfaces/interfaces';
+import { User, LoginForm } from 'app/interfaces/interfaces';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { PublicApiService } from 'app/services/public-api.service';
 import { GlobalService } from 'app/services/global.service';
 import { environment } from 'environments/environment'
@@ -10,64 +11,44 @@ import { environment } from 'environments/environment'
 })
 export class LoginFormComponent implements OnInit {
 
-  formValues = {
-    email: {
-      display: 'Email'
-    },
-    password: {
-      display: 'Password'
-    },
-  };
+  loginForm: FormGroup;
 
   constructor (
     private publicApi: PublicApiService,
     private globalService: GlobalService,
+    private fb: FormBuilder,
   ) { }
 
-  ngOnInit() {}
-
-  onLogin(user: User) {
-    const validation = this.validateForm(user);
-    if (validation) {
-      this.publicApi.users.authenticate({
-        body: user,
-      })
-      .subscribe(
-        res => {
-          localStorage.setItem('token', res['token']);
-          localStorage.setItem('user', res['user']);
-          this.globalService.notification.show({message: 'Login successful'});
-          this.globalService.redirection.delayed('/dashboard', 300)
-        },
-        error => {
-          this.globalService.errorHandler.process(error);
-        }
-      )
-    }
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [<any>Validators.required]],
+      password: ['', [<any>Validators.required]],
+    });
   }
 
-  validateForm(form) {
-    let errorFlag;
-    Object.keys(this.formValues).forEach((key) => {
-      if(!form[key]) {
-        errorFlag = true;
-        this.formValues[key]['hasError'] = true;
-        this.formValues[key]['message'] = `${this.formValues[key].display} is required`;
-      } else {
-        this.formValues[key]['hasError'] = false;
-        this.formValues[key]['message'] = undefined;
-      }
+  onLogin() {
+    if (!this.loginForm.valid) {
+      this.globalService.notification.error({message: 'An error occured, please try logging in again'})
+    }
+
+    const user: User = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password
+    }
+
+    this.publicApi.users.authenticate({
+      body: user,
     })
-
-    if(errorFlag) {
-      return false;
-    }
-
-    return true;
-  }
-
-  clearFormError(field) {
-    this.formValues[field].hasError = false;
-    this.formValues[field].message = null;
+    .subscribe(
+      res => {
+        localStorage.setItem('token', res['token']);
+        localStorage.setItem('user', res['user']);
+        this.globalService.notification.show({message: 'Login successful'});
+        this.globalService.redirection.delayed('/dashboard', 300)
+      },
+      error => {
+        this.globalService.errorHandler.process(error);
+      }
+    )
   }
 }

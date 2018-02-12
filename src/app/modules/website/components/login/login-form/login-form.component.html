@@ -5,20 +5,20 @@
         <div class="card-group">
           <div class="card p-4">
             <div class="card-body">
-              <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+              <form novalidate (ngSubmit)="onLogin()" [formGroup]="loginForm">
                 <h1>Login</h1>
                 <p class="text-muted">Sign In to your account</p>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                   </div>
-                  <input type="text" class="form-control" name="email" #email ngModel placeholder="Email">
+                  <input type="text" class="form-control" placeholder="Email" formControlName="email" [formGroup]="loginForm">
                 </div>
                 <div class="input-group mb-4">
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
                   </div>
-                  <input type="password" class="form-control" name="password" #password ngModel placeholder="Password">
+                  <input type="password" class="form-control" placeholder="Password" formControlName="password" [formGroup]="loginForm">
                 </div>
                 <div class="row">
                   <div class="col-6">

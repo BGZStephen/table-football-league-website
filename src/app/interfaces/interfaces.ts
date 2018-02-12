@@ -1,7 +1,7 @@
 export interface User {
   _id?: string,
-  name: string,
-  email: string,
+  name?: string,
+  email?: string,
   password?: string,
   teams?: Array<any>,
   fixtures?: Array<any>,
@@ -17,4 +17,9 @@ export interface RegistrationForm {
   email: string,
   password: string,
   repeatPassword: string,
+}
+
+export interface LoginForm {
+  email: string,
+  password: string,
 }
